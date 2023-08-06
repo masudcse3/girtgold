@@ -208,7 +208,8 @@ input[type="radio"] {
   background: linear-gradient(180deg, rgba(39, 33, 60, 0.8) 0%, #27213c 100%),
     url(./assets/images/banner/bannerImage.png);
   background-size: cover;
-  margin: auto;
+  background-repeat: no-repeat;
+  margin-inline: auto;
 }
 
 .bannerContainer {
