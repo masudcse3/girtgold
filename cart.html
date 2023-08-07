@@ -27,7 +27,7 @@
       </article>
       <!-- Navbar Section -->
       <nav
-        class="h-[63px] pt-[23px] lg:pt-0 lg:border-b flex justify-start items-center border-white border-opacity-[15%] text-white"
+        class="h-[63px] pt-[23px] lg:pt-0 lg:border-b flex justify-start items-center border-white border-opacity-[15%] text-white pb-5 lg:pb-0"
       >
         <!-- Navbar Container -->
         <article
@@ -48,7 +48,7 @@
               <input
                 type="text"
                 placeholder="Search"
-                class="bg-transparent py-1 text-sm w-full outline-o focus:outline-0 placeholder:opacity-70"
+                class="bg-transparent nav-search py-1 text-sm w-full outline-o focus:outline-0 focus:ring-0 placeholder:opacity-70"
               />
               <button
                 class="absolute right-[13px] top-[6px] p-[2px] bg-[#241f36]"
@@ -321,15 +321,15 @@
               <div class="flex flex-col gap-5">
                 <!-- Search Box for mobile devices -->
                 <div
-                  class="flex justify-between items-center gap-2 border border-white border-opacity-25 p-[8px_13px] rounded-[4px]"
+                  class="flex justify-between items-center gap-2 border border-white border-opacity-25 p-[10px_10px] rounded-[4px]"
                 >
                   <input
                     type="text"
                     placeholder="Search"
-                    class="bg-transparent text-sm w-full border-0 outline-o focus:outline-0 placeholder:opacity-70"
+                    class="bg-transparent nav-search focus:ring-0 text-sm w-full border-0 outline-o focus:outline-0 placeholder:opacity-70"
                   />
                   <button>
-                    <i class="fa-solid fa-magnifying-glass opacity-70"></i>
+                    <i class="fa-solid fa-magnifying-glass opacity-80"></i>
                   </button>
                 </div>
                 <!-- Currency Dropdown for mobile devices -->
@@ -344,7 +344,7 @@
                     <div class="flex items-center gap-[6px]">
                       <span id="currencyMobile">USD</span>
                       <i
-                        class="fa-solid fa-chevron-down relative top-[1px]"
+                        class="fa-solid fa-chevron-down relative top-[0px]"
                       ></i>
                     </div>
                   </div>
@@ -353,20 +353,20 @@
                     id="currencyMenuMobile"
                   >
                     <ul
-                      class="list-none text-center bg-[#241f36] rounded-[4px] w-52 border border-[#39334d] divide-y divide-[#39334d] cursor-pointer"
+                      class="list-none text-center bg-[#241f36] rounded-[4px] w-[calc(100vw-74px)] border border-[#39334d] divide-y divide-[#39334d] cursor-pointer"
                     >
                       <li
-                        class="py-1 cursor-pointer hover:bg-[#39334d] duration-200 currency-item-mobile"
+                        class="py-2 cursor-pointer hover:bg-[#39334d] duration-200 currency-item-mobile"
                       >
                         EUR
                       </li>
                       <li
-                        class="py-1 cursor-pointer hover:bg-[#39334d] duration-200 currency-item-mobile"
+                        class="py-2 cursor-pointer hover:bg-[#39334d] duration-200 currency-item-mobile"
                       >
                         GBP
                       </li>
                       <li
-                        class="py-1 cursor-pointer hover:bg-[#39334d] duration-200 currency-item-mobile"
+                        class="py-2 cursor-pointer hover:bg-[#39334d] duration-200 currency-item-mobile"
                       >
                         USD
                       </li>
@@ -605,8 +605,8 @@
               class="py-[40px] hidden md:flex items-center justify-start gap-3 text-[15px] leading-[24px] font-normal"
             >
               <h3>Home</h3>
-              <img src="./assets/cart/right angle.png" alt="" />
-              <h4>Cart</h4>
+              <img src="./assets/cart/right angle.png" alt="arrow-icon" />
+              <h4 class="opacity-50">Cart</h4>
             </div>
             <div class="pb-[40px] pt-[35px] md:pt-0">
               <h1
@@ -931,11 +931,10 @@
                       <div
                         class="w-full border rounded-[300px] px-5 py-[10px] flex items-center justify-between"
                       >
-                        <h1 id="shipping-type">
-                          Regular Delivery $<span id="shipping-charge"
-                            >5.00</span
-                          >
-                        </h1>
+                        <div class="flex items-center gap-3">
+                          <h1 id="shipping-category">Regular Delivery</h1>
+                          <p>$ <span id="shipping-charge">5.00</span></p>
+                        </div>
                         <i
                           class="fa-solid fa-chevron-down cursor-pointer"
                           id="open-shipping-charge-box"
@@ -949,25 +948,22 @@
                           class="list-none text-center rounded-[4px] w-full border border-[#ffffff85] divide-y divide-[#ffffff7c] cursor-pointer text-[13px]"
                         >
                           <li
-                            class="py-2 cursor-pointer hover:bg-[#301e1a] duration-200 shipping-category"
+                            class="py-2 cursor-pointer hover:bg-[#301e1a] duration-200"
+                            id="regular-category"
                           >
-                            Regular Delivery $<span id="shipping-charge"
-                              >5.00</span
-                            >
+                            Regular Delivery $<span>5.00</span>
                           </li>
                           <li
-                            class="py-2 cursor-pointer hover:bg-[#301e1a] duration-200 shipping-category"
+                            class="py-2 cursor-pointer hover:bg-[#301e1a] duration-200"
+                            id="standard-category"
                           >
-                            Standard Delivery $<span id="shipping-charge"
-                              >8.00</span
-                            >
+                            Standard Delivery $<span>8.00</span>
                           </li>
                           <li
-                            class="py-2 cursor-pointer hover:bg-[#301e1a] duration-200 shipping-category"
+                            class="py-2 cursor-pointer hover:bg-[#301e1a] duration-200"
+                            id="fast-category"
                           >
-                            Fast Delivery $<span id="shipping-charge"
-                              >10.00</span
-                            >
+                            Fast Delivery $<span>10.00</span>
                           </li>
                         </ul>
                       </div>

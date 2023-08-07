@@ -7,55 +7,51 @@ openShippingChargeBoxIcon.addEventListener("click", () => {
   toggleShippingChargeBox();
 });
 
-// Shipping category item
-const shippingCategoryItems = document.querySelectorAll(".shipping-category");
 
-shippingCategoryItems.forEach((category) => {
-  category.addEventListener("click", (event) => {
-    const type = event.currentTarget.innerText.split(" ")[0];
-    if (type.toLowerCase() == "regular") {
-      addRegularShipping();
-      toggleShippingChargeBox();
-      calculateCartsGrandTotal();
-    } else if (type.toLowerCase() == "standard") {
-      addStandardShipping();
-      toggleShippingChargeBox();
-      calculateCartsGrandTotal();
-    } else {
-      addFastShipping();
-      toggleShippingChargeBox();
-      calculateCartsGrandTotal();
-    }
-  });
-});
+
+// Shipping categories
+const regularShippingCharge = 5;
+const standardShippingCharge = 8;
+const fastShippingCharge = 10;
+
+// const shippingCategoryItems = document.querySelectorAll(".shipping-category");
+const shippingCategory = document.getElementById('shipping-category');
+const shippingCharge = document.getElementById('shipping-charge');
+const regularCategory = document.getElementById('regular-category');
+const standardCategory = document.getElementById('standard-category');
+const fastCategory = document.getElementById('fast-category');
+
+// Regular Delivery Category
+regularCategory.addEventListener('click', () => {
+  shippingCategory.innerText = 'Regular Delivery';
+  shippingCharge.innerText = regularShippingCharge.toFixed(2);
+  toggleShippingChargeBox();
+  calculateCartsGrandTotal();
+})
+
+// Standard Delivery Category
+standardCategory.addEventListener('click', () => {
+  shippingCategory.innerText = 'Standard Delivery';
+  shippingCharge.innerText = standardShippingCharge.toFixed(2);
+  toggleShippingChargeBox();
+  calculateCartsGrandTotal();
+})
+
+// Fast Delivery Category
+fastCategory.addEventListener('click', () => {
+  shippingCategory.innerText = 'Fast Delivery';
+  shippingCharge.innerText = fastShippingCharge.toFixed(2);
+  toggleShippingChargeBox();
+  calculateCartsGrandTotal();
+})
+
+
 
 function toggleShippingChargeBox() {
   const shippingChargeBox = document.getElementById("shipping-charge-box");
   shippingChargeBox.classList.toggle("hidden");
 }
 
-function addRegularShipping() {
-  const shippingType = document.getElementById("shipping-type");
-  shippingType.innerHTML = `
-    Regular Delivery $
-    <span id="shipping-charge">5.00</span>
-    `;
-}
-function addStandardShipping() {
-  const shippingType = document.getElementById("shipping-type");
-  shippingType.innerHTML = `
-    Standard Delivery $
-    <span id="shipping-charge">8.00</span>
-    `;
-}
-
-function addFastShipping() {
-  const shippingType = document.getElementById("shipping-type");
-  shippingType.innerHTML = `
-    Fast Delivery $
-    <span id="shipping-charge">10.00</span>
-    `;
-}
 
 // Increasing cart items and calculating sub-total and total price
 const minusIconButtons = document.querySelectorAll(".minus-icon");

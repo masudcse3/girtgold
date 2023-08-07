@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Second page | VirtGold</title>
+    <title>Second page</title>
     <script
       src="https://kit.fontawesome.com/3121d157bd.js"
       crossorigin="anonymous"
@@ -25,11 +25,11 @@
       </article>
       <!-- Navbar Section -->
       <nav
-        class="h-[63px] pt-[23px] lg:pt-0 lg:border-b flex justify-start items-center border-white border-opacity-[15%] text-white"
+        class="h-[63px] pt-[23px] lg:pt-0 lg:border-b flex justify-start items-center border-white border-opacity-[15%] text-white pb-5 lg:pb-0"
       >
         <!-- Navbar Container -->
         <article
-          class="flex justify-between items-center gap-5 w-[calc(100vw-48px)] lg:w-[calc(100vw-200px)] mx-auto relative"
+          class="flex justify-between items-center gap-5 w-[calc(100vw-48px)] lg:w-[calc(100vw-200px)] 2xl:w-[1480px] mx-auto relative"
         >
           <!-- First Column of the Navbar -->
           <div class="flex items-center justify-between gap-[40px]">
@@ -46,7 +46,7 @@
               <input
                 type="text"
                 placeholder="Search"
-                class="bg-transparent py-1 text-sm w-full outline-o focus:outline-0 placeholder:opacity-70"
+                class="bg-transparent nav-search py-1 text-sm w-full outline-o focus:outline-0 focus:ring-0 placeholder:opacity-70"
               />
               <button
                 class="absolute right-[13px] top-[6px] p-[2px] bg-[#241f36]"
@@ -319,15 +319,15 @@
               <div class="flex flex-col gap-5">
                 <!-- Search Box for mobile devices -->
                 <div
-                  class="flex justify-between items-center gap-2 border border-white border-opacity-25 p-[8px_13px] rounded-[4px]"
+                  class="flex justify-between items-center gap-2 border border-white border-opacity-25 p-[10px_10px] rounded-[4px]"
                 >
                   <input
                     type="text"
                     placeholder="Search"
-                    class="bg-transparent text-sm w-full border-0 outline-o focus:outline-0 placeholder:opacity-70"
+                    class="bg-transparent nav-search focus:ring-0 text-sm w-full border-0 outline-o focus:outline-0 placeholder:opacity-70"
                   />
                   <button>
-                    <i class="fa-solid fa-magnifying-glass opacity-70"></i>
+                    <i class="fa-solid fa-magnifying-glass opacity-80"></i>
                   </button>
                 </div>
                 <!-- Currency Dropdown for mobile devices -->
@@ -342,7 +342,7 @@
                     <div class="flex items-center gap-[6px]">
                       <span id="currencyMobile">USD</span>
                       <i
-                        class="fa-solid fa-chevron-down relative top-[1px]"
+                        class="fa-solid fa-chevron-down relative top-[0px]"
                       ></i>
                     </div>
                   </div>
@@ -351,20 +351,20 @@
                     id="currencyMenuMobile"
                   >
                     <ul
-                      class="list-none text-center bg-[#241f36] rounded-[4px] w-52 border border-[#39334d] divide-y divide-[#39334d] cursor-pointer"
+                      class="list-none text-center bg-[#241f36] rounded-[4px] w-[calc(100vw-74px)] border border-[#39334d] divide-y divide-[#39334d] cursor-pointer"
                     >
                       <li
-                        class="py-1 cursor-pointer hover:bg-[#39334d] duration-200 currency-item-mobile"
+                        class="py-2 cursor-pointer hover:bg-[#39334d] duration-200 currency-item-mobile"
                       >
                         EUR
                       </li>
                       <li
-                        class="py-1 cursor-pointer hover:bg-[#39334d] duration-200 currency-item-mobile"
+                        class="py-2 cursor-pointer hover:bg-[#39334d] duration-200 currency-item-mobile"
                       >
                         GBP
                       </li>
                       <li
-                        class="py-1 cursor-pointer hover:bg-[#39334d] duration-200 currency-item-mobile"
+                        class="py-2 cursor-pointer hover:bg-[#39334d] duration-200 currency-item-mobile"
                       >
                         USD
                       </li>
@@ -598,7 +598,7 @@
         <section class="bg-gradient-to-b from-[#27213CCC] to-[#27213C]">
           <article class="home-banner">
             <div
-              class="w-[calc(100vw-48px)] lg:w-[calc(100vw-200px)] mx-auto text-white h-[405px]"
+              class="w-[calc(100vw-48px)] lg:w-[calc(100vw-200px)] 2xl:w-[1480px] mx-auto text-white h-[405px]"
             >
               <h3 class="pt-10 space-x-2 hidden md:block">
                 <span class="text-[15px] leading-[24px] font-[400]">Home</span>
@@ -634,7 +634,7 @@
       </section>
     </header>
     <main
-      class="relative -top-[160px] w-[calc(100vw-48px)] lg:w-[calc(100vw-200px)] mx-auto text-white"
+      class="relative -top-[160px] w-[calc(100vw-48px)] lg:w-[calc(100vw-200px)] 2xl:w-[1480px] mx-auto text-white"
     >
       <section
         class="flex flex-col lg:flex-row justify-between items-start lg:gap-[80px]"
@@ -862,7 +862,7 @@
             </section>
           </section>
 
-          <section class="hidden lg:block">
+          <section class="">
             <!-- Skills Section -->
             <section id="Skills">
               <section class="w-full">
@@ -1582,9 +1582,13 @@
             </section>
           </section>
         </article>
-        <article class="w-full lg:w-1/4">
+        <article
+          class="w-full lg:w-1/4 sticky lg:top-2 bottom-5 xl:top-[20px] 2xl:top-[100px]"
+        >
+          <!-- Table of contents Section -->
           <section
-            class="w-full custom-gradient px-3 py-[10px] rounded hidden lg:block border border-white border-opacity-10"
+            id="table-of-contents"
+            class="w-full custom-gradient px-3 py-[10px] rounded hidden lg:block border border-white border-opacity-10 max-h-screen overflow-y-auto"
           >
             <h4
               class="text-white uppercase opacity-40 text-[14px] leading-[32px] -tracking-[0.2px] font-[400]"
@@ -1592,338 +1596,130 @@
               Table of contents
             </h4>
             <div
-              class="text-[14px] leading-[22px] font-[400] pl-[20px] -tracking-[0.2px] text-white"
+              class="text-[14px] leading-[22px] font-[400] pl-[10px] -tracking-[0.2px] text-white"
             >
-              <a href="#GamePlay" class="smooth-scroll-link">
+              <a
+                href="#GamePlay"
+                class="smooth-scroll-link hover:bg-[#FFFFFF15] duration-200 pl-[10px] py-[6px] block rounded"
+              >
                 <p>Diablo 4 Hammer of the</p>
                 <p>Ancients Barbarian GamePlay</p>
               </a>
             </div>
-            <hr class="border-white border-opacity-[15%] my-2" />
+            <hr class="border-white border-opacity-[15%] my-1" />
             <div
-              class="text-[14px] leading-[22px] font-[400] pl-[20px] -tracking-[0.2px] text-white"
+              class="text-[14px] leading-[22px] font-[400] pl-[10px] -tracking-[0.2px] text-white"
             >
-              <a href="#Weaknesses" class="smooth-scroll-link">
+              <a
+                href="#Weaknesses"
+                class="smooth-scroll-link hover:bg-[#FFFFFF15] duration-200 pl-[10px] py-[6px] block rounded"
+              >
                 <p>Diablo 4 HotA Barbarian</p>
                 <p>Strengths and Weaknesses</p>
               </a>
             </div>
-            <hr class="border-white border-opacity-[15%] my-2" />
+            <hr class="border-white border-opacity-[15%] my-1" />
             <div
-              class="text-[14px] leading-[22px] font-[400] pl-[20px] -tracking-[0.2px] text-white"
+              class="text-[14px] leading-[22px] font-[400] pl-[10px] -tracking-[0.2px] text-white"
             >
-              <a href="#Skills" class="smooth-scroll-link">
+              <a
+                href="#Skills"
+                class="smooth-scroll-link hover:bg-[#FFFFFF15] duration-200 pl-[10px] py-[6px] block rounded"
+              >
                 <p>Diablo 4 HotA Barbarian</p>
                 <p>Skills</p>
               </a>
             </div>
-            <hr class="border-white border-opacity-[15%] my-2" />
+            <hr class="border-white border-opacity-[15%] my-1" />
             <div
-              class="text-[14px] leading-[22px] font-[400] pl-[20px] -tracking-[0.2px] text-white"
+              class="text-[14px] leading-[22px] font-[400] pl-[10px] -tracking-[0.2px] text-white"
             >
-              <a href="#Gearing" class="smooth-scroll-link">
+              <a
+                href="#Gearing"
+                class="smooth-scroll-link hover:bg-[#FFFFFF15] duration-200 pl-[10px] py-[6px] block rounded"
+              >
                 <p>Diablo 4 HotA Barbarian</p>
                 <p>Gearing</p>
               </a>
             </div>
-            <hr class="border-white border-opacity-[0%] my-2" />
             <div class="ml-[14px]">
               <div
-                class="text-[14px] leading-[22px] font-[400] pl-[20px] -tracking-[0.2px] text-white"
+                class="text-[14px] leading-[22px] font-[400] pl-[10px] -tracking-[0.2px] text-white"
               >
-                <a href="#Slot-Gear" class="smooth-scroll-link">
+                <a
+                  href="#Slot-Gear"
+                  class="smooth-scroll-link hover:bg-[#FFFFFF15] duration-200 pl-[10px] py-[6px] block rounded"
+                >
                   <p>HotA Barbarian Best in Slot</p>
                   <p>Gear</p>
                 </a>
               </div>
-              <hr class="border-white border-opacity-[15%] my-2" />
+              <hr class="border-white border-opacity-[15%] my-1" />
               <div
-                class="text-[14px] leading-[22px] font-[400] pl-[20px] -tracking-[0.2px] text-white"
+                class="text-[14px] leading-[22px] font-[400] pl-[10px] -tracking-[0.2px] text-white"
               >
-                <a href="#Stat-Priorities" class="smooth-scroll-link">
+                <a
+                  href="#Stat-Priorities"
+                  class="smooth-scroll-link hover:bg-[#FFFFFF15] duration-200 pl-[10px] py-[6px] block rounded"
+                >
                   HotA Barbarian Stat <br />
                   Priorities
                 </a>
               </div>
-              <hr class="border-white border-opacity-[15%] my-2" />
+              <hr class="border-white border-opacity-[15%] my-1" />
               <div
-                class="text-[14px] leading-[22px] font-[400] pl-[20px] -tracking-[0.2px] text-white"
+                class="text-[14px] leading-[22px] font-[400] pl-[10px] -tracking-[0.2px] text-white"
               >
-                <a href="#Gems" class="smooth-scroll-link"
+                <a
+                  href="#Gems"
+                  class="smooth-scroll-link hover:bg-[#FFFFFF15] duration-200 pl-[10px] py-[6px] block rounded"
                   >Hammer of the Ancients Barbarian Gems</a
                 >
               </div>
-              <hr class="border-white border-opacity-[15%] my-2" />
+              <hr class="border-white border-opacity-[15%] my-1" />
               <div
-                class="text-[14px] leading-[22px] font-[400] pl-[20px] -tracking-[0.2px] text-white"
+                class="text-[14px] leading-[22px] font-[400] pl-[10px] -tracking-[0.2px] text-white"
               >
-                <a href="#Incenses" class="smooth-scroll-link"
+                <a
+                  href="#Incenses"
+                  class="smooth-scroll-link hover:bg-[#FFFFFF15] duration-200 pl-[10px] py-[6px] block rounded"
                   >HotA Barbarian Elixirs and Incenses</a
                 >
               </div>
             </div>
-            <hr class="border-white border-opacity-[15%] my-2" />
+            <hr class="border-white border-opacity-[15%] my-1" />
             <div
-              class="text-[14px] leading-[22px] font-[400] pl-[20px] -tracking-[0.2px] text-white"
+              class="text-[14px] leading-[22px] font-[400] pl-[10px] -tracking-[0.2px] text-white"
             >
-              <a href="#Paragon-Board" class="smooth-scroll-link"
+              <a
+                href="#Paragon-Board"
+                class="smooth-scroll-link hover:bg-[#FFFFFF15] duration-200 pl-[10px] py-[6px] block rounded"
                 >Diablo 4 HotA Barbarian Paragon Board</a
               >
             </div>
-            <hr class="border-white border-opacity-[15%] my-2" />
+            <hr class="border-white border-opacity-[15%] my-1" />
             <div
-              class="text-[14px] leading-[22px] font-[400] pl-[20px] -tracking-[0.2px] text-white"
+              class="text-[14px] leading-[22px] font-[400] pl-[10px] -tracking-[0.2px] text-white"
             >
-              <a href="#Barbarian-Glyphs" class="smooth-scroll-link"
+              <a
+                href="#Barbarian-Glyphs"
+                class="smooth-scroll-link hover:bg-[#FFFFFF15] duration-200 pl-[10px] py-[6px] block rounded"
                 >Diablo 4 HotA Barbarian Glyphs</a
               >
             </div>
-            <hr class="border-white border-opacity-[15%] my-2" />
-            <div class="px-2">
-              <div
-                class="bg-white bg-opacity-10 rounded-[5px] py-[7px] px-[10px]"
-              >
+            <hr class="border-white border-opacity-[15%] my-1" />
+            <div>
+              <div class="rounded-[5px] py-[7px] px-[10px]">
                 <div
                   class="text-[14px] leading-[22px] font-[400] -tracking-[0.2px] text-white"
                 >
-                  <a href="#The-Malignant" class="smooth-scroll-link">
+                  <a
+                    href="#The-Malignant"
+                    class="smooth-scroll-link hover:bg-[#FFFFFF15] duration-200 pl-[10px] py-[6px] block rounded"
+                  >
                     <p>Diablo 4 HotA Barbarian</p>
                     <p>Season 1 - The Malignant</p>
                   </a>
-                </div>
-                <div
-                  class="text-[14px] leading-[22px] font-[400] -tracking-[0.2px] text-white flex justify-start items-center gap-2"
-                >
-                  <span class="text-[20px]">•</span>
-                  <div>
-                    <a href="#The-Malignant" class="smooth-scroll-link">
-                      <p>HotA Barbarian Best in Slot</p>
-                      <p>Caged Hearts</p>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <!-- Discount Cards -->
-          <section class="flex flex-col items-center gap-[20px] my-[30px]">
-            <!-- First Box -->
-            <div class="relative w-full lg:h-[290px] xl:h-[340px] z-10">
-              <img
-                class="w-full h-full"
-                src="./assets/deal-background-large.png.png"
-                alt=""
-              />
-              <div
-                class="absolute top-[18px] left-1/2 -translate-x-1/2 z-10 w-full"
-              >
-                <div
-                  class="text-center text-[#FFE86E] font-normal text-[22px] leading-[26px] tracking-[-1.224px] drop-shadow-lg"
-                >
-                  <h2 class="mt-2">Deal of the Day</h2>
-                  <h2>
-                    25%<span class="text-[34.709px] tracking-[-2.447px]"
-                      >Off</span
-                    >
-                  </h2>
-                </div>
-              </div>
-              <div
-                style="
-                  border: 1.224px solid rgba(252, 171, 0, 0.3);
-                  background: linear-gradient(
-                      180deg,
-                      rgba(252, 171, 0, 0.35) 0%,
-                      #472920 100%
-                    ),
-                    rgba(0, 0, 0, 0.7);
-                "
-                class="absolute bottom-0 z-20 w-full mx-auto rounded-lg border border-[#0000003a] linar-back h-[70%]"
-              >
-                <div class="p-3 h-full flex flex-col justify-between">
-                  <div>
-                    <h2
-                      class="md:text-[15.907px] text-[12px] font-bold leading-[25.451px] text-white z-10"
-                    >
-                      Atlantis Armour Pack
-                    </h2>
-                    <p
-                      class="md:text-[14.683px] text-[12px] font-normal leading-[19px] text-white"
-                    >
-                      Ends in 10 hours
-                    </p>
-                  </div>
-                  <div class="w-full flex">
-                    <div class="w-[60%]">
-                      <div class="mt-8">
-                        <h2
-                          class="text-[#FFFFFFB2] text-[12px] md:text-[15px] font-normal leading-[19px]"
-                        >
-                          Atlantis Armour Pack discounted to 630 Points (TODAY
-                          ONLY)
-                        </h2>
-                      </div>
-                    </div>
-                    <div class="w-[40%] relative">
-                      <img
-                        class="relative object-fill w-full"
-                        src="./assets/AtlantisArmourSet.png.png"
-                        alt=""
-                      />
-                      <img
-                        class="absolute top-1/2 left-1/2 -translate-x-1/2 w-full"
-                        src="./assets/Link.png"
-                        alt=""
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Second Box -->
-            <div class="relative w-full lg:h-[290px] xl:h-[340px] z-0">
-              <img
-                class="w-full h-full"
-                src="./assets/deal-background-large.png.png"
-                alt=""
-              />
-              <div
-                class="absolute top-[18px] left-1/2 -translate-x-1/2 z-10 w-full"
-              >
-                <div
-                  class="text-center text-[#FFE86E] font-normal text-[22px] leading-[26px] tracking-[-1.224px] drop-shadow-lg"
-                >
-                  <h2 class="mt-2">Deal of the Day</h2>
-                  <h2>
-                    25%<span class="text-[34.709px] tracking-[-2.447px]"
-                      >Off</span
-                    >
-                  </h2>
-                </div>
-              </div>
-              <div
-                style="
-                  border: 1.224px solid rgba(252, 171, 0, 0.3);
-                  background: linear-gradient(
-                      180deg,
-                      rgba(252, 171, 0, 0.35) 0%,
-                      #472920 100%
-                    ),
-                    rgba(0, 0, 0, 0.7);
-                "
-                class="absolute bottom-0 z-20 w-full mx-auto rounded-lg border border-[#0000003a] linar-back h-[70%]"
-              >
-                <div class="p-3 h-full flex flex-col justify-between">
-                  <div>
-                    <h2
-                      class="md:text-[15.907px] text-[12px] font-bold leading-[25.451px] text-white z-10"
-                    >
-                      Atlantis Armour Pack
-                    </h2>
-                    <p
-                      class="md:text-[14.683px] text-[12px] font-normal leading-[19px] text-white"
-                    >
-                      Ends in 10 hours
-                    </p>
-                  </div>
-                  <div class="w-full flex">
-                    <div class="w-[60%]">
-                      <div class="mt-8">
-                        <h2
-                          class="text-[#FFFFFFB2] text-[12px] md:text-[15px] font-normal leading-[19px]"
-                        >
-                          Atlantis Armour Pack discounted to 630 Points (TODAY
-                          ONLY)
-                        </h2>
-                      </div>
-                    </div>
-                    <div class="w-[40%] relative">
-                      <img
-                        class="relative object-fill w-full"
-                        src="./assets/SirenFlamedashEffect.png.png"
-                        alt=""
-                      />
-                      <img
-                        class="absolute top-1/2 left-1/2 -translate-x-1/2 w-full"
-                        src="./assets/Link.png"
-                        alt=""
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Third Box -->
-            <div class="relative w-full lg:h-[290px] xl:h-[340px] z-10">
-              <img
-                class="w-full h-full"
-                src="./assets/deal-background-large.png.png"
-                alt=""
-              />
-              <div
-                class="absolute top-[18px] left-1/2 -translate-x-1/2 z-10 w-full"
-              >
-                <div
-                  class="text-center text-[#FFE86E] font-normal text-[22px] leading-[26px] tracking-[-1.224px] drop-shadow-lg"
-                >
-                  <h2 class="mt-2">Deal of the Day</h2>
-                  <h2>
-                    25%<span class="text-[34.709px] tracking-[-2.447px]"
-                      >Off</span
-                    >
-                  </h2>
-                </div>
-              </div>
-              <div
-                style="
-                  border: 1.224px solid rgba(252, 171, 0, 0.3);
-                  background: linear-gradient(
-                      180deg,
-                      rgba(252, 171, 0, 0.35) 0%,
-                      #472920 100%
-                    ),
-                    rgba(0, 0, 0, 0.7);
-                "
-                class="absolute bottom-0 z-20 w-full mx-auto rounded-lg border border-[#0000003a] linar-back h-[70%]"
-              >
-                <div class="p-3 h-full flex flex-col justify-between">
-                  <div>
-                    <h2
-                      class="md:text-[15.907px] text-[12px] font-bold leading-[25.451px] text-white z-10"
-                    >
-                      Atlantis Armour Pack
-                    </h2>
-                    <p
-                      class="md:text-[14.683px] text-[12px] font-normal leading-[19px] text-white"
-                    >
-                      Ends in 10 hours
-                    </p>
-                  </div>
-                  <div class="w-full flex">
-                    <div class="w-[60%]">
-                      <div class="mt-8">
-                        <h2
-                          class="text-[#FFFFFFB2] text-[12px] md:text-[15px] font-normal leading-[19px]"
-                        >
-                          Atlantis Armour Pack discounted to 630 Points (TODAY
-                          ONLY)
-                        </h2>
-                      </div>
-                    </div>
-                    <div class="w-[40%] relative">
-                      <img
-                        class="relative object-fill w-full"
-                        src="./assets/div.itemImageContainer.png"
-                        alt=""
-                      />
-                      <img
-                        class="absolute top-1/2 left-1/2 -translate-x-1/2 w-full"
-                        src="./assets/Link.png"
-                        alt=""
-                      />
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -1984,7 +1780,7 @@
       </section>
       <section class="bg-[#27213c]">
         <article
-          class="w-[calc(100vw-48px)] lg:w-[calc(100vw-200px)] pt-[25px] lg:pt-[60px] mx-auto"
+          class="w-[calc(100vw-48px)] lg:w-[calc(100vw-200px)] 2xl:w-[1480px] pt-[25px] lg:pt-[60px] mx-auto"
         >
           <h1
             class="text-[24px] leading-[32px] font-[600] md:text-[35px] md:leading-[48px] md:font-[800] text-center w-full md:w-[656px] mx-auto my-[26px]"

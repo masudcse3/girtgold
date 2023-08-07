@@ -7,14 +7,18 @@
 body {
   font-family: Inter;
 }
-input[type="radio"] {
-  accent-color: #fcab00;
-}
 /* ---------------------------------------------------------------------------------------------- */
 /* ---------------------------------------------------------------------------------------------- */
 /*--------------HOME PAGE---------- All The CSS For HOME PAGE -----------HOME PAGE---------*/
 /* ---------------------------------------------------------------------------------------------- */
 /* ---------------------------------------------------------------------------------------------- */
+
+.nav-search {
+  border: 0 !important;
+}
+.nav-search:focus {
+  outline: 0 !important;
+}
 
 /*------------------------- CSS for home page banner section ----------------------------*/
 .home-banner {
@@ -71,21 +75,38 @@ input[type="radio"] {
 }
 
 /*-------------START----------------- CSS For category menu -----------------START-----------------*/
-.selected-category {
-  border-left: 2px solid;
-  border-color: #fcab00;
-  background-color: #1d182d;
+
+.category-item,
+.category-item-mobile {
+  color: white !important;
+  border-left: 2px solid transparent !important;
 }
+.category-item:hover,
+.category-item-mobile:hover {
+  border-color: #fcab00 !important;
+}
+
+.selected-category,
 .selected-category-mobile {
-  border-left: 2px solid;
-  border-color: #fcab00;
-  background-color: #1d182d;
+  border-left: 2px solid !important;
+  border-color: #fcab00 !important;
+  background-color: #1d182d !important;
 }
 
 /* CSS For filer button element */
 .selected {
-  background-color: #fcab00;
-  color: #27213c;
+  background-color: #fcab00 !important;
+  color: #27213c !important;
+  border-color: #fcab00 !important;
+}
+button.filter-btn {
+  color: white;
+  transition-duration: 0.3s !important;
+}
+.filter-btn:hover {
+  background-color: #fcab00 !important;
+  color: #27213c !important;
+  border-color: #fcab00 !important;
 }
 
 /*-------START---------- All The CSS For Featured Blogs Section ---------START--------*/
@@ -208,8 +229,7 @@ input[type="radio"] {
   background: linear-gradient(180deg, rgba(39, 33, 60, 0.8) 0%, #27213c 100%),
     url(./assets/images/banner/bannerImage.png);
   background-size: cover;
-  background-repeat: no-repeat;
-  margin-inline: auto;
+  margin: auto;
 }
 
 .bannerContainer {
@@ -373,9 +393,13 @@ input[type="radio"] {
 .check {
   width: 20px;
   height: 20px;
+  display: flex;
+  justify-items: center;
+  align-items: center;
   flex-shrink: 0;
   border-radius: 3px;
   border: 2px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
 }
 
 .checkboxName {

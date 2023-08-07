@@ -15,6 +15,10 @@
       rel="stylesheet"
     />
     <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <link
       href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
       rel="stylesheet"
     />
@@ -54,7 +58,7 @@
               <input
                 type="text"
                 placeholder="Search"
-                class="bg-transparent py-1 text-sm w-full outline-o focus:outline-0 placeholder:opacity-70"
+                class="bg-transparent nav-search py-1 text-sm w-full outline-o focus:outline-0 focus:ring-0 placeholder:opacity-70"
               />
               <button
                 class="absolute right-[13px] top-[6px] p-[2px] bg-[#241f36]"
@@ -327,12 +331,12 @@
               <div class="flex flex-col gap-5">
                 <!-- Search Box for mobile devices -->
                 <div
-                  class="flex justify-between items-center gap-2 border border-white border-opacity-25 p-[8px_13px] rounded-[4px]"
+                  class="flex justify-between items-center gap-2 border border-white border-opacity-25 p-[4px_10px] rounded-[4px]"
                 >
                   <input
                     type="text"
                     placeholder="Search"
-                    class="bg-transparent text-sm w-full border-0 outline-o focus:outline-0 placeholder:opacity-70"
+                    class="bg-transparent nav-search focus:ring-0 text-sm w-full border-0 outline-o focus:outline-0 placeholder:opacity-70"
                   />
                   <button>
                     <i class="fa-solid fa-magnifying-glass opacity-70"></i>
@@ -350,7 +354,7 @@
                     <div class="flex items-center gap-[6px]">
                       <span id="currencyMobile">USD</span>
                       <i
-                        class="fa-solid fa-chevron-down relative top-[1px]"
+                        class="fa-solid fa-chevron-down relative top-[0px]"
                       ></i>
                     </div>
                   </div>
@@ -359,20 +363,20 @@
                     id="currencyMenuMobile"
                   >
                     <ul
-                      class="list-none text-center bg-[#241f36] rounded-[4px] w-52 border border-[#39334d] divide-y divide-[#39334d] cursor-pointer"
+                      class="list-none text-center bg-[#241f36] rounded-[4px] w-[calc(100vw-74px)] border border-[#39334d] divide-y divide-[#39334d] cursor-pointer"
                     >
                       <li
-                        class="py-1 cursor-pointer hover:bg-[#39334d] duration-200 currency-item-mobile"
+                        class="py-2 cursor-pointer hover:bg-[#39334d] duration-200 currency-item-mobile"
                       >
                         EUR
                       </li>
                       <li
-                        class="py-1 cursor-pointer hover:bg-[#39334d] duration-200 currency-item-mobile"
+                        class="py-2 cursor-pointer hover:bg-[#39334d] duration-200 currency-item-mobile"
                       >
                         GBP
                       </li>
                       <li
-                        class="py-1 cursor-pointer hover:bg-[#39334d] duration-200 currency-item-mobile"
+                        class="py-2 cursor-pointer hover:bg-[#39334d] duration-200 currency-item-mobile"
                       >
                         USD
                       </li>
@@ -671,190 +675,320 @@
           <section
             class="flex items-start w-full mt-[52px] lg:mt-[35px] gap-[27px]"
           >
+            <!-- Menus for large device -->
             <article
               class="hidden lg:block lg:w-[276px] bg-white bg-opacity-5 p-[10px] rounded-[10px]"
             >
-              <!-- Menus for large device -->
-              <ul class="flex flex-col list-none gap-1 overflow-hidden h-auto">
+              <ul
+                class="flex flex-col list-none gap-1 overflow-hidden h-auto"
+                id="category-menu"
+                data-tabs-toggle="#myItemsTabContent"
+                role="tablist"
+              >
                 <li
                   class="border-b-[1px] border-white border-opacity-10 hover:border-opacity-0"
+                  role="presentation"
                 >
-                  <a
-                    class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] border-l-[2px] border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item"
+                  <button
+                    id="allItems-tab"
+                    data-tabs-target="#allItems"
+                    type="button"
+                    role="tab"
+                    aria-controls="allItems"
+                    aria-selected="false"
+                    class="p-[17px_18px_17px_18px] w-full text-[15px] leading-[24px] font-[400] border-l-[2px] border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item"
                   >
                     World of Warcraft
                     <span class="opacity-50 font-[400] text-[15px]">250</span>
-                  </a>
+                  </button>
                 </li>
                 <li
                   class="border-b-[1px] border-white border-opacity-10 hover:border-opacity-0"
+                  role="presentation"
                 >
-                  <a
-                    class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] border-l-[2px] border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item"
+                  <button
+                    id="wowGold-tab"
+                    data-tabs-target="#wowGold"
+                    type="button"
+                    role="tab"
+                    aria-controls="wowGold"
+                    aria-selected="false"
+                    class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] border-transparent w-full hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item"
                   >
                     WotLK Classic
                     <span class="opacity-50 font-[400] text-[15px]">978</span>
-                  </a>
+                  </button>
                 </li>
                 <li
                   class="border-b-[1px] border-white border-opacity-10 hover:border-opacity-0 group"
+                  role="presentation"
                 >
-                  <a
-                    class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] border-l-[2px] border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item"
+                  <button
+                    id="hotOffers-tab"
+                    data-tabs-target="#hotOffers"
+                    type="button"
+                    role="tab"
+                    aria-controls="hotOffers"
+                    aria-selected="false"
+                    class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] w-full border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item"
                   >
                     Dibalo 4
                     <span class="opacity-50 font-[400] text-[15px]">958</span>
-                  </a>
+                  </button>
                 </li>
                 <li
                   class="border-b-[1px] border-white border-opacity-10 hover:border-opacity-0"
+                  role="presentation"
                 >
-                  <a
-                    class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] border-l-[2px] border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item"
+                  <button
+                    id="dragonflight-tab"
+                    data-tabs-target="#dragonflight"
+                    type="button"
+                    role="tab"
+                    aria-controls="dragonflight"
+                    aria-selected="false"
+                    class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] w-full border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item"
                   >
                     WoW Classic Era
                     <span class="opacity-50 font-[400] text-[15px]">854</span>
-                  </a>
+                  </button>
                 </li>
                 <li
                   class="border-b-[1px] border-white border-opacity-10 hover:border-opacity-0"
+                  role="presentation"
                 >
-                  <a
-                    class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] border-l-[2px] border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item"
+                  <button
+                    id="radis-tab"
+                    data-tabs-target="#radis"
+                    type="button"
+                    role="tab"
+                    aria-controls="radis"
+                    aria-selected="false"
+                    class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] w-full border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item"
                   >
                     Destiny 2
                     <span class="opacity-50 font-[400] text-[15px]">50</span>
-                  </a>
+                  </button>
                 </li>
                 <li
                   class="border-b-[1px] border-white border-opacity-10 hover:border-opacity-0"
+                  role="presentation"
                 >
-                  <a
-                    class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] border-l-[2px] border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item"
+                  <button
+                    id="mythic-tab"
+                    data-tabs-target="#mythic"
+                    type="button"
+                    role="tab"
+                    aria-controls="mythic"
+                    aria-selected="false"
+                    class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] w-full border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item"
                   >
                     Final Fantasy XIV
                     <span class="opacity-50 font-[400] text-[15px]">250</span>
-                  </a>
+                  </button>
                 </li>
                 <li
                   class="border-b-[1px] border-white border-opacity-10 hover:border-opacity-0"
+                  role="presentation"
                 >
-                  <a
-                    class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] border-l-[2px] border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item"
+                  <button
+                    id="leveling-tab"
+                    data-tabs-target="#leveling"
+                    type="button"
+                    role="tab"
+                    aria-controls="leveling"
+                    aria-selected="false"
+                    class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] w-full border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item"
                   >
                     FIFA
                     <span class="opacity-50 font-[400] text-[15px]">250</span>
-                  </a>
+                  </button>
                 </li>
                 <li
                   class="border-b-[1px] border-white border-opacity-10 hover:border-opacity-0"
+                  role="presentation"
                 >
-                  <a
-                    class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] border-l-[2px] border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item"
+                  <button
+                    id="gearing-tab"
+                    data-tabs-target="#gearing"
+                    type="button"
+                    role="tab"
+                    aria-controls="gearing"
+                    aria-selected="false"
+                    class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] w-full border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item"
                   >
                     Path Of Exile
                     <span class="opacity-50 font-[400] text-[15px]">35</span>
-                  </a>
+                  </button>
                 </li>
                 <li
                   class="border-b-[1px] border-white border-opacity-10 hover:border-opacity-0"
+                  role="presentation"
                 >
-                  <a
-                    class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] border-l-[2px] border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item"
+                  <button
+                    id="radis-tab"
+                    data-tabs-target="#radis"
+                    type="button"
+                    role="tab"
+                    aria-controls="radis"
+                    aria-selected="false"
+                    class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] w-full border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item"
                   >
                     Escape from Tarkov
                     <span class="opacity-50 font-[400] text-[15px]">85</span>
-                  </a>
+                  </button>
                 </li>
                 <li
                   class="border-b-[1px] border-white border-opacity-10 hover:border-opacity-0"
+                  role="presentation"
                 >
-                  <a
-                    class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] border-l-[2px] border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item"
+                  <button
+                    id="leveling-tab"
+                    data-tabs-target="#leveling"
+                    type="button"
+                    role="tab"
+                    aria-controls="leveling"
+                    aria-selected="false"
+                    class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] w-full border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item"
                   >
                     World of Tanks
                     <span class="opacity-50 font-[400] text-[15px]">256</span>
-                  </a>
+                  </button>
                 </li>
                 <li
                   class="border-b-[1px] border-white border-opacity-10 hover:border-opacity-0"
+                  role="presentation"
                 >
-                  <a
-                    class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] border-l-[2px] border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item"
+                  <button
+                    id="dragonflight-tab"
+                    data-tabs-target="#dragonflight"
+                    type="button"
+                    role="tab"
+                    aria-controls="dragonflight"
+                    aria-selected="false"
+                    class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] w-full border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item"
                   >
                     Call of Duty
                     <span class="opacity-50 font-[400] text-[15px]">52</span>
-                  </a>
+                  </button>
                 </li>
                 <li
                   class="border-b-[1px] border-white border-opacity-10 hover:border-opacity-0"
+                  role="presentation"
                 >
-                  <a
-                    class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] border-l-[2px] border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item"
+                  <button
+                    id="mythic-tab"
+                    data-tabs-target="#mythic"
+                    type="button"
+                    role="tab"
+                    aria-controls="mythic"
+                    aria-selected="false"
+                    class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] w-full border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item"
                   >
                     Apex Legends
                     <span class="opacity-50 font-[400] text-[15px]">425</span>
-                  </a>
+                  </button>
                 </li>
                 <li
                   class="border-b-[1px] border-white border-opacity-10 hover:border-opacity-0"
+                  role="presentation"
                 >
-                  <a
-                    class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] border-l-[2px] border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item"
+                  <button
+                    id="leveling-tab"
+                    data-tabs-target="#leveling"
+                    type="button"
+                    role="tab"
+                    aria-controls="leveling"
+                    aria-selected="false"
+                    class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] w-full border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item"
                   >
                     Overwatch 2
                     <span class="opacity-50 font-[400] text-[15px]">456</span>
-                  </a>
+                  </button>
                 </li>
                 <li
                   class="border-b-[1px] border-white border-opacity-10 hover:border-opacity-0"
+                  role="presentation"
                 >
-                  <a
-                    class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] border-l-[2px] border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item"
+                  <button
+                    id="mythic-tab"
+                    data-tabs-target="#mythic"
+                    type="button"
+                    role="tab"
+                    aria-controls="mythic"
+                    aria-selected="false"
+                    class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] w-full border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item"
                   >
                     New World
                     <span class="opacity-50 font-[400] text-[15px]">214</span>
-                  </a>
+                  </button>
                 </li>
                 <li
                   class="border-b-[1px] border-white border-opacity-10 hover:border-opacity-0"
+                  role="presentation"
                 >
-                  <a
-                    class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] border-l-[2px] border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item"
+                  <button
+                    id="wowGold-tab"
+                    data-tabs-target="#wowGold"
+                    type="button"
+                    role="tab"
+                    aria-controls="wowGold"
+                    aria-selected="false"
+                    class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] w-full border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item"
                   >
                     Dibalo Immortal
                     <span class="opacity-50 font-[400] text-[15px]">52</span>
-                  </a>
+                  </button>
                 </li>
                 <li
                   class="border-b-[1px] border-white border-opacity-10 hover:border-opacity-0"
+                  role="presentation"
                 >
-                  <a
-                    class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] border-l-[2px] border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item"
+                  <button
+                    id="hotOffers-tab"
+                    data-tabs-target="#hotOffers"
+                    type="button"
+                    role="tab"
+                    aria-controls="hotOffers"
+                    aria-selected="false"
+                    class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] w-full border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item"
                   >
                     Valorant
                     <span class="opacity-50 font-[400] text-[15px]">89</span>
-                  </a>
+                  </button>
                 </li>
                 <li
                   class="border-b-[1px] border-white border-opacity-10 hover:border-opacity-0"
                 >
-                  <a
-                    class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] border-l-[2px] border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item"
+                  <button
+                    id="mythic-tab"
+                    data-tabs-target="#mythic"
+                    type="button"
+                    role="tab"
+                    aria-controls="mythic"
+                    aria-selected="false"
+                    class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] w-full border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item"
                   >
                     Lost ARK
                     <span class="opacity-50 font-[400] text-[15px]">865</span>
-                  </a>
+                  </button>
                 </li>
                 <li
                   class="border-b-[1px] border-white border-opacity-10 hover:border-opacity-0"
+                  role="presentation"
                 >
-                  <a
-                    class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] border-l-[2px] border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item"
+                  <button
+                    id="leveling-tab"
+                    data-tabs-target="#leveling"
+                    type="button"
+                    role="tab"
+                    aria-controls="leveling"
+                    aria-selected="false"
+                    class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] w-full border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item"
                   >
                     Runescape
                     <span class="opacity-50 font-[400] text-[15px]">325</span>
-                  </a>
+                  </button>
                 </li>
               </ul>
             </article>
@@ -890,223 +1024,351 @@
                       class="hidden absolute top-9 lg:hidden z-20 bg-[#241f36] w-[calc(100vw-48px)] h-[380px] overflow-y-scroll"
                     >
                       <ul
-                        class="flex flex-col list-none gap-1 z-20 bg-white bg-opacity-5"
+                        class="flex flex-col list-none gap-1 overflow-hidden h-auto"
+                        id="category-menu"
+                        data-tabs-toggle="#myItemsTabContent"
+                        role="tablist"
                       >
                         <li
                           class="border-b-[1px] border-white border-opacity-10 hover:border-opacity-0"
+                          role="presentation"
                         >
-                          <a
-                            class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] border-l-[2px] border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item-mobile"
+                          <button
+                            id="allItems-tab"
+                            data-tabs-target="#allItems"
+                            type="button"
+                            role="tab"
+                            aria-controls="allItems"
+                            aria-selected="false"
+                            class="p-[17px_18px_17px_18px] w-full text-[15px] leading-[24px] font-[400] border-l-[2px] border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item-mobile"
                           >
                             World of Warcraft
                             <span class="opacity-50 font-[400] text-[15px]"
                               >250</span
                             >
-                          </a>
+                          </button>
                         </li>
                         <li
                           class="border-b-[1px] border-white border-opacity-10 hover:border-opacity-0"
+                          role="presentation"
                         >
-                          <a
-                            class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] border-l-[2px] border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item-mobile"
+                          <button
+                            id="wowGold-tab"
+                            data-tabs-target="#wowGold"
+                            type="button"
+                            role="tab"
+                            aria-controls="wowGold"
+                            aria-selected="false"
+                            class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] border-transparent w-full hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item-mobile"
                           >
                             WotLK Classic
                             <span class="opacity-50 font-[400] text-[15px]"
                               >978</span
                             >
-                          </a>
+                          </button>
                         </li>
                         <li
                           class="border-b-[1px] border-white border-opacity-10 hover:border-opacity-0 group"
+                          role="presentation"
                         >
-                          <a
-                            class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] border-l-[2px] border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item-mobile"
+                          <button
+                            id="hotOffers-tab"
+                            data-tabs-target="#hotOffers"
+                            type="button"
+                            role="tab"
+                            aria-controls="hotOffers"
+                            aria-selected="false"
+                            class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] w-full border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item-mobile"
                           >
                             Dibalo 4
                             <span class="opacity-50 font-[400] text-[15px]"
                               >958</span
                             >
-                          </a>
+                          </button>
                         </li>
                         <li
                           class="border-b-[1px] border-white border-opacity-10 hover:border-opacity-0"
+                          role="presentation"
                         >
-                          <a
-                            class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] border-l-[2px] border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item-mobile"
+                          <button
+                            id="dragonflight-tab"
+                            data-tabs-target="#dragonflight"
+                            type="button"
+                            role="tab"
+                            aria-controls="dragonflight"
+                            aria-selected="false"
+                            class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] w-full border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item-mobile"
                           >
                             WoW Classic Era
                             <span class="opacity-50 font-[400] text-[15px]"
                               >854</span
                             >
-                          </a>
+                          </button>
                         </li>
                         <li
                           class="border-b-[1px] border-white border-opacity-10 hover:border-opacity-0"
+                          role="presentation"
                         >
-                          <a
-                            class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] border-l-[2px] border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item-mobile"
+                          <button
+                            id="radis-tab"
+                            data-tabs-target="#radis"
+                            type="button"
+                            role="tab"
+                            aria-controls="radis"
+                            aria-selected="false"
+                            class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] w-full border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item-mobile"
                           >
                             Destiny 2
                             <span class="opacity-50 font-[400] text-[15px]"
                               >50</span
                             >
-                          </a>
+                          </button>
                         </li>
                         <li
                           class="border-b-[1px] border-white border-opacity-10 hover:border-opacity-0"
+                          role="presentation"
                         >
-                          <a
-                            class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] border-l-[2px] border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item-mobile"
+                          <button
+                            id="mythic-tab"
+                            data-tabs-target="#mythic"
+                            type="button"
+                            role="tab"
+                            aria-controls="mythic"
+                            aria-selected="false"
+                            class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] w-full border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item-mobile"
                           >
                             Final Fantasy XIV
                             <span class="opacity-50 font-[400] text-[15px]"
                               >250</span
                             >
-                          </a>
+                          </button>
                         </li>
                         <li
                           class="border-b-[1px] border-white border-opacity-10 hover:border-opacity-0"
+                          role="presentation"
                         >
-                          <a
-                            class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] border-l-[2px] border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item-mobile"
+                          <button
+                            id="leveling-tab"
+                            data-tabs-target="#leveling"
+                            type="button"
+                            role="tab"
+                            aria-controls="leveling"
+                            aria-selected="false"
+                            class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] w-full border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item-mobile"
                           >
                             FIFA
                             <span class="opacity-50 font-[400] text-[15px]"
                               >250</span
                             >
-                          </a>
+                          </button>
                         </li>
                         <li
                           class="border-b-[1px] border-white border-opacity-10 hover:border-opacity-0"
+                          role="presentation"
                         >
-                          <a
-                            class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] border-l-[2px] border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item-mobile"
+                          <button
+                            id="gearing-tab"
+                            data-tabs-target="#gearing"
+                            type="button"
+                            role="tab"
+                            aria-controls="gearing"
+                            aria-selected="false"
+                            class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] w-full border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item-mobile"
                           >
                             Path Of Exile
                             <span class="opacity-50 font-[400] text-[15px]"
                               >35</span
                             >
-                          </a>
+                          </button>
                         </li>
                         <li
                           class="border-b-[1px] border-white border-opacity-10 hover:border-opacity-0"
+                          role="presentation"
                         >
-                          <a
-                            class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] border-l-[2px] border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item-mobile"
+                          <button
+                            id="radis-tab"
+                            data-tabs-target="#radis"
+                            type="button"
+                            role="tab"
+                            aria-controls="radis"
+                            aria-selected="false"
+                            class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] w-full border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item-mobile"
                           >
                             Escape from Tarkov
                             <span class="opacity-50 font-[400] text-[15px]"
                               >85</span
                             >
-                          </a>
+                          </button>
                         </li>
                         <li
                           class="border-b-[1px] border-white border-opacity-10 hover:border-opacity-0"
+                          role="presentation"
                         >
-                          <a
-                            class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] border-l-[2px] border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item-mobile"
+                          <button
+                            id="leveling-tab"
+                            data-tabs-target="#leveling"
+                            type="button"
+                            role="tab"
+                            aria-controls="leveling"
+                            aria-selected="false"
+                            class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] w-full border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item-mobile"
                           >
                             World of Tanks
                             <span class="opacity-50 font-[400] text-[15px]"
                               >256</span
                             >
-                          </a>
+                          </button>
                         </li>
                         <li
                           class="border-b-[1px] border-white border-opacity-10 hover:border-opacity-0"
+                          role="presentation"
                         >
-                          <a
-                            class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] border-l-[2px] border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item-mobile"
+                          <button
+                            id="dragonflight-tab"
+                            data-tabs-target="#dragonflight"
+                            type="button"
+                            role="tab"
+                            aria-controls="dragonflight"
+                            aria-selected="false"
+                            class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] w-full border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item-mobile"
                           >
                             Call of Duty
                             <span class="opacity-50 font-[400] text-[15px]"
                               >52</span
                             >
-                          </a>
+                          </button>
                         </li>
                         <li
                           class="border-b-[1px] border-white border-opacity-10 hover:border-opacity-0"
+                          role="presentation"
                         >
-                          <a
-                            class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] border-l-[2px] border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item-mobile"
+                          <button
+                            id="mythic-tab"
+                            data-tabs-target="#mythic"
+                            type="button"
+                            role="tab"
+                            aria-controls="mythic"
+                            aria-selected="false"
+                            class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] w-full border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item-mobile"
                           >
                             Apex Legends
                             <span class="opacity-50 font-[400] text-[15px]"
                               >425</span
                             >
-                          </a>
+                          </button>
                         </li>
                         <li
                           class="border-b-[1px] border-white border-opacity-10 hover:border-opacity-0"
+                          role="presentation"
                         >
-                          <a
-                            class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] border-l-[2px] border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item-mobile"
+                          <button
+                            id="leveling-tab"
+                            data-tabs-target="#leveling"
+                            type="button"
+                            role="tab"
+                            aria-controls="leveling"
+                            aria-selected="false"
+                            class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] w-full border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item-mobile"
                           >
                             Overwatch 2
                             <span class="opacity-50 font-[400] text-[15px]"
                               >456</span
                             >
-                          </a>
+                          </button>
                         </li>
                         <li
                           class="border-b-[1px] border-white border-opacity-10 hover:border-opacity-0"
+                          role="presentation"
                         >
-                          <a
-                            class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] border-l-[2px] border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item-mobile"
+                          <button
+                            id="mythic-tab"
+                            data-tabs-target="#mythic"
+                            type="button"
+                            role="tab"
+                            aria-controls="mythic"
+                            aria-selected="false"
+                            class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] w-full border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item-mobile"
                           >
                             New World
                             <span class="opacity-50 font-[400] text-[15px]"
                               >214</span
                             >
-                          </a>
+                          </button>
                         </li>
                         <li
                           class="border-b-[1px] border-white border-opacity-10 hover:border-opacity-0"
+                          role="presentation"
                         >
-                          <a
-                            class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] border-l-[2px] border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item-mobile"
+                          <button
+                            id="wowGold-tab"
+                            data-tabs-target="#wowGold"
+                            type="button"
+                            role="tab"
+                            aria-controls="wowGold"
+                            aria-selected="false"
+                            class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] w-full border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item-mobile"
                           >
                             Dibalo Immortal
                             <span class="opacity-50 font-[400] text-[15px]"
                               >52</span
                             >
-                          </a>
+                          </button>
                         </li>
                         <li
                           class="border-b-[1px] border-white border-opacity-10 hover:border-opacity-0"
+                          role="presentation"
                         >
-                          <a
-                            class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] border-l-[2px] border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item-mobile"
+                          <button
+                            id="hotOffers-tab"
+                            data-tabs-target="#hotOffers"
+                            type="button"
+                            role="tab"
+                            aria-controls="hotOffers"
+                            aria-selected="false"
+                            class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] w-full border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item-mobile"
                           >
                             Valorant
                             <span class="opacity-50 font-[400] text-[15px]"
                               >89</span
                             >
-                          </a>
+                          </button>
                         </li>
                         <li
                           class="border-b-[1px] border-white border-opacity-10 hover:border-opacity-0"
                         >
-                          <a
-                            class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] border-l-[2px] border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item-mobile"
+                          <button
+                            id="mythic-tab"
+                            data-tabs-target="#mythic"
+                            type="button"
+                            role="tab"
+                            aria-controls="mythic"
+                            aria-selected="false"
+                            class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] w-full border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item-mobile"
                           >
                             Lost ARK
                             <span class="opacity-50 font-[400] text-[15px]"
                               >865</span
                             >
-                          </a>
+                          </button>
                         </li>
                         <li
                           class="border-b-[1px] border-white border-opacity-10 hover:border-opacity-0"
+                          role="presentation"
                         >
-                          <a
-                            class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] border-l-[2px] border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item-mobile"
+                          <button
+                            id="leveling-tab"
+                            data-tabs-target="#leveling"
+                            type="button"
+                            role="tab"
+                            aria-controls="leveling"
+                            aria-selected="false"
+                            class="p-[17px_18px_17px_18px] text-[15px] leading-[24px] font-[400] w-full border-transparent hover:border-[#FCAB00] rounded-[4px] flex justify-between items-center bg-transparent hover:bg-[#1D182D] duration-300 cursor-pointer category-item-mobile"
                           >
                             Runescape
                             <span class="opacity-50 font-[400] text-[15px]"
                               >325</span
                             >
-                          </a>
+                          </button>
                         </li>
                       </ul>
                     </div>
@@ -1124,436 +1386,1905 @@
                 </button>
               </div>
               <!-- List of Options Section -->
-              <div
-                id="filtering-menu"
-                class="flex justify-start items-center gap-[17px] mt-[10px] pt-[5px] pb-[10px] overflow-x-scroll w-full relative"
-              >
-                <button
-                  class="p-[11px_13px_11px_13px] lg:p-[14px_17px_14px_17px] text-[13px] font-[700] border border-white border-opacity-20 text-center rounded-[300px] duration-200 filter-btn"
+              <div>
+                <ul
+                  class="flex justify-start items-center gap-[17px] mt-[10px] pt-[5px] pb-[10px] overflow-x-scroll w-full relative"
+                  id="filtering-menu"
+                  data-tabs-toggle="#myItemsTabContent"
+                  role="tablist"
                 >
-                  All
-                </button>
-                <button
-                  class="p-[11px_13px_11px_13px] lg:p-[14px_17px_14px_17px] text-[13px] text-white font-[700] border border-white border-opacity-20 text-center rounded-[300px] hover:bg-[#FCAB00] hover:text-[#27213C] duration-200 filter-btn"
-                >
-                  <span class="whitespace-pre">WoW Gold</span>
-                </button>
-                <button
-                  class="p-[11px_13px_11px_13px] lg:p-[14px_17px_14px_17px] text-[13px] text-white font-[700] border border-white border-opacity-20 text-center rounded-[300px] hover:bg-[#FCAB00] hover:text-[#27213C] duration-200 filter-btn"
-                >
-                  <span class="whitespace-pre">Hot Offers</span>
-                </button>
-                <button
-                  class="p-[11px_13px_11px_13px] lg:p-[14px_17px_14px_17px] text-[13px] text-white font-[700] border border-white border-opacity-20 text-center rounded-[300px] hover:bg-[#FCAB00] hover:text-[#27213C] duration-200 filter-btn"
-                >
-                  <span class="whitespace-pre">Dragonflight 10.1.5</span>
-                </button>
-                <button
-                  class="p-[11px_13px_11px_13px] lg:p-[14px_17px_14px_17px] text-[13px] text-white font-[700] border border-white border-opacity-20 text-center rounded-[300px] hover:bg-[#FCAB00] hover:text-[#27213C] duration-200 filter-btn"
-                >
-                  <span class="whitespace-pre">Radis</span>
-                </button>
-                <button
-                  class="p-[11px_13px_11px_13px] lg:p-[14px_17px_14px_17px] text-[13px] text-white font-[700] border border-white border-opacity-20 text-center rounded-[300px] hover:bg-[#FCAB00] hover:text-[#27213C] duration-200 filter-btn"
-                >
-                  <span class="whitespace-pre">Mythic + Dungeons</span>
-                </button>
-                <button
-                  class="p-[11px_13px_11px_13px] lg:p-[14px_17px_14px_17px] text-[13px] text-white font-[700] border border-white border-opacity-20 text-center rounded-[300px] hover:bg-[#FCAB00] hover:text-[#27213C] duration-200 filter-btn"
-                >
-                  Leveling
-                </button>
-                <button
-                  class="p-[11px_13px_11px_13px] lg:p-[14px_17px_14px_17px] text-[13px] text-white font-[700] border border-white border-opacity-20 text-center rounded-[300px] hover:bg-[#FCAB00] hover:text-[#27213C] duration-200 filter-btn"
-                >
-                  Gearing
-                </button>
+                  <li role="presentation">
+                    <button
+                      id="allItems-tab"
+                      data-tabs-target="#allItems"
+                      type="button"
+                      role="tab"
+                      aria-controls="allItems"
+                      aria-selected="false"
+                      class="p-[11px_13px_11px_13px] lg:p-[14px_17px_14px_17px] text-[13px] font-[700] border border-white border-opacity-20 text-center rounded-[300px] text-white duration-200 filter-btn"
+                    >
+                      All
+                    </button>
+                  </li>
+                  <li role="presentation">
+                    <button
+                      id="wowGold-tab"
+                      data-tabs-target="#wowGold"
+                      type="button"
+                      role="tab"
+                      aria-controls="wowGold"
+                      aria-selected="false"
+                      class="inline-block p-[11px_13px_11px_13px] lg:p-[14px_17px_14px_17px] text-[13px] text-white font-[700] border border-white border-opacity-20 text-center rounded-[300px] hover:bg-[#FCAB00] hover:text-[#27213C] duration-200 filter-btn"
+                    >
+                      <span class="whitespace-pre">WoW Gold</span>
+                    </button>
+                  </li>
+                  <li role="presentation">
+                    <button
+                      id="hotOffers-tab"
+                      data-tabs-target="#hotOffers"
+                      type="button"
+                      role="tab"
+                      aria-controls="hotOffers"
+                      aria-selected="false"
+                      class="p-[11px_13px_11px_13px] lg:p-[14px_17px_14px_17px] text-[13px] text-white font-[700] border border-white border-opacity-20 text-center rounded-[300px] hover:bg-[#FCAB00] hover:text-[#27213C] duration-200 filter-btn"
+                    >
+                      <span class="whitespace-pre">Hot Offers</span>
+                    </button>
+                  </li>
+                  <li role="presentation">
+                    <button
+                      id="dragonflight-tab"
+                      data-tabs-target="#dragonflight"
+                      type="button"
+                      role="tab"
+                      aria-controls="dragonflight"
+                      aria-selected="false"
+                      class="p-[11px_13px_11px_13px] lg:p-[14px_17px_14px_17px] text-[13px] text-white font-[700] border border-white border-opacity-20 text-center rounded-[300px] hover:bg-[#FCAB00] hover:text-[#27213C] duration-200 filter-btn"
+                    >
+                      <span class="whitespace-pre">Dragonflight 10.1.5</span>
+                    </button>
+                  </li>
+                  <li role="presentation">
+                    <button
+                      id="radis-tab"
+                      data-tabs-target="#radis"
+                      type="button"
+                      role="tab"
+                      aria-controls="radis"
+                      aria-selected="false"
+                      class="p-[11px_13px_11px_13px] lg:p-[14px_17px_14px_17px] text-[13px] text-white font-[700] border border-white border-opacity-20 text-center rounded-[300px] hover:bg-[#FCAB00] hover:text-[#27213C] duration-200 filter-btn"
+                    >
+                      <span class="whitespace-pre">Radis</span>
+                    </button>
+                  </li>
+                  <li role="presentation">
+                    <button
+                      id="mythic-tab"
+                      data-tabs-target="#mythic"
+                      type="button"
+                      role="tab"
+                      aria-controls="mythic"
+                      aria-selected="false"
+                      class="p-[11px_13px_11px_13px] lg:p-[14px_17px_14px_17px] text-[13px] text-white font-[700] border border-white border-opacity-20 text-center rounded-[300px] hover:bg-[#FCAB00] hover:text-[#27213C] duration-200 filter-btn"
+                    >
+                      <span class="whitespace-pre">Mythic + Dungeons</span>
+                    </button>
+                  </li>
+                  <li role="presentation">
+                    <button
+                      id="leveling-tab"
+                      data-tabs-target="#leveling"
+                      type="button"
+                      role="tab"
+                      aria-controls="leveling"
+                      aria-selected="false"
+                      class="p-[11px_13px_11px_13px] lg:p-[14px_17px_14px_17px] text-[13px] text-white font-[700] border border-white border-opacity-20 text-center rounded-[300px] hover:bg-[#FCAB00] hover:text-[#27213C] duration-200 filter-btn"
+                    >
+                      Leveling
+                    </button>
+                  </li>
+                  <li role="presentation">
+                    <button
+                      id="gearing-tab"
+                      data-tabs-target="#gearing"
+                      type="button"
+                      role="tab"
+                      aria-controls="gearing"
+                      aria-selected="false"
+                      class="p-[11px_13px_11px_13px] lg:p-[14px_17px_14px_17px] text-[13px] text-white font-[700] border border-white border-opacity-20 text-center rounded-[300px] hover:bg-[#FCAB00] hover:text-[#27213C] duration-200 filter-btn"
+                    >
+                      Gearing
+                    </button>
+                  </li>
+                </ul>
               </div>
               <!-- Items Section -->
-              <section
-                id="cards-section"
-                class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 justify-center items-center gap-5 mt-[23px] lg:mt-[19px] relative"
-              >
-                <!-- Item Card - 01 -->
-                <div class="relative group cursor-pointer overflow-hidden">
-                  <img
-                    src="./assets/Home/Rectangle-2.png"
-                    class="h-full w-full"
-                    alt="item-image"
-                  />
-                  <img
-                    src="./assets/Home/Overlapping-Rectangle.png"
-                    class="absolute top-0 h-full w-full"
-                    alt="overlaped image"
-                  />
-                  <div
-                    class="absolute top-0 h-full w-full flex flex-col justify-between p-[24px_21px]"
+              <div id="myItemsTabContent">
+                <!-- All Items Tabs Content-->
+                <div
+                  class="hidden"
+                  id="allItems"
+                  role="tabpanel"
+                  aria-labelledby="allItems-tab"
+                >
+                  <section
+                    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 justify-center items-center gap-5 mt-[23px] lg:mt-[19px] relative"
                   >
-                    <div>
-                      <button
-                        class="p-[7px_9px_7px_9px] lg:p-[10px_20px_10px_20px] text-[13px] text-[#000000] leading-[15px] font-[700] border border-[#FCAB00] bg-[#FCAB00] rounded-[5px] text-center"
+                    <!-- Item Card - 01 -->
+                    <div class="relative group cursor-pointer overflow-hidden">
+                      <img
+                        src="./assets/Home/Rectangle-2.png"
+                        class="h-full w-full"
+                        alt="item-image"
+                      />
+                      <img
+                        src="./assets/Home/Overlapping-Rectangle.png"
+                        class="absolute top-0 h-full w-full"
+                        alt="overlaped image"
+                      />
+                      <div
+                        class="absolute top-0 h-full w-full flex flex-col justify-between p-[24px_21px]"
                       >
-                        Hot Offer!
-                      </button>
-                    </div>
-                    <div class="text-[#ffffff]">
-                      <h1 class="text-[17px] leading-[24px] font-[600]">
-                        WoW Gold
-                      </h1>
-                      <p
-                        class="text-[13px] leading-[22px] font-[500] mt-[15px] mb-[18px] text-justify"
-                      >
-                        Buy WoW Gold, any amount of gold on Each Realm in Stock.
-                        Cheap WoW Gold with daily prices update. More than
-                        100,000 positive reviews. Delivery time in most cases is
-                        less than 15 minutes, depending on Realm.
-                      </p>
-                      <div class="flex items-center gap-3">
-                        <p class="text-[13px] leading-[22px] font-[400]">
-                          From
-                        </p>
-                        <p class="text-[20px] leading-[24px] font-[600]">
-                          $ 0.39
-                        </p>
+                        <div>
+                          <button
+                            class="p-[7px_9px_7px_9px] lg:p-[10px_20px_10px_20px] text-[13px] text-[#000000] leading-[15px] font-[700] border border-[#FCAB00] bg-[#FCAB00] rounded-[5px] text-center"
+                          >
+                            Hot Offer!
+                          </button>
+                        </div>
+                        <div class="text-[#ffffff]">
+                          <h1 class="text-[17px] leading-[24px] font-[600]">
+                            WoW Gold
+                          </h1>
+                          <p
+                            class="text-[13px] leading-[22px] font-[500] mt-[15px] mb-[18px] text-justify"
+                          >
+                            Buy WoW Gold, any amount of gold on Each Realm in
+                            Stock. Cheap WoW Gold with daily prices update. More
+                            than 100,000 positive reviews. Delivery time in most
+                            cases is less than 15 minutes, depending on Realm.
+                          </p>
+                          <div class="flex items-center gap-3">
+                            <p class="text-[13px] leading-[22px] font-[400]">
+                              From
+                            </p>
+                            <p class="text-[20px] leading-[24px] font-[600]">
+                              $ 0.39
+                            </p>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-                <!-- Item Card - 02 -->
-                <div class="relative group cursor-pointer overflow-hidden">
-                  <img
-                    src="./assets/Home/Rectangle-3.png"
-                    class="h-full w-full"
-                    alt="item-image"
-                  />
-                  <img
-                    src="./assets/Home/Overlapping-Rectangle.png"
-                    class="absolute top-0 h-full w-full"
-                    alt="Overlap image"
-                  />
-                  <div
-                    class="absolute top-0 h-full w-full flex flex-col justify-between p-[24px_21px]"
-                  >
-                    <div></div>
-                    <div class="text-[#ffffff]">
-                      <h1 class="text-[17px] leading-[24px] font-[600]">
-                        WoW Gold
-                      </h1>
-                      <p
-                        class="text-[13px] leading-[22px] font-[500] mt-[15px] mb-[18px] text-justify"
+                    <!-- Item Card - 02 -->
+                    <div class="relative group cursor-pointer overflow-hidden">
+                      <img
+                        src="./assets/Home/Rectangle-3.png"
+                        class="h-full w-full"
+                        alt="item-image"
+                      />
+                      <img
+                        src="./assets/Home/Overlapping-Rectangle.png"
+                        class="absolute top-0 h-full w-full"
+                        alt="Overlap image"
+                      />
+                      <div
+                        class="absolute top-0 h-full w-full flex flex-col justify-between p-[24px_21px]"
                       >
-                        Buy WoW Gold, any amount of gold on Each Realm in Stock.
-                        Cheap WoW Gold with daily prices update. More than
-                        100,000 positive reviews. Delivery time in most cases is
-                        less than 15 minutes, depending on Realm.
-                      </p>
-                      <div class="flex items-center gap-3">
-                        <p class="text-[13px] leading-[22px] font-[400]">
-                          From
-                        </p>
-                        <p class="text-[20px] leading-[24px] font-[600]">
-                          $ 0.39
-                        </p>
+                        <div></div>
+                        <div class="text-[#ffffff]">
+                          <h1 class="text-[17px] leading-[24px] font-[600]">
+                            WoW Gold
+                          </h1>
+                          <p
+                            class="text-[13px] leading-[22px] font-[500] mt-[15px] mb-[18px] text-justify"
+                          >
+                            Buy WoW Gold, any amount of gold on Each Realm in
+                            Stock. Cheap WoW Gold with daily prices update. More
+                            than 100,000 positive reviews. Delivery time in most
+                            cases is less than 15 minutes, depending on Realm.
+                          </p>
+                          <div class="flex items-center gap-3">
+                            <p class="text-[13px] leading-[22px] font-[400]">
+                              From
+                            </p>
+                            <p class="text-[20px] leading-[24px] font-[600]">
+                              $ 0.39
+                            </p>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-                <!-- Item Card - 03 -->
-                <div class="relative group cursor-pointer overflow-hidden">
-                  <img
-                    src="./assets/Home/Rectangle-4.png"
-                    class="h-full w-full"
-                    alt="item-image"
-                  />
-                  <img
-                    src="./assets/Home/Overlapping-Rectangle.png"
-                    class="absolute top-0 h-full w-full"
-                    alt="Overlap image"
-                  />
-                  <div
-                    class="absolute top-0 h-full w-full flex flex-col justify-between p-[24px_21px]"
-                  >
-                    <div></div>
-                    <div class="text-[#ffffff]">
-                      <h1 class="text-[17px] leading-[24px] font-[600]">
-                        WoW Gold
-                      </h1>
-                      <p
-                        class="text-[13px] leading-[22px] font-[500] mt-[15px] mb-[18px] text-justify"
+                    <!-- Item Card - 03 -->
+                    <div class="relative group cursor-pointer overflow-hidden">
+                      <img
+                        src="./assets/Home/Rectangle-4.png"
+                        class="h-full w-full"
+                        alt="item-image"
+                      />
+                      <img
+                        src="./assets/Home/Overlapping-Rectangle.png"
+                        class="absolute top-0 h-full w-full"
+                        alt="Overlap image"
+                      />
+                      <div
+                        class="absolute top-0 h-full w-full flex flex-col justify-between p-[24px_21px]"
                       >
-                        Buy WoW Gold, any amount of gold on Each Realm in Stock.
-                        Cheap WoW Gold with daily prices update. More than
-                        100,000 positive reviews. Delivery time in most cases is
-                        less than 15 minutes, depending on Realm.
-                      </p>
-                      <button
-                        class="mb-[18px] p-[7px_9px_7px_9px] lg:p-[10px_20px_10px_20px] text-[13px] text-[#000000] leading-[15px] font-[700] border border-[#0CE83C] bg-[#0CE83C] text-center rounded-[5px]"
-                      >
-                        Save up to 20%
-                      </button>
-                      <div class="flex items-center gap-3">
-                        <p class="text-[13px] leading-[22px] font-[400]">
-                          From
-                        </p>
-                        <p class="text-[20px] leading-[24px] font-[600]">
-                          $ 0.39
-                        </p>
+                        <div></div>
+                        <div class="text-[#ffffff]">
+                          <h1 class="text-[17px] leading-[24px] font-[600]">
+                            WoW Gold
+                          </h1>
+                          <p
+                            class="text-[13px] leading-[22px] font-[500] mt-[15px] mb-[18px] text-justify"
+                          >
+                            Buy WoW Gold, any amount of gold on Each Realm in
+                            Stock. Cheap WoW Gold with daily prices update. More
+                            than 100,000 positive reviews. Delivery time in most
+                            cases is less than 15 minutes, depending on Realm.
+                          </p>
+                          <button
+                            class="mb-[18px] p-[7px_9px_7px_9px] lg:p-[10px_20px_10px_20px] text-[13px] text-[#000000] leading-[15px] font-[700] border border-[#0CE83C] bg-[#0CE83C] text-center rounded-[5px]"
+                          >
+                            Save up to 20%
+                          </button>
+                          <div class="flex items-center gap-3">
+                            <p class="text-[13px] leading-[22px] font-[400]">
+                              From
+                            </p>
+                            <p class="text-[20px] leading-[24px] font-[600]">
+                              $ 0.39
+                            </p>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-                <!-- Item Card - 04 -->
-                <div class="relative group cursor-pointer overflow-hidden">
-                  <img
-                    src="./assets/Home/Rectangle-5.png"
-                    class="h-full w-full"
-                    alt="item-image"
-                  />
-                  <img
-                    src="./assets/Home/Overlapping-Rectangle.png"
-                    class="absolute top-0 h-full w-full"
-                    alt="Overlap image"
-                  />
-                  <div
-                    class="absolute top-0 h-full w-full flex flex-col justify-between p-[24px_21px]"
-                  >
-                    <div></div>
-                    <div class="text-[#ffffff]">
-                      <h1 class="text-[17px] leading-[24px] font-[600]">
-                        WoW Gold
-                      </h1>
-                      <p
-                        class="text-[13px] leading-[22px] font-[500] mt-[15px] mb-[18px] text-justify"
+                    <!-- Item Card - 04 -->
+                    <div class="relative group cursor-pointer overflow-hidden">
+                      <img
+                        src="./assets/Home/Rectangle-5.png"
+                        class="h-full w-full"
+                        alt="item-image"
+                      />
+                      <img
+                        src="./assets/Home/Overlapping-Rectangle.png"
+                        class="absolute top-0 h-full w-full"
+                        alt="Overlap image"
+                      />
+                      <div
+                        class="absolute top-0 h-full w-full flex flex-col justify-between p-[24px_21px]"
                       >
-                        Buy WoW Gold, any amount of gold on Each Realm in Stock.
-                        Cheap WoW Gold with daily prices update. More than
-                        100,000 positive reviews. Delivery time in most cases is
-                        less than 15 minutes, depending on Realm.
-                      </p>
-                      <div class="flex items-center gap-3">
-                        <p class="text-[13px] leading-[22px] font-[400]">
-                          From
-                        </p>
-                        <p class="text-[20px] leading-[24px] font-[600]">
-                          $ 0.39
-                        </p>
+                        <div></div>
+                        <div class="text-[#ffffff]">
+                          <h1 class="text-[17px] leading-[24px] font-[600]">
+                            WoW Gold
+                          </h1>
+                          <p
+                            class="text-[13px] leading-[22px] font-[500] mt-[15px] mb-[18px] text-justify"
+                          >
+                            Buy WoW Gold, any amount of gold on Each Realm in
+                            Stock. Cheap WoW Gold with daily prices update. More
+                            than 100,000 positive reviews. Delivery time in most
+                            cases is less than 15 minutes, depending on Realm.
+                          </p>
+                          <div class="flex items-center gap-3">
+                            <p class="text-[13px] leading-[22px] font-[400]">
+                              From
+                            </p>
+                            <p class="text-[20px] leading-[24px] font-[600]">
+                              $ 0.39
+                            </p>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-                <!-- Item Card - 05 -->
-                <div class="relative group cursor-pointer overflow-hidden">
-                  <img
-                    src="./assets/Home/Rectangle-6.png"
-                    class="h-full w-full"
-                    alt="item-image"
-                  />
-                  <img
-                    src="./assets/Home/Overlapping-Rectangle.png"
-                    class="absolute top-0 h-full w-full"
-                    alt="overlaped image"
-                  />
-                  <div
-                    class="absolute top-0 h-full w-full flex flex-col justify-between p-[24px_21px]"
-                  >
-                    <div>
-                      <button
-                        class="p-[7px_9px_7px_9px] lg:p-[10px_20px_10px_20px] text-[13px] text-[#000000] leading-[15px] font-[700] border border-[#FCAB00] bg-[#FCAB00] rounded-[5px] text-center"
+                    <!-- Item Card - 05 -->
+                    <div class="relative group cursor-pointer overflow-hidden">
+                      <img
+                        src="./assets/Home/Rectangle-6.png"
+                        class="h-full w-full"
+                        alt="item-image"
+                      />
+                      <img
+                        src="./assets/Home/Overlapping-Rectangle.png"
+                        class="absolute top-0 h-full w-full"
+                        alt="overlaped image"
+                      />
+                      <div
+                        class="absolute top-0 h-full w-full flex flex-col justify-between p-[24px_21px]"
                       >
-                        Hot Offer!
-                      </button>
-                    </div>
-                    <div class="text-[#ffffff]">
-                      <h1 class="text-[17px] leading-[24px] font-[600]">
-                        WoW Gold
-                      </h1>
-                      <p
-                        class="text-[13px] leading-[22px] font-[500] mt-[15px] mb-[18px] text-justify"
-                      >
-                        Buy WoW Gold, any amount of gold on Each Realm in Stock.
-                        Cheap WoW Gold with daily prices update. More than
-                        100,000 positive reviews. Delivery time in most cases is
-                        less than 15 minutes, depending on Realm.
-                      </p>
-                      <div class="flex items-center gap-3">
-                        <p class="text-[13px] leading-[22px] font-[400]">
-                          From
-                        </p>
-                        <p class="text-[20px] leading-[24px] font-[600]">
-                          $ 0.39
-                        </p>
+                        <div>
+                          <button
+                            class="p-[7px_9px_7px_9px] lg:p-[10px_20px_10px_20px] text-[13px] text-[#000000] leading-[15px] font-[700] border border-[#FCAB00] bg-[#FCAB00] rounded-[5px] text-center"
+                          >
+                            Hot Offer!
+                          </button>
+                        </div>
+                        <div class="text-[#ffffff]">
+                          <h1 class="text-[17px] leading-[24px] font-[600]">
+                            WoW Gold
+                          </h1>
+                          <p
+                            class="text-[13px] leading-[22px] font-[500] mt-[15px] mb-[18px] text-justify"
+                          >
+                            Buy WoW Gold, any amount of gold on Each Realm in
+                            Stock. Cheap WoW Gold with daily prices update. More
+                            than 100,000 positive reviews. Delivery time in most
+                            cases is less than 15 minutes, depending on Realm.
+                          </p>
+                          <div class="flex items-center gap-3">
+                            <p class="text-[13px] leading-[22px] font-[400]">
+                              From
+                            </p>
+                            <p class="text-[20px] leading-[24px] font-[600]">
+                              $ 0.39
+                            </p>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-                <!-- Item Card - 06 -->
-                <div class="relative group cursor-pointer overflow-hidden">
-                  <img
-                    src="./assets/Home/Rectangle-7.png"
-                    class="h-full w-full"
-                    alt="item-image"
-                  />
-                  <img
-                    src="./assets/Home/Overlapping-Rectangle.png"
-                    class="absolute top-0 h-full w-full"
-                    alt="overlaped image"
-                  />
-                  <div
-                    class="absolute top-0 h-full w-full flex flex-col justify-between p-[24px_21px]"
-                  >
-                    <div>
-                      <button
-                        class="p-[7px_9px_7px_9px] lg:p-[10px_20px_10px_20px] text-[13px] text-[#000000] leading-[15px] font-[700] border border-[#FCAB00] bg-[#FCAB00] rounded-[5px] text-center"
+                    <!-- Item Card - 06 -->
+                    <div class="relative group cursor-pointer overflow-hidden">
+                      <img
+                        src="./assets/Home/Rectangle-7.png"
+                        class="h-full w-full"
+                        alt="item-image"
+                      />
+                      <img
+                        src="./assets/Home/Overlapping-Rectangle.png"
+                        class="absolute top-0 h-full w-full"
+                        alt="overlaped image"
+                      />
+                      <div
+                        class="absolute top-0 h-full w-full flex flex-col justify-between p-[24px_21px]"
                       >
-                        Hot Offer!
-                      </button>
-                    </div>
-                    <div class="text-[#ffffff]">
-                      <h1 class="text-[17px] leading-[24px] font-[600]">
-                        WoW Gold
-                      </h1>
-                      <p
-                        class="text-[13px] leading-[22px] font-[500] mt-[15px] mb-[18px] text-justify"
-                      >
-                        Buy WoW Gold, any amount of gold on Each Realm in Stock.
-                        Cheap WoW Gold with daily prices update. More than
-                        100,000 positive reviews. Delivery time in most cases is
-                        less than 15 minutes, depending on Realm.
-                      </p>
-                      <div class="flex items-center gap-3">
-                        <p class="text-[13px] leading-[22px] font-[400]">
-                          From
-                        </p>
-                        <p class="text-[20px] leading-[24px] font-[600]">
-                          $ 0.39
-                        </p>
+                        <div>
+                          <button
+                            class="p-[7px_9px_7px_9px] lg:p-[10px_20px_10px_20px] text-[13px] text-[#000000] leading-[15px] font-[700] border border-[#FCAB00] bg-[#FCAB00] rounded-[5px] text-center"
+                          >
+                            Hot Offer!
+                          </button>
+                        </div>
+                        <div class="text-[#ffffff]">
+                          <h1 class="text-[17px] leading-[24px] font-[600]">
+                            WoW Gold
+                          </h1>
+                          <p
+                            class="text-[13px] leading-[22px] font-[500] mt-[15px] mb-[18px] text-justify"
+                          >
+                            Buy WoW Gold, any amount of gold on Each Realm in
+                            Stock. Cheap WoW Gold with daily prices update. More
+                            than 100,000 positive reviews. Delivery time in most
+                            cases is less than 15 minutes, depending on Realm.
+                          </p>
+                          <div class="flex items-center gap-3">
+                            <p class="text-[13px] leading-[22px] font-[400]">
+                              From
+                            </p>
+                            <p class="text-[20px] leading-[24px] font-[600]">
+                              $ 0.39
+                            </p>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-                <!-- Item Card - 07 -->
-                <div class="relative group cursor-pointer overflow-hidden">
-                  <img
-                    src="./assets/Home/Rectangle-8.png"
-                    class="h-full w-full"
-                    alt="item-image"
-                  />
-                  <img
-                    src="./assets/Home/Overlapping-Rectangle.png"
-                    class="absolute top-0 h-full w-full"
-                    alt="Overlap image"
-                  />
-                  <div
-                    class="absolute top-0 h-full w-full flex flex-col justify-between p-[24px_21px]"
-                  >
-                    <div></div>
-                    <div class="text-[#ffffff]">
-                      <h1 class="text-[17px] leading-[24px] font-[600]">
-                        WoW Gold
-                      </h1>
-                      <p
-                        class="text-[13px] leading-[22px] font-[500] mt-[15px] mb-[18px] text-justify"
+                    <!-- Item Card - 07 -->
+                    <div class="relative group cursor-pointer overflow-hidden">
+                      <img
+                        src="./assets/Home/Rectangle-8.png"
+                        class="h-full w-full"
+                        alt="item-image"
+                      />
+                      <img
+                        src="./assets/Home/Overlapping-Rectangle.png"
+                        class="absolute top-0 h-full w-full"
+                        alt="Overlap image"
+                      />
+                      <div
+                        class="absolute top-0 h-full w-full flex flex-col justify-between p-[24px_21px]"
                       >
-                        Buy WoW Gold, any amount of gold on Each Realm in Stock.
-                        Cheap WoW Gold with daily prices update. More than
-                        100,000 positive reviews. Delivery time in most cases is
-                        less than 15 minutes, depending on Realm.
-                      </p>
-                      <button
-                        class="mb-[18px] p-[7px_9px_7px_9px] lg:p-[10px_20px_10px_20px] text-[13px] text-[#000000] leading-[15px] font-[700] border border-[#0CE83C] bg-[#0CE83C] text-center rounded-[5px]"
-                      >
-                        Save up to 20%
-                      </button>
-                      <div class="flex items-center gap-3">
-                        <p class="text-[13px] leading-[22px] font-[400]">
-                          From
-                        </p>
-                        <p class="text-[20px] leading-[24px] font-[600]">
-                          $ 0.39
-                        </p>
+                        <div></div>
+                        <div class="text-[#ffffff]">
+                          <h1 class="text-[17px] leading-[24px] font-[600]">
+                            WoW Gold
+                          </h1>
+                          <p
+                            class="text-[13px] leading-[22px] font-[500] mt-[15px] mb-[18px] text-justify"
+                          >
+                            Buy WoW Gold, any amount of gold on Each Realm in
+                            Stock. Cheap WoW Gold with daily prices update. More
+                            than 100,000 positive reviews. Delivery time in most
+                            cases is less than 15 minutes, depending on Realm.
+                          </p>
+                          <button
+                            class="mb-[18px] p-[7px_9px_7px_9px] lg:p-[10px_20px_10px_20px] text-[13px] text-[#000000] leading-[15px] font-[700] border border-[#0CE83C] bg-[#0CE83C] text-center rounded-[5px]"
+                          >
+                            Save up to 20%
+                          </button>
+                          <div class="flex items-center gap-3">
+                            <p class="text-[13px] leading-[22px] font-[400]">
+                              From
+                            </p>
+                            <p class="text-[20px] leading-[24px] font-[600]">
+                              $ 0.39
+                            </p>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-                <!-- Item Card 08 -->
-                <div class="relative group cursor-pointer overflow-hidden">
-                  <img
-                    src="./assets/Home/Rectangle-9.png"
-                    class="h-full w-full"
-                    alt="item-image"
-                  />
-                  <img
-                    src="./assets/Home/Overlapping-Rectangle.png"
-                    class="absolute top-0 h-full w-full"
-                    alt="Overlap image"
-                  />
-                  <div
-                    class="absolute top-0 h-full w-full flex flex-col justify-between p-[24px_21px]"
-                  >
-                    <div></div>
-                    <div class="text-[#ffffff]">
-                      <h1 class="text-[17px] leading-[24px] font-[600]">
-                        WoW Gold
-                      </h1>
-                      <p
-                        class="text-[13px] leading-[22px] font-[500] mt-[15px] mb-[18px] text-justify"
+                    <!-- Item Card 08 -->
+                    <div class="relative group cursor-pointer overflow-hidden">
+                      <img
+                        src="./assets/Home/Rectangle-9.png"
+                        class="h-full w-full"
+                        alt="item-image"
+                      />
+                      <img
+                        src="./assets/Home/Overlapping-Rectangle.png"
+                        class="absolute top-0 h-full w-full"
+                        alt="Overlap image"
+                      />
+                      <div
+                        class="absolute top-0 h-full w-full flex flex-col justify-between p-[24px_21px]"
                       >
-                        Buy WoW Gold, any amount of gold on Each Realm in Stock.
-                        Cheap WoW Gold with daily prices update. More than
-                        100,000 positive reviews. Delivery time in most cases is
-                        less than 15 minutes, depending on Realm.
-                      </p>
-                      <div class="flex items-center gap-3">
-                        <p class="text-[13px] leading-[22px] font-[400]">
-                          From
-                        </p>
-                        <p class="text-[20px] leading-[24px] font-[600]">
-                          $ 0.39
-                        </p>
+                        <div></div>
+                        <div class="text-[#ffffff]">
+                          <h1 class="text-[17px] leading-[24px] font-[600]">
+                            WoW Gold
+                          </h1>
+                          <p
+                            class="text-[13px] leading-[22px] font-[500] mt-[15px] mb-[18px] text-justify"
+                          >
+                            Buy WoW Gold, any amount of gold on Each Realm in
+                            Stock. Cheap WoW Gold with daily prices update. More
+                            than 100,000 positive reviews. Delivery time in most
+                            cases is less than 15 minutes, depending on Realm.
+                          </p>
+                          <div class="flex items-center gap-3">
+                            <p class="text-[13px] leading-[22px] font-[400]">
+                              From
+                            </p>
+                            <p class="text-[20px] leading-[24px] font-[600]">
+                              $ 0.39
+                            </p>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-                <!-- Item Card 09 -->
-                <div class="relative group cursor-pointer overflow-hidden">
-                  <img
-                    src="./assets/Home/Rectangle-10.png"
-                    class="h-full w-full"
-                    alt="item-image"
-                  />
-                  <img
-                    src="./assets/Home/Overlapping-Rectangle.png"
-                    class="absolute top-0 h-full w-full"
-                    alt="Overlap image"
-                  />
-                  <div
-                    class="absolute top-0 h-full w-full flex flex-col justify-between p-[24px_21px]"
-                  >
-                    <div></div>
-                    <div class="text-[#ffffff]">
-                      <h1 class="text-[17px] leading-[24px] font-[600]">
-                        WoW Gold
-                      </h1>
-                      <p
-                        class="text-[13px] leading-[22px] font-[500] mt-[15px] mb-[18px] text-justify"
+                    <!-- Item Card 09 -->
+                    <div class="relative group cursor-pointer overflow-hidden">
+                      <img
+                        src="./assets/Home/Rectangle-10.png"
+                        class="h-full w-full"
+                        alt="item-image"
+                      />
+                      <img
+                        src="./assets/Home/Overlapping-Rectangle.png"
+                        class="absolute top-0 h-full w-full"
+                        alt="Overlap image"
+                      />
+                      <div
+                        class="absolute top-0 h-full w-full flex flex-col justify-between p-[24px_21px]"
                       >
-                        Buy WoW Gold, any amount of gold on Each Realm in Stock.
-                        Cheap WoW Gold with daily prices update. More than
-                        100,000 positive reviews. Delivery time in most cases is
-                        less than 15 minutes, depending on Realm.
-                      </p>
-                      <div class="flex items-center gap-3">
-                        <p class="text-[13px] leading-[22px] font-[400]">
-                          From
-                        </p>
-                        <p class="text-[20px] leading-[24px] font-[600]">
-                          $ 0.39
-                        </p>
+                        <div></div>
+                        <div class="text-[#ffffff]">
+                          <h1 class="text-[17px] leading-[24px] font-[600]">
+                            WoW Gold
+                          </h1>
+                          <p
+                            class="text-[13px] leading-[22px] font-[500] mt-[15px] mb-[18px] text-justify"
+                          >
+                            Buy WoW Gold, any amount of gold on Each Realm in
+                            Stock. Cheap WoW Gold with daily prices update. More
+                            than 100,000 positive reviews. Delivery time in most
+                            cases is less than 15 minutes, depending on Realm.
+                          </p>
+                          <div class="flex items-center gap-3">
+                            <p class="text-[13px] leading-[22px] font-[400]">
+                              From
+                            </p>
+                            <p class="text-[20px] leading-[24px] font-[600]">
+                              $ 0.39
+                            </p>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  </section>
                 </div>
-              </section>
+                <!-- WoW Gold Tabs Content -->
+                <div
+                  class="hidden"
+                  id="wowGold"
+                  role="tabpanel"
+                  aria-labelledby="wowGold-tab"
+                >
+                  <section
+                    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 justify-center items-center gap-5 mt-[23px] lg:mt-[19px] relative"
+                  >
+                    <!-- Item Card - 01 -->
+                    <div class="relative group cursor-pointer overflow-hidden">
+                      <img
+                        src="./assets/Home/Rectangle-2.png"
+                        class="h-full w-full"
+                        alt="item-image"
+                      />
+                      <img
+                        src="./assets/Home/Overlapping-Rectangle.png"
+                        class="absolute top-0 h-full w-full"
+                        alt="overlaped image"
+                      />
+                      <div
+                        class="absolute top-0 h-full w-full flex flex-col justify-between p-[24px_21px]"
+                      >
+                        <div>
+                          <button
+                            class="p-[7px_9px_7px_9px] lg:p-[10px_20px_10px_20px] text-[13px] text-[#000000] leading-[15px] font-[700] border border-[#FCAB00] bg-[#FCAB00] rounded-[5px] text-center"
+                          >
+                            Hot Offer!
+                          </button>
+                        </div>
+                        <div class="text-[#ffffff]">
+                          <h1 class="text-[17px] leading-[24px] font-[600]">
+                            WoW Gold
+                          </h1>
+                          <p
+                            class="text-[13px] leading-[22px] font-[500] mt-[15px] mb-[18px] text-justify"
+                          >
+                            Buy WoW Gold, any amount of gold on Each Realm in
+                            Stock. Cheap WoW Gold with daily prices update. More
+                            than 100,000 positive reviews. Delivery time in most
+                            cases is less than 15 minutes, depending on Realm.
+                          </p>
+                          <div class="flex items-center gap-3">
+                            <p class="text-[13px] leading-[22px] font-[400]">
+                              From
+                            </p>
+                            <p class="text-[20px] leading-[24px] font-[600]">
+                              $ 0.39
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Item Card - 03 -->
+                    <div class="relative group cursor-pointer overflow-hidden">
+                      <img
+                        src="./assets/Home/Rectangle-4.png"
+                        class="h-full w-full"
+                        alt="item-image"
+                      />
+                      <img
+                        src="./assets/Home/Overlapping-Rectangle.png"
+                        class="absolute top-0 h-full w-full"
+                        alt="Overlap image"
+                      />
+                      <div
+                        class="absolute top-0 h-full w-full flex flex-col justify-between p-[24px_21px]"
+                      >
+                        <div></div>
+                        <div class="text-[#ffffff]">
+                          <h1 class="text-[17px] leading-[24px] font-[600]">
+                            WoW Gold
+                          </h1>
+                          <p
+                            class="text-[13px] leading-[22px] font-[500] mt-[15px] mb-[18px] text-justify"
+                          >
+                            Buy WoW Gold, any amount of gold on Each Realm in
+                            Stock. Cheap WoW Gold with daily prices update. More
+                            than 100,000 positive reviews. Delivery time in most
+                            cases is less than 15 minutes, depending on Realm.
+                          </p>
+                          <button
+                            class="mb-[18px] p-[7px_9px_7px_9px] lg:p-[10px_20px_10px_20px] text-[13px] text-[#000000] leading-[15px] font-[700] border border-[#0CE83C] bg-[#0CE83C] text-center rounded-[5px]"
+                          >
+                            Save up to 20%
+                          </button>
+                          <div class="flex items-center gap-3">
+                            <p class="text-[13px] leading-[22px] font-[400]">
+                              From
+                            </p>
+                            <p class="text-[20px] leading-[24px] font-[600]">
+                              $ 0.39
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Item Card - 04 -->
+                    <div class="relative group cursor-pointer overflow-hidden">
+                      <img
+                        src="./assets/Home/Rectangle-5.png"
+                        class="h-full w-full"
+                        alt="item-image"
+                      />
+                      <img
+                        src="./assets/Home/Overlapping-Rectangle.png"
+                        class="absolute top-0 h-full w-full"
+                        alt="Overlap image"
+                      />
+                      <div
+                        class="absolute top-0 h-full w-full flex flex-col justify-between p-[24px_21px]"
+                      >
+                        <div></div>
+                        <div class="text-[#ffffff]">
+                          <h1 class="text-[17px] leading-[24px] font-[600]">
+                            WoW Gold
+                          </h1>
+                          <p
+                            class="text-[13px] leading-[22px] font-[500] mt-[15px] mb-[18px] text-justify"
+                          >
+                            Buy WoW Gold, any amount of gold on Each Realm in
+                            Stock. Cheap WoW Gold with daily prices update. More
+                            than 100,000 positive reviews. Delivery time in most
+                            cases is less than 15 minutes, depending on Realm.
+                          </p>
+                          <div class="flex items-center gap-3">
+                            <p class="text-[13px] leading-[22px] font-[400]">
+                              From
+                            </p>
+                            <p class="text-[20px] leading-[24px] font-[600]">
+                              $ 0.39
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Item Card 08 -->
+                    <div class="relative group cursor-pointer overflow-hidden">
+                      <img
+                        src="./assets/Home/Rectangle-9.png"
+                        class="h-full w-full"
+                        alt="item-image"
+                      />
+                      <img
+                        src="./assets/Home/Overlapping-Rectangle.png"
+                        class="absolute top-0 h-full w-full"
+                        alt="Overlap image"
+                      />
+                      <div
+                        class="absolute top-0 h-full w-full flex flex-col justify-between p-[24px_21px]"
+                      >
+                        <div></div>
+                        <div class="text-[#ffffff]">
+                          <h1 class="text-[17px] leading-[24px] font-[600]">
+                            WoW Gold
+                          </h1>
+                          <p
+                            class="text-[13px] leading-[22px] font-[500] mt-[15px] mb-[18px] text-justify"
+                          >
+                            Buy WoW Gold, any amount of gold on Each Realm in
+                            Stock. Cheap WoW Gold with daily prices update. More
+                            than 100,000 positive reviews. Delivery time in most
+                            cases is less than 15 minutes, depending on Realm.
+                          </p>
+                          <div class="flex items-center gap-3">
+                            <p class="text-[13px] leading-[22px] font-[400]">
+                              From
+                            </p>
+                            <p class="text-[20px] leading-[24px] font-[600]">
+                              $ 0.39
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Item Card 09 -->
+                    <div class="relative group cursor-pointer overflow-hidden">
+                      <img
+                        src="./assets/Home/Rectangle-10.png"
+                        class="h-full w-full"
+                        alt="item-image"
+                      />
+                      <img
+                        src="./assets/Home/Overlapping-Rectangle.png"
+                        class="absolute top-0 h-full w-full"
+                        alt="Overlap image"
+                      />
+                      <div
+                        class="absolute top-0 h-full w-full flex flex-col justify-between p-[24px_21px]"
+                      >
+                        <div></div>
+                        <div class="text-[#ffffff]">
+                          <h1 class="text-[17px] leading-[24px] font-[600]">
+                            WoW Gold
+                          </h1>
+                          <p
+                            class="text-[13px] leading-[22px] font-[500] mt-[15px] mb-[18px] text-justify"
+                          >
+                            Buy WoW Gold, any amount of gold on Each Realm in
+                            Stock. Cheap WoW Gold with daily prices update. More
+                            than 100,000 positive reviews. Delivery time in most
+                            cases is less than 15 minutes, depending on Realm.
+                          </p>
+                          <div class="flex items-center gap-3">
+                            <p class="text-[13px] leading-[22px] font-[400]">
+                              From
+                            </p>
+                            <p class="text-[20px] leading-[24px] font-[600]">
+                              $ 0.39
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+                <!-- Hot Offers Tabs Content -->
+                <div
+                  class="hidden"
+                  id="hotOffers"
+                  role="tabpanel"
+                  aria-labelledby="hotOffers-tab"
+                >
+                  <section
+                    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 justify-center items-center gap-5 mt-[23px] lg:mt-[19px] relative"
+                  >
+                    <!-- Item Card - 03 -->
+                    <div class="relative group cursor-pointer overflow-hidden">
+                      <img
+                        src="./assets/Home/Rectangle-4.png"
+                        class="h-full w-full"
+                        alt="item-image"
+                      />
+                      <img
+                        src="./assets/Home/Overlapping-Rectangle.png"
+                        class="absolute top-0 h-full w-full"
+                        alt="Overlap image"
+                      />
+                      <div
+                        class="absolute top-0 h-full w-full flex flex-col justify-between p-[24px_21px]"
+                      >
+                        <div></div>
+                        <div class="text-[#ffffff]">
+                          <h1 class="text-[17px] leading-[24px] font-[600]">
+                            WoW Gold
+                          </h1>
+                          <p
+                            class="text-[13px] leading-[22px] font-[500] mt-[15px] mb-[18px] text-justify"
+                          >
+                            Buy WoW Gold, any amount of gold on Each Realm in
+                            Stock. Cheap WoW Gold with daily prices update. More
+                            than 100,000 positive reviews. Delivery time in most
+                            cases is less than 15 minutes, depending on Realm.
+                          </p>
+                          <button
+                            class="mb-[18px] p-[7px_9px_7px_9px] lg:p-[10px_20px_10px_20px] text-[13px] text-[#000000] leading-[15px] font-[700] border border-[#0CE83C] bg-[#0CE83C] text-center rounded-[5px]"
+                          >
+                            Save up to 20%
+                          </button>
+                          <div class="flex items-center gap-3">
+                            <p class="text-[13px] leading-[22px] font-[400]">
+                              From
+                            </p>
+                            <p class="text-[20px] leading-[24px] font-[600]">
+                              $ 0.39
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Item Card - 05 -->
+                    <div class="relative group cursor-pointer overflow-hidden">
+                      <img
+                        src="./assets/Home/Rectangle-6.png"
+                        class="h-full w-full"
+                        alt="item-image"
+                      />
+                      <img
+                        src="./assets/Home/Overlapping-Rectangle.png"
+                        class="absolute top-0 h-full w-full"
+                        alt="overlaped image"
+                      />
+                      <div
+                        class="absolute top-0 h-full w-full flex flex-col justify-between p-[24px_21px]"
+                      >
+                        <div>
+                          <button
+                            class="p-[7px_9px_7px_9px] lg:p-[10px_20px_10px_20px] text-[13px] text-[#000000] leading-[15px] font-[700] border border-[#FCAB00] bg-[#FCAB00] rounded-[5px] text-center"
+                          >
+                            Hot Offer!
+                          </button>
+                        </div>
+                        <div class="text-[#ffffff]">
+                          <h1 class="text-[17px] leading-[24px] font-[600]">
+                            WoW Gold
+                          </h1>
+                          <p
+                            class="text-[13px] leading-[22px] font-[500] mt-[15px] mb-[18px] text-justify"
+                          >
+                            Buy WoW Gold, any amount of gold on Each Realm in
+                            Stock. Cheap WoW Gold with daily prices update. More
+                            than 100,000 positive reviews. Delivery time in most
+                            cases is less than 15 minutes, depending on Realm.
+                          </p>
+                          <div class="flex items-center gap-3">
+                            <p class="text-[13px] leading-[22px] font-[400]">
+                              From
+                            </p>
+                            <p class="text-[20px] leading-[24px] font-[600]">
+                              $ 0.39
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Item Card - 06 -->
+                    <div class="relative group cursor-pointer overflow-hidden">
+                      <img
+                        src="./assets/Home/Rectangle-7.png"
+                        class="h-full w-full"
+                        alt="item-image"
+                      />
+                      <img
+                        src="./assets/Home/Overlapping-Rectangle.png"
+                        class="absolute top-0 h-full w-full"
+                        alt="overlaped image"
+                      />
+                      <div
+                        class="absolute top-0 h-full w-full flex flex-col justify-between p-[24px_21px]"
+                      >
+                        <div>
+                          <button
+                            class="p-[7px_9px_7px_9px] lg:p-[10px_20px_10px_20px] text-[13px] text-[#000000] leading-[15px] font-[700] border border-[#FCAB00] bg-[#FCAB00] rounded-[5px] text-center"
+                          >
+                            Hot Offer!
+                          </button>
+                        </div>
+                        <div class="text-[#ffffff]">
+                          <h1 class="text-[17px] leading-[24px] font-[600]">
+                            WoW Gold
+                          </h1>
+                          <p
+                            class="text-[13px] leading-[22px] font-[500] mt-[15px] mb-[18px] text-justify"
+                          >
+                            Buy WoW Gold, any amount of gold on Each Realm in
+                            Stock. Cheap WoW Gold with daily prices update. More
+                            than 100,000 positive reviews. Delivery time in most
+                            cases is less than 15 minutes, depending on Realm.
+                          </p>
+                          <div class="flex items-center gap-3">
+                            <p class="text-[13px] leading-[22px] font-[400]">
+                              From
+                            </p>
+                            <p class="text-[20px] leading-[24px] font-[600]">
+                              $ 0.39
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+                <!-- Dragon Flight Tabs Content -->
+                <div
+                  class="hidden"
+                  id="dragonflight"
+                  role="tabpanel"
+                  aria-labelledby="dragonflight-tab"
+                >
+                  <section
+                    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 justify-center items-center gap-5 mt-[23px] lg:mt-[19px] relative"
+                  >
+                    <!-- Item Card - 03 -->
+                    <div class="relative group cursor-pointer overflow-hidden">
+                      <img
+                        src="./assets/Home/Rectangle-4.png"
+                        class="h-full w-full"
+                        alt="item-image"
+                      />
+                      <img
+                        src="./assets/Home/Overlapping-Rectangle.png"
+                        class="absolute top-0 h-full w-full"
+                        alt="Overlap image"
+                      />
+                      <div
+                        class="absolute top-0 h-full w-full flex flex-col justify-between p-[24px_21px]"
+                      >
+                        <div></div>
+                        <div class="text-[#ffffff]">
+                          <h1 class="text-[17px] leading-[24px] font-[600]">
+                            WoW Gold
+                          </h1>
+                          <p
+                            class="text-[13px] leading-[22px] font-[500] mt-[15px] mb-[18px] text-justify"
+                          >
+                            Buy WoW Gold, any amount of gold on Each Realm in
+                            Stock. Cheap WoW Gold with daily prices update. More
+                            than 100,000 positive reviews. Delivery time in most
+                            cases is less than 15 minutes, depending on Realm.
+                          </p>
+                          <button
+                            class="mb-[18px] p-[7px_9px_7px_9px] lg:p-[10px_20px_10px_20px] text-[13px] text-[#000000] leading-[15px] font-[700] border border-[#0CE83C] bg-[#0CE83C] text-center rounded-[5px]"
+                          >
+                            Save up to 20%
+                          </button>
+                          <div class="flex items-center gap-3">
+                            <p class="text-[13px] leading-[22px] font-[400]">
+                              From
+                            </p>
+                            <p class="text-[20px] leading-[24px] font-[600]">
+                              $ 0.39
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Item Card - 04 -->
+                    <div class="relative group cursor-pointer overflow-hidden">
+                      <img
+                        src="./assets/Home/Rectangle-5.png"
+                        class="h-full w-full"
+                        alt="item-image"
+                      />
+                      <img
+                        src="./assets/Home/Overlapping-Rectangle.png"
+                        class="absolute top-0 h-full w-full"
+                        alt="Overlap image"
+                      />
+                      <div
+                        class="absolute top-0 h-full w-full flex flex-col justify-between p-[24px_21px]"
+                      >
+                        <div></div>
+                        <div class="text-[#ffffff]">
+                          <h1 class="text-[17px] leading-[24px] font-[600]">
+                            WoW Gold
+                          </h1>
+                          <p
+                            class="text-[13px] leading-[22px] font-[500] mt-[15px] mb-[18px] text-justify"
+                          >
+                            Buy WoW Gold, any amount of gold on Each Realm in
+                            Stock. Cheap WoW Gold with daily prices update. More
+                            than 100,000 positive reviews. Delivery time in most
+                            cases is less than 15 minutes, depending on Realm.
+                          </p>
+                          <div class="flex items-center gap-3">
+                            <p class="text-[13px] leading-[22px] font-[400]">
+                              From
+                            </p>
+                            <p class="text-[20px] leading-[24px] font-[600]">
+                              $ 0.39
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Item Card - 06 -->
+                    <div class="relative group cursor-pointer overflow-hidden">
+                      <img
+                        src="./assets/Home/Rectangle-7.png"
+                        class="h-full w-full"
+                        alt="item-image"
+                      />
+                      <img
+                        src="./assets/Home/Overlapping-Rectangle.png"
+                        class="absolute top-0 h-full w-full"
+                        alt="overlaped image"
+                      />
+                      <div
+                        class="absolute top-0 h-full w-full flex flex-col justify-between p-[24px_21px]"
+                      >
+                        <div>
+                          <button
+                            class="p-[7px_9px_7px_9px] lg:p-[10px_20px_10px_20px] text-[13px] text-[#000000] leading-[15px] font-[700] border border-[#FCAB00] bg-[#FCAB00] rounded-[5px] text-center"
+                          >
+                            Hot Offer!
+                          </button>
+                        </div>
+                        <div class="text-[#ffffff]">
+                          <h1 class="text-[17px] leading-[24px] font-[600]">
+                            WoW Gold
+                          </h1>
+                          <p
+                            class="text-[13px] leading-[22px] font-[500] mt-[15px] mb-[18px] text-justify"
+                          >
+                            Buy WoW Gold, any amount of gold on Each Realm in
+                            Stock. Cheap WoW Gold with daily prices update. More
+                            than 100,000 positive reviews. Delivery time in most
+                            cases is less than 15 minutes, depending on Realm.
+                          </p>
+                          <div class="flex items-center gap-3">
+                            <p class="text-[13px] leading-[22px] font-[400]">
+                              From
+                            </p>
+                            <p class="text-[20px] leading-[24px] font-[600]">
+                              $ 0.39
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Item Card - 07 -->
+                    <div class="relative group cursor-pointer overflow-hidden">
+                      <img
+                        src="./assets/Home/Rectangle-8.png"
+                        class="h-full w-full"
+                        alt="item-image"
+                      />
+                      <img
+                        src="./assets/Home/Overlapping-Rectangle.png"
+                        class="absolute top-0 h-full w-full"
+                        alt="Overlap image"
+                      />
+                      <div
+                        class="absolute top-0 h-full w-full flex flex-col justify-between p-[24px_21px]"
+                      >
+                        <div></div>
+                        <div class="text-[#ffffff]">
+                          <h1 class="text-[17px] leading-[24px] font-[600]">
+                            WoW Gold
+                          </h1>
+                          <p
+                            class="text-[13px] leading-[22px] font-[500] mt-[15px] mb-[18px] text-justify"
+                          >
+                            Buy WoW Gold, any amount of gold on Each Realm in
+                            Stock. Cheap WoW Gold with daily prices update. More
+                            than 100,000 positive reviews. Delivery time in most
+                            cases is less than 15 minutes, depending on Realm.
+                          </p>
+                          <button
+                            class="mb-[18px] p-[7px_9px_7px_9px] lg:p-[10px_20px_10px_20px] text-[13px] text-[#000000] leading-[15px] font-[700] border border-[#0CE83C] bg-[#0CE83C] text-center rounded-[5px]"
+                          >
+                            Save up to 20%
+                          </button>
+                          <div class="flex items-center gap-3">
+                            <p class="text-[13px] leading-[22px] font-[400]">
+                              From
+                            </p>
+                            <p class="text-[20px] leading-[24px] font-[600]">
+                              $ 0.39
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Item Card 09 -->
+                    <div class="relative group cursor-pointer overflow-hidden">
+                      <img
+                        src="./assets/Home/Rectangle-10.png"
+                        class="h-full w-full"
+                        alt="item-image"
+                      />
+                      <img
+                        src="./assets/Home/Overlapping-Rectangle.png"
+                        class="absolute top-0 h-full w-full"
+                        alt="Overlap image"
+                      />
+                      <div
+                        class="absolute top-0 h-full w-full flex flex-col justify-between p-[24px_21px]"
+                      >
+                        <div></div>
+                        <div class="text-[#ffffff]">
+                          <h1 class="text-[17px] leading-[24px] font-[600]">
+                            WoW Gold
+                          </h1>
+                          <p
+                            class="text-[13px] leading-[22px] font-[500] mt-[15px] mb-[18px] text-justify"
+                          >
+                            Buy WoW Gold, any amount of gold on Each Realm in
+                            Stock. Cheap WoW Gold with daily prices update. More
+                            than 100,000 positive reviews. Delivery time in most
+                            cases is less than 15 minutes, depending on Realm.
+                          </p>
+                          <div class="flex items-center gap-3">
+                            <p class="text-[13px] leading-[22px] font-[400]">
+                              From
+                            </p>
+                            <p class="text-[20px] leading-[24px] font-[600]">
+                              $ 0.39
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+                <!-- Radis Tabs Content -->
+                <div
+                  class="hidden"
+                  id="radis"
+                  role="tabpanel"
+                  aria-labelledby="radis-tab"
+                >
+                  <section
+                    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 justify-center items-center gap-5 mt-[23px] lg:mt-[19px] relative"
+                  >
+                    <!-- Item Card - 02 -->
+                    <div class="relative group cursor-pointer overflow-hidden">
+                      <img
+                        src="./assets/Home/Rectangle-3.png"
+                        class="h-full w-full"
+                        alt="item-image"
+                      />
+                      <img
+                        src="./assets/Home/Overlapping-Rectangle.png"
+                        class="absolute top-0 h-full w-full"
+                        alt="Overlap image"
+                      />
+                      <div
+                        class="absolute top-0 h-full w-full flex flex-col justify-between p-[24px_21px]"
+                      >
+                        <div></div>
+                        <div class="text-[#ffffff]">
+                          <h1 class="text-[17px] leading-[24px] font-[600]">
+                            WoW Gold
+                          </h1>
+                          <p
+                            class="text-[13px] leading-[22px] font-[500] mt-[15px] mb-[18px] text-justify"
+                          >
+                            Buy WoW Gold, any amount of gold on Each Realm in
+                            Stock. Cheap WoW Gold with daily prices update. More
+                            than 100,000 positive reviews. Delivery time in most
+                            cases is less than 15 minutes, depending on Realm.
+                          </p>
+                          <div class="flex items-center gap-3">
+                            <p class="text-[13px] leading-[22px] font-[400]">
+                              From
+                            </p>
+                            <p class="text-[20px] leading-[24px] font-[600]">
+                              $ 0.39
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Item Card - 03 -->
+                    <div class="relative group cursor-pointer overflow-hidden">
+                      <img
+                        src="./assets/Home/Rectangle-4.png"
+                        class="h-full w-full"
+                        alt="item-image"
+                      />
+                      <img
+                        src="./assets/Home/Overlapping-Rectangle.png"
+                        class="absolute top-0 h-full w-full"
+                        alt="Overlap image"
+                      />
+                      <div
+                        class="absolute top-0 h-full w-full flex flex-col justify-between p-[24px_21px]"
+                      >
+                        <div></div>
+                        <div class="text-[#ffffff]">
+                          <h1 class="text-[17px] leading-[24px] font-[600]">
+                            WoW Gold
+                          </h1>
+                          <p
+                            class="text-[13px] leading-[22px] font-[500] mt-[15px] mb-[18px] text-justify"
+                          >
+                            Buy WoW Gold, any amount of gold on Each Realm in
+                            Stock. Cheap WoW Gold with daily prices update. More
+                            than 100,000 positive reviews. Delivery time in most
+                            cases is less than 15 minutes, depending on Realm.
+                          </p>
+                          <button
+                            class="mb-[18px] p-[7px_9px_7px_9px] lg:p-[10px_20px_10px_20px] text-[13px] text-[#000000] leading-[15px] font-[700] border border-[#0CE83C] bg-[#0CE83C] text-center rounded-[5px]"
+                          >
+                            Save up to 20%
+                          </button>
+                          <div class="flex items-center gap-3">
+                            <p class="text-[13px] leading-[22px] font-[400]">
+                              From
+                            </p>
+                            <p class="text-[20px] leading-[24px] font-[600]">
+                              $ 0.39
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Item Card - 05 -->
+                    <div class="relative group cursor-pointer overflow-hidden">
+                      <img
+                        src="./assets/Home/Rectangle-6.png"
+                        class="h-full w-full"
+                        alt="item-image"
+                      />
+                      <img
+                        src="./assets/Home/Overlapping-Rectangle.png"
+                        class="absolute top-0 h-full w-full"
+                        alt="overlaped image"
+                      />
+                      <div
+                        class="absolute top-0 h-full w-full flex flex-col justify-between p-[24px_21px]"
+                      >
+                        <div>
+                          <button
+                            class="p-[7px_9px_7px_9px] lg:p-[10px_20px_10px_20px] text-[13px] text-[#000000] leading-[15px] font-[700] border border-[#FCAB00] bg-[#FCAB00] rounded-[5px] text-center"
+                          >
+                            Hot Offer!
+                          </button>
+                        </div>
+                        <div class="text-[#ffffff]">
+                          <h1 class="text-[17px] leading-[24px] font-[600]">
+                            WoW Gold
+                          </h1>
+                          <p
+                            class="text-[13px] leading-[22px] font-[500] mt-[15px] mb-[18px] text-justify"
+                          >
+                            Buy WoW Gold, any amount of gold on Each Realm in
+                            Stock. Cheap WoW Gold with daily prices update. More
+                            than 100,000 positive reviews. Delivery time in most
+                            cases is less than 15 minutes, depending on Realm.
+                          </p>
+                          <div class="flex items-center gap-3">
+                            <p class="text-[13px] leading-[22px] font-[400]">
+                              From
+                            </p>
+                            <p class="text-[20px] leading-[24px] font-[600]">
+                              $ 0.39
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Item Card - 06 -->
+                    <div class="relative group cursor-pointer overflow-hidden">
+                      <img
+                        src="./assets/Home/Rectangle-7.png"
+                        class="h-full w-full"
+                        alt="item-image"
+                      />
+                      <img
+                        src="./assets/Home/Overlapping-Rectangle.png"
+                        class="absolute top-0 h-full w-full"
+                        alt="overlaped image"
+                      />
+                      <div
+                        class="absolute top-0 h-full w-full flex flex-col justify-between p-[24px_21px]"
+                      >
+                        <div>
+                          <button
+                            class="p-[7px_9px_7px_9px] lg:p-[10px_20px_10px_20px] text-[13px] text-[#000000] leading-[15px] font-[700] border border-[#FCAB00] bg-[#FCAB00] rounded-[5px] text-center"
+                          >
+                            Hot Offer!
+                          </button>
+                        </div>
+                        <div class="text-[#ffffff]">
+                          <h1 class="text-[17px] leading-[24px] font-[600]">
+                            WoW Gold
+                          </h1>
+                          <p
+                            class="text-[13px] leading-[22px] font-[500] mt-[15px] mb-[18px] text-justify"
+                          >
+                            Buy WoW Gold, any amount of gold on Each Realm in
+                            Stock. Cheap WoW Gold with daily prices update. More
+                            than 100,000 positive reviews. Delivery time in most
+                            cases is less than 15 minutes, depending on Realm.
+                          </p>
+                          <div class="flex items-center gap-3">
+                            <p class="text-[13px] leading-[22px] font-[400]">
+                              From
+                            </p>
+                            <p class="text-[20px] leading-[24px] font-[600]">
+                              $ 0.39
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Item Card 08 -->
+                    <div class="relative group cursor-pointer overflow-hidden">
+                      <img
+                        src="./assets/Home/Rectangle-9.png"
+                        class="h-full w-full"
+                        alt="item-image"
+                      />
+                      <img
+                        src="./assets/Home/Overlapping-Rectangle.png"
+                        class="absolute top-0 h-full w-full"
+                        alt="Overlap image"
+                      />
+                      <div
+                        class="absolute top-0 h-full w-full flex flex-col justify-between p-[24px_21px]"
+                      >
+                        <div></div>
+                        <div class="text-[#ffffff]">
+                          <h1 class="text-[17px] leading-[24px] font-[600]">
+                            WoW Gold
+                          </h1>
+                          <p
+                            class="text-[13px] leading-[22px] font-[500] mt-[15px] mb-[18px] text-justify"
+                          >
+                            Buy WoW Gold, any amount of gold on Each Realm in
+                            Stock. Cheap WoW Gold with daily prices update. More
+                            than 100,000 positive reviews. Delivery time in most
+                            cases is less than 15 minutes, depending on Realm.
+                          </p>
+                          <div class="flex items-center gap-3">
+                            <p class="text-[13px] leading-[22px] font-[400]">
+                              From
+                            </p>
+                            <p class="text-[20px] leading-[24px] font-[600]">
+                              $ 0.39
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+                <!-- Mythic & Dungeons Tabs Content -->
+                <div
+                  class="hidden"
+                  id="mythic"
+                  role="tabpanel"
+                  aria-labelledby="mythic-tab"
+                >
+                  <section
+                    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 justify-center items-center gap-5 mt-[23px] lg:mt-[19px] relative"
+                  >
+                    <!-- Item Card - 02 -->
+                    <div class="relative group cursor-pointer overflow-hidden">
+                      <img
+                        src="./assets/Home/Rectangle-3.png"
+                        class="h-full w-full"
+                        alt="item-image"
+                      />
+                      <img
+                        src="./assets/Home/Overlapping-Rectangle.png"
+                        class="absolute top-0 h-full w-full"
+                        alt="Overlap image"
+                      />
+                      <div
+                        class="absolute top-0 h-full w-full flex flex-col justify-between p-[24px_21px]"
+                      >
+                        <div></div>
+                        <div class="text-[#ffffff]">
+                          <h1 class="text-[17px] leading-[24px] font-[600]">
+                            WoW Gold
+                          </h1>
+                          <p
+                            class="text-[13px] leading-[22px] font-[500] mt-[15px] mb-[18px] text-justify"
+                          >
+                            Buy WoW Gold, any amount of gold on Each Realm in
+                            Stock. Cheap WoW Gold with daily prices update. More
+                            than 100,000 positive reviews. Delivery time in most
+                            cases is less than 15 minutes, depending on Realm.
+                          </p>
+                          <div class="flex items-center gap-3">
+                            <p class="text-[13px] leading-[22px] font-[400]">
+                              From
+                            </p>
+                            <p class="text-[20px] leading-[24px] font-[600]">
+                              $ 0.39
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Item Card - 04 -->
+                    <div class="relative group cursor-pointer overflow-hidden">
+                      <img
+                        src="./assets/Home/Rectangle-5.png"
+                        class="h-full w-full"
+                        alt="item-image"
+                      />
+                      <img
+                        src="./assets/Home/Overlapping-Rectangle.png"
+                        class="absolute top-0 h-full w-full"
+                        alt="Overlap image"
+                      />
+                      <div
+                        class="absolute top-0 h-full w-full flex flex-col justify-between p-[24px_21px]"
+                      >
+                        <div></div>
+                        <div class="text-[#ffffff]">
+                          <h1 class="text-[17px] leading-[24px] font-[600]">
+                            WoW Gold
+                          </h1>
+                          <p
+                            class="text-[13px] leading-[22px] font-[500] mt-[15px] mb-[18px] text-justify"
+                          >
+                            Buy WoW Gold, any amount of gold on Each Realm in
+                            Stock. Cheap WoW Gold with daily prices update. More
+                            than 100,000 positive reviews. Delivery time in most
+                            cases is less than 15 minutes, depending on Realm.
+                          </p>
+                          <div class="flex items-center gap-3">
+                            <p class="text-[13px] leading-[22px] font-[400]">
+                              From
+                            </p>
+                            <p class="text-[20px] leading-[24px] font-[600]">
+                              $ 0.39
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Item Card 08 -->
+                    <div class="relative group cursor-pointer overflow-hidden">
+                      <img
+                        src="./assets/Home/Rectangle-9.png"
+                        class="h-full w-full"
+                        alt="item-image"
+                      />
+                      <img
+                        src="./assets/Home/Overlapping-Rectangle.png"
+                        class="absolute top-0 h-full w-full"
+                        alt="Overlap image"
+                      />
+                      <div
+                        class="absolute top-0 h-full w-full flex flex-col justify-between p-[24px_21px]"
+                      >
+                        <div></div>
+                        <div class="text-[#ffffff]">
+                          <h1 class="text-[17px] leading-[24px] font-[600]">
+                            WoW Gold
+                          </h1>
+                          <p
+                            class="text-[13px] leading-[22px] font-[500] mt-[15px] mb-[18px] text-justify"
+                          >
+                            Buy WoW Gold, any amount of gold on Each Realm in
+                            Stock. Cheap WoW Gold with daily prices update. More
+                            than 100,000 positive reviews. Delivery time in most
+                            cases is less than 15 minutes, depending on Realm.
+                          </p>
+                          <div class="flex items-center gap-3">
+                            <p class="text-[13px] leading-[22px] font-[400]">
+                              From
+                            </p>
+                            <p class="text-[20px] leading-[24px] font-[600]">
+                              $ 0.39
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Item Card 09 -->
+                    <div class="relative group cursor-pointer overflow-hidden">
+                      <img
+                        src="./assets/Home/Rectangle-10.png"
+                        class="h-full w-full"
+                        alt="item-image"
+                      />
+                      <img
+                        src="./assets/Home/Overlapping-Rectangle.png"
+                        class="absolute top-0 h-full w-full"
+                        alt="Overlap image"
+                      />
+                      <div
+                        class="absolute top-0 h-full w-full flex flex-col justify-between p-[24px_21px]"
+                      >
+                        <div></div>
+                        <div class="text-[#ffffff]">
+                          <h1 class="text-[17px] leading-[24px] font-[600]">
+                            WoW Gold
+                          </h1>
+                          <p
+                            class="text-[13px] leading-[22px] font-[500] mt-[15px] mb-[18px] text-justify"
+                          >
+                            Buy WoW Gold, any amount of gold on Each Realm in
+                            Stock. Cheap WoW Gold with daily prices update. More
+                            than 100,000 positive reviews. Delivery time in most
+                            cases is less than 15 minutes, depending on Realm.
+                          </p>
+                          <div class="flex items-center gap-3">
+                            <p class="text-[13px] leading-[22px] font-[400]">
+                              From
+                            </p>
+                            <p class="text-[20px] leading-[24px] font-[600]">
+                              $ 0.39
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+                <!-- Leveling Tabs Content -->
+                <div
+                  class="hidden"
+                  id="leveling"
+                  role="tabpanel"
+                  aria-labelledby="leveling-tab"
+                >
+                  <section
+                    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 justify-center items-center gap-5 mt-[23px] lg:mt-[19px] relative"
+                  >
+                    <!-- Item Card - 01 -->
+                    <div class="relative group cursor-pointer overflow-hidden">
+                      <img
+                        src="./assets/Home/Rectangle-2.png"
+                        class="h-full w-full"
+                        alt="item-image"
+                      />
+                      <img
+                        src="./assets/Home/Overlapping-Rectangle.png"
+                        class="absolute top-0 h-full w-full"
+                        alt="overlaped image"
+                      />
+                      <div
+                        class="absolute top-0 h-full w-full flex flex-col justify-between p-[24px_21px]"
+                      >
+                        <div>
+                          <button
+                            class="p-[7px_9px_7px_9px] lg:p-[10px_20px_10px_20px] text-[13px] text-[#000000] leading-[15px] font-[700] border border-[#FCAB00] bg-[#FCAB00] rounded-[5px] text-center"
+                          >
+                            Hot Offer!
+                          </button>
+                        </div>
+                        <div class="text-[#ffffff]">
+                          <h1 class="text-[17px] leading-[24px] font-[600]">
+                            WoW Gold
+                          </h1>
+                          <p
+                            class="text-[13px] leading-[22px] font-[500] mt-[15px] mb-[18px] text-justify"
+                          >
+                            Buy WoW Gold, any amount of gold on Each Realm in
+                            Stock. Cheap WoW Gold with daily prices update. More
+                            than 100,000 positive reviews. Delivery time in most
+                            cases is less than 15 minutes, depending on Realm.
+                          </p>
+                          <div class="flex items-center gap-3">
+                            <p class="text-[13px] leading-[22px] font-[400]">
+                              From
+                            </p>
+                            <p class="text-[20px] leading-[24px] font-[600]">
+                              $ 0.39
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Item Card - 03 -->
+                    <div class="relative group cursor-pointer overflow-hidden">
+                      <img
+                        src="./assets/Home/Rectangle-4.png"
+                        class="h-full w-full"
+                        alt="item-image"
+                      />
+                      <img
+                        src="./assets/Home/Overlapping-Rectangle.png"
+                        class="absolute top-0 h-full w-full"
+                        alt="Overlap image"
+                      />
+                      <div
+                        class="absolute top-0 h-full w-full flex flex-col justify-between p-[24px_21px]"
+                      >
+                        <div></div>
+                        <div class="text-[#ffffff]">
+                          <h1 class="text-[17px] leading-[24px] font-[600]">
+                            WoW Gold
+                          </h1>
+                          <p
+                            class="text-[13px] leading-[22px] font-[500] mt-[15px] mb-[18px] text-justify"
+                          >
+                            Buy WoW Gold, any amount of gold on Each Realm in
+                            Stock. Cheap WoW Gold with daily prices update. More
+                            than 100,000 positive reviews. Delivery time in most
+                            cases is less than 15 minutes, depending on Realm.
+                          </p>
+                          <button
+                            class="mb-[18px] p-[7px_9px_7px_9px] lg:p-[10px_20px_10px_20px] text-[13px] text-[#000000] leading-[15px] font-[700] border border-[#0CE83C] bg-[#0CE83C] text-center rounded-[5px]"
+                          >
+                            Save up to 20%
+                          </button>
+                          <div class="flex items-center gap-3">
+                            <p class="text-[13px] leading-[22px] font-[400]">
+                              From
+                            </p>
+                            <p class="text-[20px] leading-[24px] font-[600]">
+                              $ 0.39
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Item Card - 05 -->
+                    <div class="relative group cursor-pointer overflow-hidden">
+                      <img
+                        src="./assets/Home/Rectangle-6.png"
+                        class="h-full w-full"
+                        alt="item-image"
+                      />
+                      <img
+                        src="./assets/Home/Overlapping-Rectangle.png"
+                        class="absolute top-0 h-full w-full"
+                        alt="overlaped image"
+                      />
+                      <div
+                        class="absolute top-0 h-full w-full flex flex-col justify-between p-[24px_21px]"
+                      >
+                        <div>
+                          <button
+                            class="p-[7px_9px_7px_9px] lg:p-[10px_20px_10px_20px] text-[13px] text-[#000000] leading-[15px] font-[700] border border-[#FCAB00] bg-[#FCAB00] rounded-[5px] text-center"
+                          >
+                            Hot Offer!
+                          </button>
+                        </div>
+                        <div class="text-[#ffffff]">
+                          <h1 class="text-[17px] leading-[24px] font-[600]">
+                            WoW Gold
+                          </h1>
+                          <p
+                            class="text-[13px] leading-[22px] font-[500] mt-[15px] mb-[18px] text-justify"
+                          >
+                            Buy WoW Gold, any amount of gold on Each Realm in
+                            Stock. Cheap WoW Gold with daily prices update. More
+                            than 100,000 positive reviews. Delivery time in most
+                            cases is less than 15 minutes, depending on Realm.
+                          </p>
+                          <div class="flex items-center gap-3">
+                            <p class="text-[13px] leading-[22px] font-[400]">
+                              From
+                            </p>
+                            <p class="text-[20px] leading-[24px] font-[600]">
+                              $ 0.39
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Item Card - 07 -->
+                    <div class="relative group cursor-pointer overflow-hidden">
+                      <img
+                        src="./assets/Home/Rectangle-8.png"
+                        class="h-full w-full"
+                        alt="item-image"
+                      />
+                      <img
+                        src="./assets/Home/Overlapping-Rectangle.png"
+                        class="absolute top-0 h-full w-full"
+                        alt="Overlap image"
+                      />
+                      <div
+                        class="absolute top-0 h-full w-full flex flex-col justify-between p-[24px_21px]"
+                      >
+                        <div></div>
+                        <div class="text-[#ffffff]">
+                          <h1 class="text-[17px] leading-[24px] font-[600]">
+                            WoW Gold
+                          </h1>
+                          <p
+                            class="text-[13px] leading-[22px] font-[500] mt-[15px] mb-[18px] text-justify"
+                          >
+                            Buy WoW Gold, any amount of gold on Each Realm in
+                            Stock. Cheap WoW Gold with daily prices update. More
+                            than 100,000 positive reviews. Delivery time in most
+                            cases is less than 15 minutes, depending on Realm.
+                          </p>
+                          <button
+                            class="mb-[18px] p-[7px_9px_7px_9px] lg:p-[10px_20px_10px_20px] text-[13px] text-[#000000] leading-[15px] font-[700] border border-[#0CE83C] bg-[#0CE83C] text-center rounded-[5px]"
+                          >
+                            Save up to 20%
+                          </button>
+                          <div class="flex items-center gap-3">
+                            <p class="text-[13px] leading-[22px] font-[400]">
+                              From
+                            </p>
+                            <p class="text-[20px] leading-[24px] font-[600]">
+                              $ 0.39
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+                <!-- Gearing Tabs Content -->
+                <div
+                  class="hidden"
+                  id="gearing"
+                  role="tabpanel"
+                  aria-labelledby="gearing-tab"
+                >
+                  <section
+                    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 justify-center items-center gap-5 mt-[23px] lg:mt-[19px] relative"
+                  >
+                    <!-- Item Card - 03 -->
+                    <div class="relative group cursor-pointer overflow-hidden">
+                      <img
+                        src="./assets/Home/Rectangle-4.png"
+                        class="h-full w-full"
+                        alt="item-image"
+                      />
+                      <img
+                        src="./assets/Home/Overlapping-Rectangle.png"
+                        class="absolute top-0 h-full w-full"
+                        alt="Overlap image"
+                      />
+                      <div
+                        class="absolute top-0 h-full w-full flex flex-col justify-between p-[24px_21px]"
+                      >
+                        <div></div>
+                        <div class="text-[#ffffff]">
+                          <h1 class="text-[17px] leading-[24px] font-[600]">
+                            WoW Gold
+                          </h1>
+                          <p
+                            class="text-[13px] leading-[22px] font-[500] mt-[15px] mb-[18px] text-justify"
+                          >
+                            Buy WoW Gold, any amount of gold on Each Realm in
+                            Stock. Cheap WoW Gold with daily prices update. More
+                            than 100,000 positive reviews. Delivery time in most
+                            cases is less than 15 minutes, depending on Realm.
+                          </p>
+                          <button
+                            class="mb-[18px] p-[7px_9px_7px_9px] lg:p-[10px_20px_10px_20px] text-[13px] text-[#000000] leading-[15px] font-[700] border border-[#0CE83C] bg-[#0CE83C] text-center rounded-[5px]"
+                          >
+                            Save up to 20%
+                          </button>
+                          <div class="flex items-center gap-3">
+                            <p class="text-[13px] leading-[22px] font-[400]">
+                              From
+                            </p>
+                            <p class="text-[20px] leading-[24px] font-[600]">
+                              $ 0.39
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Item Card - 04 -->
+                    <div class="relative group cursor-pointer overflow-hidden">
+                      <img
+                        src="./assets/Home/Rectangle-5.png"
+                        class="h-full w-full"
+                        alt="item-image"
+                      />
+                      <img
+                        src="./assets/Home/Overlapping-Rectangle.png"
+                        class="absolute top-0 h-full w-full"
+                        alt="Overlap image"
+                      />
+                      <div
+                        class="absolute top-0 h-full w-full flex flex-col justify-between p-[24px_21px]"
+                      >
+                        <div></div>
+                        <div class="text-[#ffffff]">
+                          <h1 class="text-[17px] leading-[24px] font-[600]">
+                            WoW Gold
+                          </h1>
+                          <p
+                            class="text-[13px] leading-[22px] font-[500] mt-[15px] mb-[18px] text-justify"
+                          >
+                            Buy WoW Gold, any amount of gold on Each Realm in
+                            Stock. Cheap WoW Gold with daily prices update. More
+                            than 100,000 positive reviews. Delivery time in most
+                            cases is less than 15 minutes, depending on Realm.
+                          </p>
+                          <div class="flex items-center gap-3">
+                            <p class="text-[13px] leading-[22px] font-[400]">
+                              From
+                            </p>
+                            <p class="text-[20px] leading-[24px] font-[600]">
+                              $ 0.39
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Item Card - 06 -->
+                    <div class="relative group cursor-pointer overflow-hidden">
+                      <img
+                        src="./assets/Home/Rectangle-7.png"
+                        class="h-full w-full"
+                        alt="item-image"
+                      />
+                      <img
+                        src="./assets/Home/Overlapping-Rectangle.png"
+                        class="absolute top-0 h-full w-full"
+                        alt="overlaped image"
+                      />
+                      <div
+                        class="absolute top-0 h-full w-full flex flex-col justify-between p-[24px_21px]"
+                      >
+                        <div>
+                          <button
+                            class="p-[7px_9px_7px_9px] lg:p-[10px_20px_10px_20px] text-[13px] text-[#000000] leading-[15px] font-[700] border border-[#FCAB00] bg-[#FCAB00] rounded-[5px] text-center"
+                          >
+                            Hot Offer!
+                          </button>
+                        </div>
+                        <div class="text-[#ffffff]">
+                          <h1 class="text-[17px] leading-[24px] font-[600]">
+                            WoW Gold
+                          </h1>
+                          <p
+                            class="text-[13px] leading-[22px] font-[500] mt-[15px] mb-[18px] text-justify"
+                          >
+                            Buy WoW Gold, any amount of gold on Each Realm in
+                            Stock. Cheap WoW Gold with daily prices update. More
+                            than 100,000 positive reviews. Delivery time in most
+                            cases is less than 15 minutes, depending on Realm.
+                          </p>
+                          <div class="flex items-center gap-3">
+                            <p class="text-[13px] leading-[22px] font-[400]">
+                              From
+                            </p>
+                            <p class="text-[20px] leading-[24px] font-[600]">
+                              $ 0.39
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Item Card - 07 -->
+                    <div class="relative group cursor-pointer overflow-hidden">
+                      <img
+                        src="./assets/Home/Rectangle-8.png"
+                        class="h-full w-full"
+                        alt="item-image"
+                      />
+                      <img
+                        src="./assets/Home/Overlapping-Rectangle.png"
+                        class="absolute top-0 h-full w-full"
+                        alt="Overlap image"
+                      />
+                      <div
+                        class="absolute top-0 h-full w-full flex flex-col justify-between p-[24px_21px]"
+                      >
+                        <div></div>
+                        <div class="text-[#ffffff]">
+                          <h1 class="text-[17px] leading-[24px] font-[600]">
+                            WoW Gold
+                          </h1>
+                          <p
+                            class="text-[13px] leading-[22px] font-[500] mt-[15px] mb-[18px] text-justify"
+                          >
+                            Buy WoW Gold, any amount of gold on Each Realm in
+                            Stock. Cheap WoW Gold with daily prices update. More
+                            than 100,000 positive reviews. Delivery time in most
+                            cases is less than 15 minutes, depending on Realm.
+                          </p>
+                          <button
+                            class="mb-[18px] p-[7px_9px_7px_9px] lg:p-[10px_20px_10px_20px] text-[13px] text-[#000000] leading-[15px] font-[700] border border-[#0CE83C] bg-[#0CE83C] text-center rounded-[5px]"
+                          >
+                            Save up to 20%
+                          </button>
+                          <div class="flex items-center gap-3">
+                            <p class="text-[13px] leading-[22px] font-[400]">
+                              From
+                            </p>
+                            <p class="text-[20px] leading-[24px] font-[600]">
+                              $ 0.39
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Item Card 09 -->
+                    <div class="relative group cursor-pointer overflow-hidden">
+                      <img
+                        src="./assets/Home/Rectangle-10.png"
+                        class="h-full w-full"
+                        alt="item-image"
+                      />
+                      <img
+                        src="./assets/Home/Overlapping-Rectangle.png"
+                        class="absolute top-0 h-full w-full"
+                        alt="Overlap image"
+                      />
+                      <div
+                        class="absolute top-0 h-full w-full flex flex-col justify-between p-[24px_21px]"
+                      >
+                        <div></div>
+                        <div class="text-[#ffffff]">
+                          <h1 class="text-[17px] leading-[24px] font-[600]">
+                            WoW Gold
+                          </h1>
+                          <p
+                            class="text-[13px] leading-[22px] font-[500] mt-[15px] mb-[18px] text-justify"
+                          >
+                            Buy WoW Gold, any amount of gold on Each Realm in
+                            Stock. Cheap WoW Gold with daily prices update. More
+                            than 100,000 positive reviews. Delivery time in most
+                            cases is less than 15 minutes, depending on Realm.
+                          </p>
+                          <div class="flex items-center gap-3">
+                            <p class="text-[13px] leading-[22px] font-[400]">
+                              From
+                            </p>
+                            <p class="text-[20px] leading-[24px] font-[600]">
+                              $ 0.39
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+              </div>
               <button
                 class="block mx-auto w-full mt-[35px] p-[10px_9px_10px_9px] lg:p-[11px_13px_11px_13px] lg:w-[189px] h-[52px] text-[13px] text-[#27213C] font-[700] border border-[#FCAB00] bg-[#FCAB00] text-center rounded-[300px] hover:bg-[#fcb826] duration-200"
               >
@@ -1829,12 +3560,17 @@
               <div
                 class="feature-box rounded-[6px] w-full lg:w-[368px] xl:w-[400px] p-4 cursor-pointer feature-box-bg-active"
               >
-                <p
+                <div
                   id="feature-inner-box"
                   class="text-[17px] leading-[24px] font-[600] pl-4 h-[76px] feature-box-loader"
                 >
                   Browse out catalog and select a service or a product.
-                </p>
+                  <p
+                    class="text-[13px] leading-[22px] font-[500] text-[#A7A7C8] description"
+                  >
+                    We put your money on hold in a safe place.
+                  </p>
+                </div>
               </div>
               <!-- Feature - 02 -->
               <div
@@ -1846,7 +3582,7 @@
                 >
                   Book your slot with payment
                   <p
-                    class="text-[13px] leading-[22px] font-[500] text-[#A7A7C8]"
+                    class="text-[13px] leading-[22px] font-[500] text-[#A7A7C8] description"
                   >
                     We put your money on hold in a safe place
                     <br class="hidden lg:block" />
@@ -1858,12 +3594,19 @@
               <div
                 class="feature-box rounded-[6px] w-full lg:w-[368px] xl:w-[400px] p-4 cursor-pointer feature-box-bg-not-active"
               >
-                <p
+                <div
                   id="feature-inner-box"
                   class="text-[17px] leading-[24px] font-[600] pl-4 h-[76px] feature-box-border"
                 >
                   Confirm Completion
-                </p>
+                  <p
+                    class="text-[13px] leading-[22px] font-[500] text-[#A7A7C8] description"
+                  >
+                    We put your money on hold in a safe place
+                    <br class="hidden lg:block" />
+                    until you confirm completion.
+                  </p>
+                </div>
               </div>
             </article>
             <!-- Feature Banner Image -->
@@ -2404,12 +4147,12 @@
         </p>
       </div>
     </footer>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script>
     <script type="text/javascript" src="slick/slick.min.js"></script>
     <!-- JS File -->
     <script type="module" src="./navbar.js"></script>
-    <script type="module" src="./home.js"></script>
+    <script type="module" src="./index.js"></script>
   </body>
 </html>
