@@ -1109,9 +1109,55 @@ active {
 
 /* ---------------------------------------------------------------------------------------------- */
 /* ---------------------------------------------------------------------------------------------- */
-/*------------EIGHTH PAGE---------- All Te CSS For EIGHTH PAGE -----------EIGHTH PAGE--------*/
+/*------------NINTH PAGE---------- All Te CSS For NINTH PAGE -----------NINTH PAGE--------*/
 /* ---------------------------------------------------------------------------------------------- */
 /* ---------------------------------------------------------------------------------------------- */
+.diablo-banner-black {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("./assets/ninth/bg-black.png");
+}
+
+.tabBtn {
+  color: white !important;
+  opacity: 70% !important;
+}
+button.tabActive {
+  opacity: 100% !important;
+  font-weight: bold;
+}
+
+input.checkField {
+  height: 30px;
+  width: 30px;
+  background-color: transparent !important;
+  border-radius: 4px;
+  background-size: 29px 29px;
+  border: 0 !important;
+  background-repeat: no-repeat;
+  background-image: url("./assets/ninth/checkbox-bg.png");
+}
+input.checkField:checked {
+  height: 30px;
+  width: 30px;
+  background-color: transparent !important;
+  border-radius: 4px;
+  background-size: 29px 29px;
+  background-repeat: no-repeat;
+  background-image: url("./assets/ninth/selected-checkbox-bg.png");
+}
+input.checkField:focus {
+  outline: none; /* Remove default outline */
+  box-shadow: none; /* Remove any box-shadow */
+}
+
+input.radioBox:checked,
+input.radioBox:checked:focus,
+input.radioBox:focus {
+  background: #7e632a !important;
+  outline: 0 !important;
+  box-shadow: 0 !important;
+}
 
 /* 
 -
