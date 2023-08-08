@@ -31,7 +31,7 @@
       >
         <!-- Navbar Container -->
         <article
-          class="flex justify-between items-center gap-5 w-[calc(100vw-48px)] lg:w-[calc(100vw-200px)] mx-auto relative"
+          class="flex justify-between items-center gap-5 w-[calc(100vw-48px)] lg:w-[calc(100vw-200px)] 2xl:w-[1480px] mx-auto relative"
         >
           <!-- First Column of the Navbar -->
           <div class="flex items-center justify-between gap-[40px]">
@@ -48,7 +48,7 @@
               <input
                 type="text"
                 placeholder="Search"
-                class="bg-transparent py-1 text-sm w-full outline-o focus:outline-0 placeholder:opacity-70"
+                class="bg-transparent nav-search py-1 text-sm w-full outline-o focus:outline-0 focus:ring-0 placeholder:opacity-70"
               />
               <button
                 class="absolute right-[13px] top-[6px] p-[2px] bg-[#241f36]"
@@ -321,15 +321,15 @@
               <div class="flex flex-col gap-5">
                 <!-- Search Box for mobile devices -->
                 <div
-                  class="flex justify-between items-center gap-2 border border-white border-opacity-25 p-[8px_13px] rounded-[4px]"
+                  class="flex justify-between items-center gap-2 border border-white border-opacity-25 p-[10px_10px] rounded-[4px]"
                 >
                   <input
                     type="text"
                     placeholder="Search"
-                    class="bg-transparent text-sm w-full border-0 outline-o focus:outline-0 placeholder:opacity-70"
+                    class="bg-transparent nav-search focus:ring-0 text-sm w-full border-0 outline-o focus:outline-0 placeholder:opacity-70"
                   />
                   <button>
-                    <i class="fa-solid fa-magnifying-glass opacity-70"></i>
+                    <i class="fa-solid fa-magnifying-glass opacity-80"></i>
                   </button>
                 </div>
                 <!-- Currency Dropdown for mobile devices -->
@@ -344,7 +344,7 @@
                     <div class="flex items-center gap-[6px]">
                       <span id="currencyMobile">USD</span>
                       <i
-                        class="fa-solid fa-chevron-down relative top-[1px]"
+                        class="fa-solid fa-chevron-down relative top-[0px]"
                       ></i>
                     </div>
                   </div>
@@ -353,20 +353,20 @@
                     id="currencyMenuMobile"
                   >
                     <ul
-                      class="list-none text-center bg-[#241f36] rounded-[4px] w-52 border border-[#39334d] divide-y divide-[#39334d] cursor-pointer"
+                      class="list-none text-center bg-[#241f36] rounded-[4px] w-[calc(100vw-74px)] border border-[#39334d] divide-y divide-[#39334d] cursor-pointer"
                     >
                       <li
-                        class="py-1 cursor-pointer hover:bg-[#39334d] duration-200 currency-item-mobile"
+                        class="py-2 cursor-pointer hover:bg-[#39334d] duration-200 currency-item-mobile"
                       >
                         EUR
                       </li>
                       <li
-                        class="py-1 cursor-pointer hover:bg-[#39334d] duration-200 currency-item-mobile"
+                        class="py-2 cursor-pointer hover:bg-[#39334d] duration-200 currency-item-mobile"
                       >
                         GBP
                       </li>
                       <li
-                        class="py-1 cursor-pointer hover:bg-[#39334d] duration-200 currency-item-mobile"
+                        class="py-2 cursor-pointer hover:bg-[#39334d] duration-200 currency-item-mobile"
                       >
                         USD
                       </li>
@@ -598,7 +598,9 @@
       class="bg-gradient-to-r from-[#241420] via-[#302b3f] to-[#27213C] md:w-full"
     >
       <!--Container -->
-      <article class="w-[calc(100vw-48px)] lg:w-[calc(100vw-200px)] mx-auto">
+      <article
+        class="w-[calc(100vw-48px)] lg:w-[calc(100vw-200px)] 2xl:w-[1480px] mx-auto"
+      >
         <!-- TODO: Z INDEX OR POSITION  -->
         <div
           class="hidden lg:block absolute -z-10 top-[80px] left-0 w-[150px] h-[400px]"
@@ -677,14 +679,14 @@
               >
                 <button
                   id="engLang"
-                  onclick="languageChange('engLang','usLang','enData','usData','6827 offers')"
+                  onclick="languageChange('engLang','usLang','enData','allanceHide','6827 offers')"
                   class="flex h-[46px] px-[17px] py-[11px] items-center rounded-[300px] border border-[#FCAB00] bg-[#FCAB00] text-[#27213C] text-[13px] font-bold leading-[22px]"
                 >
                   EN
                 </button>
                 <button
                   id="usLang"
-                  onclick="languageChange('usLang','engLang','usData','enData','5327 offers')"
+                  onclick="languageChange('usLang','engLang','usData','sellerFalse','5327 offers')"
                   class="w-[53px] h-[48px] py-[12px] pr-[27px] pl-[20px] justify-center items-center text-white text-[13px] font-bold leading-[22px]"
                 >
                   US
@@ -694,7 +696,9 @@
                 class="lg:order-2 flex w-[150px] h-[49px] py-[13px] justify-center items-center gap-[14px] border border-[#3C4A64] bg-[#1F203C1A] rounded-[300px]"
               >
                 <p
-                  class="flex-shrink-0 items-center text-white text-[14px] font-normal leading-normal"
+                  id="horde"
+                  class="flex-shrink-0 cursor-pointer items-center text-white text-[14px] font-normal leading-normal"
+                  onclick="removeClassList('horde-section','hordeHide')"
                 >
                   Horde
                 </p>
@@ -705,7 +709,8 @@
                     alt=""
                 /></span>
                 <p
-                  class="flex-shrink-0 items-center text-white text-[14px] font-normal leading-normal"
+                  onclick="removeClassList('enData','allanceHide')"
+                  class="flex-shrink-0 cursor-pointer items-center text-white text-[14px] font-normal leading-normal"
                 >
                   Alliance
                 </p>
@@ -714,14 +719,20 @@
                 class="lg:order-3 flex h-[49px] py-[13px] px-[20px] justify-center items-center gap-[12px] border border-[#3C4A64] bg-[#1F203C1A] rounded-[300px]"
               >
                 <span
-                  onclick="changeClick('showImg')"
-                  class="flex w-5 h-5 py-[6px] px-[4px] justify-center items-center rounded-[3px] bg-[#FFD056] cursor-pointer"
+                  id="clickBox"
+                  onclick="removeClassList('sellerData','sellerHide','noClick','clickBox')"
+                  class="hidden flex w-5 h-5 py-[6px] px-[4px] justify-center items-center rounded-[3px] bg-[#FFD056] cursor-pointer"
                   ><img
                     id="showImg"
                     src="./assets/Fourth/multi shine.png"
                     alt=""
-                    class="hidden color-white"
                 /></span>
+                <span
+                  id="noClick"
+                  onclick="removeClassList('usData','sellerFalse','clickBox','noClick')"
+                  class="flex w-5 h-5 py-[6px] px-[4px] justify-center items-center rounded-[3px] bg-[#FFD056] cursor-pointer"
+                >
+                </span>
 
                 <p class="text-white text-[14px] font-normal leading-normal">
                   Seller Online
@@ -745,7 +756,7 @@
             <div
               class="total-offer flex pr-0 items-start text-[21px] lg:text-[24px] font-bold leading-[48px] lg:leading-[28px] text-[#fff]"
             >
-              6827 offers
+              <span id="offer-number"> 6827</span> offers
             </div>
             <div class="flex items-end relative z-10">
               <div class="relative z-10">
@@ -800,7 +811,7 @@
 
           <div
             id="enData"
-            class="grid md:grid-cols-1 grid-cols-2 gap-[10px] lg:gap-2 mb-[50px] lg:mt-[20px]"
+            class="hordeHide sellerHide sellerFalse grid md:grid-cols-1 grid-cols-1 gap-[10px] lg:gap-2 mb-[50px] lg:mt-[20px]"
           >
             <div
               class="p-[18px] lg:py-[10px] lg:px-[18px] lg:w-full flex flex-wrap flex-col lg:flex-row lg:items-center lg:justify-between gap-[13px] lg:gap-[20px] rounded-lg border-2 border-[#FCAB00] bg-[#FCAB001A]"
@@ -1539,7 +1550,7 @@
           <!-- Us data -->
           <div
             id="usData"
-            class="hidden grid md:grid-cols-1 grid-cols-2 gap-[10px] lg:gap-2 mb-[50px] lg:mt-[20px]"
+            class="hordeHide sellerHide allanceHide hidden grid md:grid-cols-1 grid-cols-1 gap-[10px] lg:gap-2 mb-[50px] lg:mt-[20px]"
           >
             <div
               class="p-[18px] lg:py-[10px] lg:px-[18px] lg:w-full flex flex-wrap flex-col lg:flex-row lg:items-center lg:justify-between gap-[13px] lg:gap-[20px] rounded-lg border-2 border-[#FCAB00] bg-[#FCAB001A]"
@@ -1551,6 +1562,1484 @@
                   $5.5000
                 </h1>
                 <p class="text-[#A7A7C8] text-xs font-bold">for 9k gold</p>
+              </div>
+              <div
+                class="flex flex-wrap flex-col lg:flex-row gap-[14px] lg:gap-2"
+              >
+                <div
+                  class="flex pt-[7px] pr-[33.66px] pb-[12px] pl-[16px] items-start rounded-[8px] bg-[#FFFFFF1A]"
+                >
+                  <div class="flex items-center gap-[8px]">
+                    <div class="flex w-[16px] items-start p-[1.333px]">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="15"
+                        viewBox="0 0 14 15"
+                        fill="none"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M7.85301 7.13731C11.0637 7.13731 13.6663 5.72598 13.6663 3.98531C13.6663 2.24465 11.0637 0.833313 7.85301 0.833313C4.64101 0.833313 2.03834 2.24465 2.03834 3.98531C2.03834 5.72598 4.64101 7.13731 7.85167 7.13731H7.85301ZM10.5997 4.09731C10.5923 3.82998 10.443 3.60465 10.153 3.42331C9.90359 3.26274 9.61488 3.17372 9.31834 3.16598C9.04189 3.15521 8.76555 3.18989 8.50034 3.26865C8.24167 3.34398 7.94901 3.45198 7.62101 3.59198C7.36634 3.69998 7.17434 3.77198 7.04767 3.80865C6.91634 3.84265 6.81434 3.83731 6.74167 3.79198C6.58967 3.69665 6.67034 3.55065 6.98367 3.35465C7.30101 3.15598 7.72634 3.00198 8.26101 2.89265L7.74101 2.10798C7.2697 2.19313 6.81449 2.35101 6.39167 2.57598L5.83634 2.22931L5.10767 2.68465L5.67301 3.03865C5.32167 3.33198 5.14501 3.61598 5.14234 3.89065C5.14301 4.16265 5.29567 4.39398 5.59967 4.58465C5.86234 4.74931 6.14101 4.83731 6.43434 4.84798C6.71012 4.85868 6.98588 4.82629 7.25167 4.75198C7.50367 4.67665 7.79834 4.56998 8.13634 4.43198C8.39834 4.32398 8.59501 4.25331 8.72567 4.21865C8.86034 4.18198 8.96567 4.18798 9.04167 4.23531C9.10767 4.27665 9.12167 4.33065 9.08368 4.39731C9.04234 4.46198 8.93701 4.54731 8.76834 4.65331C8.57234 4.77598 8.33768 4.88598 8.06567 4.98265C7.79779 5.07546 7.52261 5.14571 7.24301 5.19265L7.74234 5.99665C8.02433 5.95257 8.30139 5.88135 8.56967 5.78398C8.86836 5.67854 9.15742 5.54761 9.43367 5.39265L9.98368 5.73665L10.7123 5.28065L10.1363 4.92065C10.453 4.63531 10.6077 4.36065 10.5997 4.09731ZM0.333008 6.89265C0.333008 6.25865 0.678341 5.66798 1.27301 5.17331V5.65665C1.27301 7.64198 4.23434 9.25198 7.88767 9.25198C8.83701 9.25198 9.73967 9.14331 10.5557 8.94731C9.48901 9.61931 7.90967 10.0446 6.14701 10.0446C2.93567 10.044 0.333008 8.63331 0.333008 6.89265ZM6.14634 11.2526C2.97101 11.2526 0.389675 9.87198 0.334341 8.15731C0.677675 8.69465 1.22434 9.14531 1.86501 9.49265C2.98034 10.0973 4.49501 10.4593 6.14701 10.4593C7.84834 10.4593 9.40701 10.0753 10.5337 9.43465V10.1693C9.46701 10.8326 7.89701 11.2526 6.14634 11.2526ZM2.82234 12.198V12.8673C3.87901 13.6546 5.59234 14.1666 7.52634 14.1666C10.6583 14.1666 13.2117 12.824 13.335 11.1426C12.9857 11.6653 12.447 12.1026 11.8237 12.4406C10.7023 13.0486 9.18234 13.4113 7.52634 13.4113C5.66834 13.4113 3.97167 12.954 2.82167 12.198H2.82234ZM7.52701 12.9593C5.59501 12.9593 3.88301 12.4486 2.82567 11.662C3.79634 11.9713 4.92701 12.1486 6.13434 12.1486C9.74901 12.1486 12.679 10.5593 12.679 8.59998V8.34598C13.1017 8.78265 13.3403 9.27931 13.3403 9.80731C13.3403 11.548 10.7377 12.9593 7.52701 12.9593ZM7.85234 7.55265C9.50434 7.55265 11.019 7.19131 12.135 6.58598C12.775 6.23931 13.3217 5.78798 13.6657 5.25065C13.6097 6.96531 11.0283 8.34598 7.85234 8.34598C4.67634 8.34598 2.09567 6.96531 2.03967 5.25065C2.38301 5.78798 2.93034 6.23931 3.57034 6.58598C4.68634 7.19131 6.20034 7.55265 7.85234 7.55265Z"
+                          fill="white"
+                        />
+                      </svg>
+                    </div>
+                    <div class="flex flex-col items-start gap-[-1]">
+                      <h1
+                        class="flex items-start text-[17px] font-bold leading-[24px] text-[#fff]"
+                      >
+                        15m+
+                      </h1>
+                      <p
+                        class="flex items-start text-[12px] font-bold leading-[16px] text-[#A7A7C8]"
+                      >
+                        gold in stock
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="flex pt-[7px] pr-[33.66px] pb-[12px] pl-[16px] items-start rounded-[8px] bg-[#FFFFFF1A]"
+                >
+                  <div class="flex items-center gap-[8px]">
+                    <div class="flex w-[16px] items-start p-[1.333px]">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="12"
+                        viewBox="0 0 14 12"
+                        fill="none"
+                      >
+                        <path
+                          d="M12.9997 0.166642H0.333008V1.49998H1.86634L4.05301 7.49998C4.19055 7.88901 4.44506 8.22598 4.78163 8.46468C5.11821 8.70339 5.52038 8.83215 5.93301 8.83331H11.6663V7.49998H5.93301C5.796 7.49992 5.66233 7.45765 5.5502 7.37892C5.43807 7.30019 5.35292 7.18882 5.30634 7.05998L4.99967 6.16664H11.1863C11.4757 6.16622 11.7571 6.07169 11.988 5.89731C12.2189 5.72293 12.3868 5.47817 12.4663 5.19998L13.6663 1.01331C13.6934 0.925765 13.7022 0.833573 13.6921 0.742492C13.6819 0.651411 13.6531 0.563395 13.6075 0.483943C13.5618 0.404491 13.5002 0.335307 13.4266 0.280713C13.353 0.226119 13.269 0.187287 13.1797 0.166642C13.1201 0.156936 13.0593 0.156936 12.9997 0.166642ZM11.1663 4.83331H4.49967L3.28634 1.49998H12.113L11.1663 4.83331ZM5.99967 11.5C6.26489 11.5 6.51925 11.3946 6.70678 11.2071C6.89432 11.0195 6.99967 10.7652 6.99967 10.5C6.99967 10.2348 6.89432 9.98041 6.70678 9.79287C6.51925 9.60533 6.26489 9.49998 5.99967 9.49998C5.73446 9.49998 5.4801 9.60533 5.29257 9.79287C5.10503 9.98041 4.99967 10.2348 4.99967 10.5C4.99967 10.7652 5.10503 11.0195 5.29257 11.2071C5.4801 11.3946 5.73446 11.5 5.99967 11.5ZM9.99967 11.5C10.2649 11.5 10.5192 11.3946 10.7068 11.2071C10.8943 11.0195 10.9997 10.7652 10.9997 10.5C10.9997 10.2348 10.8943 9.98041 10.7068 9.79287C10.5192 9.60533 10.2649 9.49998 9.99967 9.49998C9.73446 9.49998 9.4801 9.60533 9.29257 9.79287C9.10503 9.98041 8.99967 10.2348 8.99967 10.5C8.99967 10.7652 9.10503 11.0195 9.29257 11.2071C9.4801 11.3946 9.73446 11.5 9.99967 11.5Z"
+                          fill="white"
+                        />
+                      </svg>
+                    </div>
+                    <div class="flex flex-col items-start gap-[-1]">
+                      <h1
+                        class="flex items-start text-[17px] font-bold leading-[24px] text-[#fff]"
+                      >
+                        300k
+                      </h1>
+                      <p
+                        class="flex items-start text-[12px] font-bold leading-[16px] text-[#A7A7C8]"
+                      >
+                        min. purchase
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex lg:items-center">
+                  <h2
+                    class="text-[#A7A7C8] text-[14px] leading-[22px] font-bold"
+                  >
+                    Kazzak - EU Horde
+                  </h2>
+                </div>
+              </div>
+              <div class="flex flex-col items-start">
+                <div class="flex items-center gap-1">
+                  <div class="w-2 h-2 rounded bg-[#96D473]"></div>
+                  <h2 class="text-=[14px] font-bold leading-[22px] text-white">
+                    OvergearSales
+                  </h2>
+                  <img src="./assets/Fourth/batc.png" alt="" />
+                </div>
+                <div class="flex items-center gap-1">
+                  <div class="">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="12"
+                      height="13"
+                      viewBox="0 0 12 13"
+                      fill="none"
+                    >
+                      <path
+                        d="M6 0.0999756L7.973 3.87798L12 4.68398L9.192 7.82398L9.708 12.1L6 10.262L2.292 12.1L2.808 7.82398L0 4.68398L4.027 3.87798L6 0.0999756Z"
+                        fill="#FF9548"
+                      />
+                    </svg>
+                  </div>
+                  <h2 class="text-=[10px] font-bold leading-[16px] text-white">
+                    4.9
+                  </h2>
+                  <h2
+                    class="text-=[10px] font-bold leading-[16px] text-[#A7A7C8]"
+                  >
+                    144k+
+                  </h2>
+                </div>
+              </div>
+            </div>
+            <div
+              class="p-[18px] lg:py-[10px] lg:px-[18px] lg:w-full flex flex-wrap flex-col lg:flex-row lg:items-center lg:justify-between gap-[13px] lg:gap-[20px] rounded-lg border-2 border-[#FCAB00] bg-[#FCAB001A]"
+            >
+              <div class="flex pr-0 flex-col items-start gap-[-1px]">
+                <h1
+                  class="text-[#FFFFFF] text-[22px] font-black leading-[28px]"
+                >
+                  $6.4035
+                </h1>
+                <p class="text-[#A7A7C8] text-xs font-bold">for 10k gold</p>
+              </div>
+              <div
+                class="flex flex-wrap flex-col lg:flex-row gap-[14px] lg:gap-2"
+              >
+                <div
+                  class="flex pt-[7px] pr-[33.66px] pb-[12px] pl-[16px] items-start rounded-[8px] bg-[#FFFFFF1A]"
+                >
+                  <div class="flex items-center gap-[8px]">
+                    <div class="flex w-[16px] items-start p-[1.333px]">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="15"
+                        viewBox="0 0 14 15"
+                        fill="none"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M7.85301 7.13731C11.0637 7.13731 13.6663 5.72598 13.6663 3.98531C13.6663 2.24465 11.0637 0.833313 7.85301 0.833313C4.64101 0.833313 2.03834 2.24465 2.03834 3.98531C2.03834 5.72598 4.64101 7.13731 7.85167 7.13731H7.85301ZM10.5997 4.09731C10.5923 3.82998 10.443 3.60465 10.153 3.42331C9.90359 3.26274 9.61488 3.17372 9.31834 3.16598C9.04189 3.15521 8.76555 3.18989 8.50034 3.26865C8.24167 3.34398 7.94901 3.45198 7.62101 3.59198C7.36634 3.69998 7.17434 3.77198 7.04767 3.80865C6.91634 3.84265 6.81434 3.83731 6.74167 3.79198C6.58967 3.69665 6.67034 3.55065 6.98367 3.35465C7.30101 3.15598 7.72634 3.00198 8.26101 2.89265L7.74101 2.10798C7.2697 2.19313 6.81449 2.35101 6.39167 2.57598L5.83634 2.22931L5.10767 2.68465L5.67301 3.03865C5.32167 3.33198 5.14501 3.61598 5.14234 3.89065C5.14301 4.16265 5.29567 4.39398 5.59967 4.58465C5.86234 4.74931 6.14101 4.83731 6.43434 4.84798C6.71012 4.85868 6.98588 4.82629 7.25167 4.75198C7.50367 4.67665 7.79834 4.56998 8.13634 4.43198C8.39834 4.32398 8.59501 4.25331 8.72567 4.21865C8.86034 4.18198 8.96567 4.18798 9.04167 4.23531C9.10767 4.27665 9.12167 4.33065 9.08368 4.39731C9.04234 4.46198 8.93701 4.54731 8.76834 4.65331C8.57234 4.77598 8.33768 4.88598 8.06567 4.98265C7.79779 5.07546 7.52261 5.14571 7.24301 5.19265L7.74234 5.99665C8.02433 5.95257 8.30139 5.88135 8.56967 5.78398C8.86836 5.67854 9.15742 5.54761 9.43367 5.39265L9.98368 5.73665L10.7123 5.28065L10.1363 4.92065C10.453 4.63531 10.6077 4.36065 10.5997 4.09731ZM0.333008 6.89265C0.333008 6.25865 0.678341 5.66798 1.27301 5.17331V5.65665C1.27301 7.64198 4.23434 9.25198 7.88767 9.25198C8.83701 9.25198 9.73967 9.14331 10.5557 8.94731C9.48901 9.61931 7.90967 10.0446 6.14701 10.0446C2.93567 10.044 0.333008 8.63331 0.333008 6.89265ZM6.14634 11.2526C2.97101 11.2526 0.389675 9.87198 0.334341 8.15731C0.677675 8.69465 1.22434 9.14531 1.86501 9.49265C2.98034 10.0973 4.49501 10.4593 6.14701 10.4593C7.84834 10.4593 9.40701 10.0753 10.5337 9.43465V10.1693C9.46701 10.8326 7.89701 11.2526 6.14634 11.2526ZM2.82234 12.198V12.8673C3.87901 13.6546 5.59234 14.1666 7.52634 14.1666C10.6583 14.1666 13.2117 12.824 13.335 11.1426C12.9857 11.6653 12.447 12.1026 11.8237 12.4406C10.7023 13.0486 9.18234 13.4113 7.52634 13.4113C5.66834 13.4113 3.97167 12.954 2.82167 12.198H2.82234ZM7.52701 12.9593C5.59501 12.9593 3.88301 12.4486 2.82567 11.662C3.79634 11.9713 4.92701 12.1486 6.13434 12.1486C9.74901 12.1486 12.679 10.5593 12.679 8.59998V8.34598C13.1017 8.78265 13.3403 9.27931 13.3403 9.80731C13.3403 11.548 10.7377 12.9593 7.52701 12.9593ZM7.85234 7.55265C9.50434 7.55265 11.019 7.19131 12.135 6.58598C12.775 6.23931 13.3217 5.78798 13.6657 5.25065C13.6097 6.96531 11.0283 8.34598 7.85234 8.34598C4.67634 8.34598 2.09567 6.96531 2.03967 5.25065C2.38301 5.78798 2.93034 6.23931 3.57034 6.58598C4.68634 7.19131 6.20034 7.55265 7.85234 7.55265Z"
+                          fill="white"
+                        />
+                      </svg>
+                    </div>
+                    <div class="flex flex-col items-start gap-[-1]">
+                      <h1
+                        class="flex items-start text-[17px] font-bold leading-[24px] text-[#fff]"
+                      >
+                        15m+
+                      </h1>
+                      <p
+                        class="flex items-start text-[12px] font-bold leading-[16px] text-[#A7A7C8]"
+                      >
+                        gold in stock
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="flex pt-[7px] pr-[33.66px] pb-[12px] pl-[16px] items-start rounded-[8px] bg-[#FFFFFF1A]"
+                >
+                  <div class="flex items-center gap-[8px]">
+                    <div class="flex w-[16px] items-start p-[1.333px]">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="12"
+                        viewBox="0 0 14 12"
+                        fill="none"
+                      >
+                        <path
+                          d="M12.9997 0.166642H0.333008V1.49998H1.86634L4.05301 7.49998C4.19055 7.88901 4.44506 8.22598 4.78163 8.46468C5.11821 8.70339 5.52038 8.83215 5.93301 8.83331H11.6663V7.49998H5.93301C5.796 7.49992 5.66233 7.45765 5.5502 7.37892C5.43807 7.30019 5.35292 7.18882 5.30634 7.05998L4.99967 6.16664H11.1863C11.4757 6.16622 11.7571 6.07169 11.988 5.89731C12.2189 5.72293 12.3868 5.47817 12.4663 5.19998L13.6663 1.01331C13.6934 0.925765 13.7022 0.833573 13.6921 0.742492C13.6819 0.651411 13.6531 0.563395 13.6075 0.483943C13.5618 0.404491 13.5002 0.335307 13.4266 0.280713C13.353 0.226119 13.269 0.187287 13.1797 0.166642C13.1201 0.156936 13.0593 0.156936 12.9997 0.166642ZM11.1663 4.83331H4.49967L3.28634 1.49998H12.113L11.1663 4.83331ZM5.99967 11.5C6.26489 11.5 6.51925 11.3946 6.70678 11.2071C6.89432 11.0195 6.99967 10.7652 6.99967 10.5C6.99967 10.2348 6.89432 9.98041 6.70678 9.79287C6.51925 9.60533 6.26489 9.49998 5.99967 9.49998C5.73446 9.49998 5.4801 9.60533 5.29257 9.79287C5.10503 9.98041 4.99967 10.2348 4.99967 10.5C4.99967 10.7652 5.10503 11.0195 5.29257 11.2071C5.4801 11.3946 5.73446 11.5 5.99967 11.5ZM9.99967 11.5C10.2649 11.5 10.5192 11.3946 10.7068 11.2071C10.8943 11.0195 10.9997 10.7652 10.9997 10.5C10.9997 10.2348 10.8943 9.98041 10.7068 9.79287C10.5192 9.60533 10.2649 9.49998 9.99967 9.49998C9.73446 9.49998 9.4801 9.60533 9.29257 9.79287C9.10503 9.98041 8.99967 10.2348 8.99967 10.5C8.99967 10.7652 9.10503 11.0195 9.29257 11.2071C9.4801 11.3946 9.73446 11.5 9.99967 11.5Z"
+                          fill="white"
+                        />
+                      </svg>
+                    </div>
+                    <div class="flex flex-col items-start gap-[-1]">
+                      <h1
+                        class="flex items-start text-[17px] font-bold leading-[24px] text-[#fff]"
+                      >
+                        300k
+                      </h1>
+                      <p
+                        class="flex items-start text-[12px] font-bold leading-[16px] text-[#A7A7C8]"
+                      >
+                        min. purchase
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex lg:items-center">
+                  <h2
+                    class="text-[#A7A7C8] text-[14px] leading-[22px] font-bold"
+                  >
+                    Kazzak - EU Horde
+                  </h2>
+                </div>
+              </div>
+              <div class="flex flex-col items-start">
+                <div class="flex items-center gap-1">
+                  <div class="w-2 h-2 rounded bg-[#96D473]"></div>
+                  <h2 class="text-=[14px] font-bold leading-[22px] text-white">
+                    OvergearSales
+                  </h2>
+                  <img src="./assets/Fourth/batc.png" alt="" />
+                </div>
+                <div class="flex items-center gap-1">
+                  <div class="">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="12"
+                      height="13"
+                      viewBox="0 0 12 13"
+                      fill="none"
+                    >
+                      <path
+                        d="M6 0.0999756L7.973 3.87798L12 4.68398L9.192 7.82398L9.708 12.1L6 10.262L2.292 12.1L2.808 7.82398L0 4.68398L4.027 3.87798L6 0.0999756Z"
+                        fill="#FF9548"
+                      />
+                    </svg>
+                  </div>
+                  <h2 class="text-=[10px] font-bold leading-[16px] text-white">
+                    4.9
+                  </h2>
+                  <h2
+                    class="text-=[10px] font-bold leading-[16px] text-[#A7A7C8]"
+                  >
+                    144k+
+                  </h2>
+                </div>
+              </div>
+            </div>
+            <div
+              class="p-[18px] lg:py-[10px] lg:px-[18px] lg:w-full flex flex-wrap flex-col lg:flex-row lg:items-center lg:justify-between gap-[13px] lg:gap-[20px] rounded-lg border-2 border-[#FCAB00] bg-[#FCAB001A]"
+            >
+              <div class="flex pr-0 flex-col items-start gap-[-1px]">
+                <h1
+                  class="text-[#FFFFFF] text-[22px] font-black leading-[28px]"
+                >
+                  $7.5555
+                </h1>
+                <p class="text-[#A7A7C8] text-xs font-bold">for 10k gold</p>
+              </div>
+              <div
+                class="flex flex-wrap flex-col lg:flex-row gap-[14px] lg:gap-2"
+              >
+                <div
+                  class="flex pt-[7px] pr-[33.66px] pb-[12px] pl-[16px] items-start rounded-[8px] bg-[#FFFFFF1A]"
+                >
+                  <div class="flex items-center gap-[8px]">
+                    <div class="flex w-[16px] items-start p-[1.333px]">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="15"
+                        viewBox="0 0 14 15"
+                        fill="none"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M7.85301 7.13731C11.0637 7.13731 13.6663 5.72598 13.6663 3.98531C13.6663 2.24465 11.0637 0.833313 7.85301 0.833313C4.64101 0.833313 2.03834 2.24465 2.03834 3.98531C2.03834 5.72598 4.64101 7.13731 7.85167 7.13731H7.85301ZM10.5997 4.09731C10.5923 3.82998 10.443 3.60465 10.153 3.42331C9.90359 3.26274 9.61488 3.17372 9.31834 3.16598C9.04189 3.15521 8.76555 3.18989 8.50034 3.26865C8.24167 3.34398 7.94901 3.45198 7.62101 3.59198C7.36634 3.69998 7.17434 3.77198 7.04767 3.80865C6.91634 3.84265 6.81434 3.83731 6.74167 3.79198C6.58967 3.69665 6.67034 3.55065 6.98367 3.35465C7.30101 3.15598 7.72634 3.00198 8.26101 2.89265L7.74101 2.10798C7.2697 2.19313 6.81449 2.35101 6.39167 2.57598L5.83634 2.22931L5.10767 2.68465L5.67301 3.03865C5.32167 3.33198 5.14501 3.61598 5.14234 3.89065C5.14301 4.16265 5.29567 4.39398 5.59967 4.58465C5.86234 4.74931 6.14101 4.83731 6.43434 4.84798C6.71012 4.85868 6.98588 4.82629 7.25167 4.75198C7.50367 4.67665 7.79834 4.56998 8.13634 4.43198C8.39834 4.32398 8.59501 4.25331 8.72567 4.21865C8.86034 4.18198 8.96567 4.18798 9.04167 4.23531C9.10767 4.27665 9.12167 4.33065 9.08368 4.39731C9.04234 4.46198 8.93701 4.54731 8.76834 4.65331C8.57234 4.77598 8.33768 4.88598 8.06567 4.98265C7.79779 5.07546 7.52261 5.14571 7.24301 5.19265L7.74234 5.99665C8.02433 5.95257 8.30139 5.88135 8.56967 5.78398C8.86836 5.67854 9.15742 5.54761 9.43367 5.39265L9.98368 5.73665L10.7123 5.28065L10.1363 4.92065C10.453 4.63531 10.6077 4.36065 10.5997 4.09731ZM0.333008 6.89265C0.333008 6.25865 0.678341 5.66798 1.27301 5.17331V5.65665C1.27301 7.64198 4.23434 9.25198 7.88767 9.25198C8.83701 9.25198 9.73967 9.14331 10.5557 8.94731C9.48901 9.61931 7.90967 10.0446 6.14701 10.0446C2.93567 10.044 0.333008 8.63331 0.333008 6.89265ZM6.14634 11.2526C2.97101 11.2526 0.389675 9.87198 0.334341 8.15731C0.677675 8.69465 1.22434 9.14531 1.86501 9.49265C2.98034 10.0973 4.49501 10.4593 6.14701 10.4593C7.84834 10.4593 9.40701 10.0753 10.5337 9.43465V10.1693C9.46701 10.8326 7.89701 11.2526 6.14634 11.2526ZM2.82234 12.198V12.8673C3.87901 13.6546 5.59234 14.1666 7.52634 14.1666C10.6583 14.1666 13.2117 12.824 13.335 11.1426C12.9857 11.6653 12.447 12.1026 11.8237 12.4406C10.7023 13.0486 9.18234 13.4113 7.52634 13.4113C5.66834 13.4113 3.97167 12.954 2.82167 12.198H2.82234ZM7.52701 12.9593C5.59501 12.9593 3.88301 12.4486 2.82567 11.662C3.79634 11.9713 4.92701 12.1486 6.13434 12.1486C9.74901 12.1486 12.679 10.5593 12.679 8.59998V8.34598C13.1017 8.78265 13.3403 9.27931 13.3403 9.80731C13.3403 11.548 10.7377 12.9593 7.52701 12.9593ZM7.85234 7.55265C9.50434 7.55265 11.019 7.19131 12.135 6.58598C12.775 6.23931 13.3217 5.78798 13.6657 5.25065C13.6097 6.96531 11.0283 8.34598 7.85234 8.34598C4.67634 8.34598 2.09567 6.96531 2.03967 5.25065C2.38301 5.78798 2.93034 6.23931 3.57034 6.58598C4.68634 7.19131 6.20034 7.55265 7.85234 7.55265Z"
+                          fill="white"
+                        />
+                      </svg>
+                    </div>
+                    <div class="flex flex-col items-start gap-[-1]">
+                      <h1
+                        class="flex items-start text-[17px] font-bold leading-[24px] text-[#fff]"
+                      >
+                        15m+
+                      </h1>
+                      <p
+                        class="flex items-start text-[12px] font-bold leading-[16px] text-[#A7A7C8]"
+                      >
+                        gold in stock
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="flex pt-[7px] pr-[33.66px] pb-[12px] pl-[16px] items-start rounded-[8px] bg-[#FFFFFF1A]"
+                >
+                  <div class="flex items-center gap-[8px]">
+                    <div class="flex w-[16px] items-start p-[1.333px]">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="12"
+                        viewBox="0 0 14 12"
+                        fill="none"
+                      >
+                        <path
+                          d="M12.9997 0.166642H0.333008V1.49998H1.86634L4.05301 7.49998C4.19055 7.88901 4.44506 8.22598 4.78163 8.46468C5.11821 8.70339 5.52038 8.83215 5.93301 8.83331H11.6663V7.49998H5.93301C5.796 7.49992 5.66233 7.45765 5.5502 7.37892C5.43807 7.30019 5.35292 7.18882 5.30634 7.05998L4.99967 6.16664H11.1863C11.4757 6.16622 11.7571 6.07169 11.988 5.89731C12.2189 5.72293 12.3868 5.47817 12.4663 5.19998L13.6663 1.01331C13.6934 0.925765 13.7022 0.833573 13.6921 0.742492C13.6819 0.651411 13.6531 0.563395 13.6075 0.483943C13.5618 0.404491 13.5002 0.335307 13.4266 0.280713C13.353 0.226119 13.269 0.187287 13.1797 0.166642C13.1201 0.156936 13.0593 0.156936 12.9997 0.166642ZM11.1663 4.83331H4.49967L3.28634 1.49998H12.113L11.1663 4.83331ZM5.99967 11.5C6.26489 11.5 6.51925 11.3946 6.70678 11.2071C6.89432 11.0195 6.99967 10.7652 6.99967 10.5C6.99967 10.2348 6.89432 9.98041 6.70678 9.79287C6.51925 9.60533 6.26489 9.49998 5.99967 9.49998C5.73446 9.49998 5.4801 9.60533 5.29257 9.79287C5.10503 9.98041 4.99967 10.2348 4.99967 10.5C4.99967 10.7652 5.10503 11.0195 5.29257 11.2071C5.4801 11.3946 5.73446 11.5 5.99967 11.5ZM9.99967 11.5C10.2649 11.5 10.5192 11.3946 10.7068 11.2071C10.8943 11.0195 10.9997 10.7652 10.9997 10.5C10.9997 10.2348 10.8943 9.98041 10.7068 9.79287C10.5192 9.60533 10.2649 9.49998 9.99967 9.49998C9.73446 9.49998 9.4801 9.60533 9.29257 9.79287C9.10503 9.98041 8.99967 10.2348 8.99967 10.5C8.99967 10.7652 9.10503 11.0195 9.29257 11.2071C9.4801 11.3946 9.73446 11.5 9.99967 11.5Z"
+                          fill="white"
+                        />
+                      </svg>
+                    </div>
+                    <div class="flex flex-col items-start gap-[-1]">
+                      <h1
+                        class="flex items-start text-[17px] font-bold leading-[24px] text-[#fff]"
+                      >
+                        300k
+                      </h1>
+                      <p
+                        class="flex items-start text-[12px] font-bold leading-[16px] text-[#A7A7C8]"
+                      >
+                        min. purchase
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex lg:items-center">
+                  <h2
+                    class="text-[#A7A7C8] text-[14px] leading-[22px] font-bold"
+                  >
+                    Kazzak - EU Horde
+                  </h2>
+                </div>
+              </div>
+              <div class="flex flex-col items-start">
+                <div class="flex items-center gap-1">
+                  <div class="w-2 h-2 rounded bg-[#96D473]"></div>
+                  <h2 class="text-=[14px] font-bold leading-[22px] text-white">
+                    OvergearSales
+                  </h2>
+                  <img src="./assets/Fourth/batc.png" alt="" />
+                </div>
+                <div class="flex items-center gap-1">
+                  <div class="">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="12"
+                      height="13"
+                      viewBox="0 0 12 13"
+                      fill="none"
+                    >
+                      <path
+                        d="M6 0.0999756L7.973 3.87798L12 4.68398L9.192 7.82398L9.708 12.1L6 10.262L2.292 12.1L2.808 7.82398L0 4.68398L4.027 3.87798L6 0.0999756Z"
+                        fill="#FF9548"
+                      />
+                    </svg>
+                  </div>
+                  <h2 class="text-=[10px] font-bold leading-[16px] text-white">
+                    4.9
+                  </h2>
+                  <h2
+                    class="text-=[10px] font-bold leading-[16px] text-[#A7A7C8]"
+                  >
+                    144k+
+                  </h2>
+                </div>
+              </div>
+            </div>
+            <div
+              class="p-[18px] lg:py-[10px] lg:px-[18px] lg:w-full flex flex-wrap flex-col lg:flex-row lg:items-center lg:justify-between gap-[13px] lg:gap-[20px] rounded-lg border-2 border-[#FCAB00] bg-[#FCAB001A]"
+            >
+              <div class="flex pr-0 flex-col items-start gap-[-1px]">
+                <h1
+                  class="text-[#FFFFFF] text-[22px] font-black leading-[28px]"
+                >
+                  $8.9999
+                </h1>
+                <p class="text-[#A7A7C8] text-xs font-bold">for 10k gold</p>
+              </div>
+              <div
+                class="flex flex-wrap flex-col lg:flex-row gap-[14px] lg:gap-2"
+              >
+                <div
+                  class="flex pt-[7px] pr-[33.66px] pb-[12px] pl-[16px] items-start rounded-[8px] bg-[#FFFFFF1A]"
+                >
+                  <div class="flex items-center gap-[8px]">
+                    <div class="flex w-[16px] items-start p-[1.333px]">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="15"
+                        viewBox="0 0 14 15"
+                        fill="none"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M7.85301 7.13731C11.0637 7.13731 13.6663 5.72598 13.6663 3.98531C13.6663 2.24465 11.0637 0.833313 7.85301 0.833313C4.64101 0.833313 2.03834 2.24465 2.03834 3.98531C2.03834 5.72598 4.64101 7.13731 7.85167 7.13731H7.85301ZM10.5997 4.09731C10.5923 3.82998 10.443 3.60465 10.153 3.42331C9.90359 3.26274 9.61488 3.17372 9.31834 3.16598C9.04189 3.15521 8.76555 3.18989 8.50034 3.26865C8.24167 3.34398 7.94901 3.45198 7.62101 3.59198C7.36634 3.69998 7.17434 3.77198 7.04767 3.80865C6.91634 3.84265 6.81434 3.83731 6.74167 3.79198C6.58967 3.69665 6.67034 3.55065 6.98367 3.35465C7.30101 3.15598 7.72634 3.00198 8.26101 2.89265L7.74101 2.10798C7.2697 2.19313 6.81449 2.35101 6.39167 2.57598L5.83634 2.22931L5.10767 2.68465L5.67301 3.03865C5.32167 3.33198 5.14501 3.61598 5.14234 3.89065C5.14301 4.16265 5.29567 4.39398 5.59967 4.58465C5.86234 4.74931 6.14101 4.83731 6.43434 4.84798C6.71012 4.85868 6.98588 4.82629 7.25167 4.75198C7.50367 4.67665 7.79834 4.56998 8.13634 4.43198C8.39834 4.32398 8.59501 4.25331 8.72567 4.21865C8.86034 4.18198 8.96567 4.18798 9.04167 4.23531C9.10767 4.27665 9.12167 4.33065 9.08368 4.39731C9.04234 4.46198 8.93701 4.54731 8.76834 4.65331C8.57234 4.77598 8.33768 4.88598 8.06567 4.98265C7.79779 5.07546 7.52261 5.14571 7.24301 5.19265L7.74234 5.99665C8.02433 5.95257 8.30139 5.88135 8.56967 5.78398C8.86836 5.67854 9.15742 5.54761 9.43367 5.39265L9.98368 5.73665L10.7123 5.28065L10.1363 4.92065C10.453 4.63531 10.6077 4.36065 10.5997 4.09731ZM0.333008 6.89265C0.333008 6.25865 0.678341 5.66798 1.27301 5.17331V5.65665C1.27301 7.64198 4.23434 9.25198 7.88767 9.25198C8.83701 9.25198 9.73967 9.14331 10.5557 8.94731C9.48901 9.61931 7.90967 10.0446 6.14701 10.0446C2.93567 10.044 0.333008 8.63331 0.333008 6.89265ZM6.14634 11.2526C2.97101 11.2526 0.389675 9.87198 0.334341 8.15731C0.677675 8.69465 1.22434 9.14531 1.86501 9.49265C2.98034 10.0973 4.49501 10.4593 6.14701 10.4593C7.84834 10.4593 9.40701 10.0753 10.5337 9.43465V10.1693C9.46701 10.8326 7.89701 11.2526 6.14634 11.2526ZM2.82234 12.198V12.8673C3.87901 13.6546 5.59234 14.1666 7.52634 14.1666C10.6583 14.1666 13.2117 12.824 13.335 11.1426C12.9857 11.6653 12.447 12.1026 11.8237 12.4406C10.7023 13.0486 9.18234 13.4113 7.52634 13.4113C5.66834 13.4113 3.97167 12.954 2.82167 12.198H2.82234ZM7.52701 12.9593C5.59501 12.9593 3.88301 12.4486 2.82567 11.662C3.79634 11.9713 4.92701 12.1486 6.13434 12.1486C9.74901 12.1486 12.679 10.5593 12.679 8.59998V8.34598C13.1017 8.78265 13.3403 9.27931 13.3403 9.80731C13.3403 11.548 10.7377 12.9593 7.52701 12.9593ZM7.85234 7.55265C9.50434 7.55265 11.019 7.19131 12.135 6.58598C12.775 6.23931 13.3217 5.78798 13.6657 5.25065C13.6097 6.96531 11.0283 8.34598 7.85234 8.34598C4.67634 8.34598 2.09567 6.96531 2.03967 5.25065C2.38301 5.78798 2.93034 6.23931 3.57034 6.58598C4.68634 7.19131 6.20034 7.55265 7.85234 7.55265Z"
+                          fill="white"
+                        />
+                      </svg>
+                    </div>
+                    <div class="flex flex-col items-start gap-[-1]">
+                      <h1
+                        class="flex items-start text-[17px] font-bold leading-[24px] text-[#fff]"
+                      >
+                        15m+
+                      </h1>
+                      <p
+                        class="flex items-start text-[12px] font-bold leading-[16px] text-[#A7A7C8]"
+                      >
+                        gold in stock
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="flex pt-[7px] pr-[33.66px] pb-[12px] pl-[16px] items-start rounded-[8px] bg-[#FFFFFF1A]"
+                >
+                  <div class="flex items-center gap-[8px]">
+                    <div class="flex w-[16px] items-start p-[1.333px]">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="12"
+                        viewBox="0 0 14 12"
+                        fill="none"
+                      >
+                        <path
+                          d="M12.9997 0.166642H0.333008V1.49998H1.86634L4.05301 7.49998C4.19055 7.88901 4.44506 8.22598 4.78163 8.46468C5.11821 8.70339 5.52038 8.83215 5.93301 8.83331H11.6663V7.49998H5.93301C5.796 7.49992 5.66233 7.45765 5.5502 7.37892C5.43807 7.30019 5.35292 7.18882 5.30634 7.05998L4.99967 6.16664H11.1863C11.4757 6.16622 11.7571 6.07169 11.988 5.89731C12.2189 5.72293 12.3868 5.47817 12.4663 5.19998L13.6663 1.01331C13.6934 0.925765 13.7022 0.833573 13.6921 0.742492C13.6819 0.651411 13.6531 0.563395 13.6075 0.483943C13.5618 0.404491 13.5002 0.335307 13.4266 0.280713C13.353 0.226119 13.269 0.187287 13.1797 0.166642C13.1201 0.156936 13.0593 0.156936 12.9997 0.166642ZM11.1663 4.83331H4.49967L3.28634 1.49998H12.113L11.1663 4.83331ZM5.99967 11.5C6.26489 11.5 6.51925 11.3946 6.70678 11.2071C6.89432 11.0195 6.99967 10.7652 6.99967 10.5C6.99967 10.2348 6.89432 9.98041 6.70678 9.79287C6.51925 9.60533 6.26489 9.49998 5.99967 9.49998C5.73446 9.49998 5.4801 9.60533 5.29257 9.79287C5.10503 9.98041 4.99967 10.2348 4.99967 10.5C4.99967 10.7652 5.10503 11.0195 5.29257 11.2071C5.4801 11.3946 5.73446 11.5 5.99967 11.5ZM9.99967 11.5C10.2649 11.5 10.5192 11.3946 10.7068 11.2071C10.8943 11.0195 10.9997 10.7652 10.9997 10.5C10.9997 10.2348 10.8943 9.98041 10.7068 9.79287C10.5192 9.60533 10.2649 9.49998 9.99967 9.49998C9.73446 9.49998 9.4801 9.60533 9.29257 9.79287C9.10503 9.98041 8.99967 10.2348 8.99967 10.5C8.99967 10.7652 9.10503 11.0195 9.29257 11.2071C9.4801 11.3946 9.73446 11.5 9.99967 11.5Z"
+                          fill="white"
+                        />
+                      </svg>
+                    </div>
+                    <div class="flex flex-col items-start gap-[-1]">
+                      <h1
+                        class="flex items-start text-[17px] font-bold leading-[24px] text-[#fff]"
+                      >
+                        300k
+                      </h1>
+                      <p
+                        class="flex items-start text-[12px] font-bold leading-[16px] text-[#A7A7C8]"
+                      >
+                        min. purchase
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex lg:items-center">
+                  <h2
+                    class="text-[#A7A7C8] text-[14px] leading-[22px] font-bold"
+                  >
+                    Kazzak - EU Horde
+                  </h2>
+                </div>
+              </div>
+              <div class="flex flex-col items-start">
+                <div class="flex items-center gap-1">
+                  <div class="w-2 h-2 rounded bg-[#96D473]"></div>
+                  <h2 class="text-=[14px] font-bold leading-[22px] text-white">
+                    OvergearSales
+                  </h2>
+                  <img src="./assets/Fourth/batc.png" alt="" />
+                </div>
+                <div class="flex items-center gap-1">
+                  <div class="">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="12"
+                      height="13"
+                      viewBox="0 0 12 13"
+                      fill="none"
+                    >
+                      <path
+                        d="M6 0.0999756L7.973 3.87798L12 4.68398L9.192 7.82398L9.708 12.1L6 10.262L2.292 12.1L2.808 7.82398L0 4.68398L4.027 3.87798L6 0.0999756Z"
+                        fill="#FF9548"
+                      />
+                    </svg>
+                  </div>
+                  <h2 class="text-=[10px] font-bold leading-[16px] text-white">
+                    4.9
+                  </h2>
+                  <h2
+                    class="text-=[10px] font-bold leading-[16px] text-[#A7A7C8]"
+                  >
+                    144k+
+                  </h2>
+                </div>
+              </div>
+            </div>
+            <div
+              class="p-[18px] lg:py-[10px] lg:px-[18px] lg:w-full flex flex-wrap flex-col lg:flex-row lg:items-center lg:justify-between gap-[13px] lg:gap-[20px] rounded-lg border-2 border-[#FCAB00] bg-[#FCAB001A]"
+            >
+              <div class="flex pr-0 flex-col items-start gap-[-1px]">
+                <h1
+                  class="text-[#FFFFFF] text-[22px] font-black leading-[28px]"
+                >
+                  $2.3333
+                </h1>
+                <p class="text-[#A7A7C8] text-xs font-bold">for 10k gold</p>
+              </div>
+              <div
+                class="flex flex-wrap flex-col lg:flex-row gap-[14px] lg:gap-2"
+              >
+                <div
+                  class="flex pt-[7px] pr-[33.66px] pb-[12px] pl-[16px] items-start rounded-[8px] bg-[#FFFFFF1A]"
+                >
+                  <div class="flex items-center gap-[8px]">
+                    <div class="flex w-[16px] items-start p-[1.333px]">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="15"
+                        viewBox="0 0 14 15"
+                        fill="none"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M7.85301 7.13731C11.0637 7.13731 13.6663 5.72598 13.6663 3.98531C13.6663 2.24465 11.0637 0.833313 7.85301 0.833313C4.64101 0.833313 2.03834 2.24465 2.03834 3.98531C2.03834 5.72598 4.64101 7.13731 7.85167 7.13731H7.85301ZM10.5997 4.09731C10.5923 3.82998 10.443 3.60465 10.153 3.42331C9.90359 3.26274 9.61488 3.17372 9.31834 3.16598C9.04189 3.15521 8.76555 3.18989 8.50034 3.26865C8.24167 3.34398 7.94901 3.45198 7.62101 3.59198C7.36634 3.69998 7.17434 3.77198 7.04767 3.80865C6.91634 3.84265 6.81434 3.83731 6.74167 3.79198C6.58967 3.69665 6.67034 3.55065 6.98367 3.35465C7.30101 3.15598 7.72634 3.00198 8.26101 2.89265L7.74101 2.10798C7.2697 2.19313 6.81449 2.35101 6.39167 2.57598L5.83634 2.22931L5.10767 2.68465L5.67301 3.03865C5.32167 3.33198 5.14501 3.61598 5.14234 3.89065C5.14301 4.16265 5.29567 4.39398 5.59967 4.58465C5.86234 4.74931 6.14101 4.83731 6.43434 4.84798C6.71012 4.85868 6.98588 4.82629 7.25167 4.75198C7.50367 4.67665 7.79834 4.56998 8.13634 4.43198C8.39834 4.32398 8.59501 4.25331 8.72567 4.21865C8.86034 4.18198 8.96567 4.18798 9.04167 4.23531C9.10767 4.27665 9.12167 4.33065 9.08368 4.39731C9.04234 4.46198 8.93701 4.54731 8.76834 4.65331C8.57234 4.77598 8.33768 4.88598 8.06567 4.98265C7.79779 5.07546 7.52261 5.14571 7.24301 5.19265L7.74234 5.99665C8.02433 5.95257 8.30139 5.88135 8.56967 5.78398C8.86836 5.67854 9.15742 5.54761 9.43367 5.39265L9.98368 5.73665L10.7123 5.28065L10.1363 4.92065C10.453 4.63531 10.6077 4.36065 10.5997 4.09731ZM0.333008 6.89265C0.333008 6.25865 0.678341 5.66798 1.27301 5.17331V5.65665C1.27301 7.64198 4.23434 9.25198 7.88767 9.25198C8.83701 9.25198 9.73967 9.14331 10.5557 8.94731C9.48901 9.61931 7.90967 10.0446 6.14701 10.0446C2.93567 10.044 0.333008 8.63331 0.333008 6.89265ZM6.14634 11.2526C2.97101 11.2526 0.389675 9.87198 0.334341 8.15731C0.677675 8.69465 1.22434 9.14531 1.86501 9.49265C2.98034 10.0973 4.49501 10.4593 6.14701 10.4593C7.84834 10.4593 9.40701 10.0753 10.5337 9.43465V10.1693C9.46701 10.8326 7.89701 11.2526 6.14634 11.2526ZM2.82234 12.198V12.8673C3.87901 13.6546 5.59234 14.1666 7.52634 14.1666C10.6583 14.1666 13.2117 12.824 13.335 11.1426C12.9857 11.6653 12.447 12.1026 11.8237 12.4406C10.7023 13.0486 9.18234 13.4113 7.52634 13.4113C5.66834 13.4113 3.97167 12.954 2.82167 12.198H2.82234ZM7.52701 12.9593C5.59501 12.9593 3.88301 12.4486 2.82567 11.662C3.79634 11.9713 4.92701 12.1486 6.13434 12.1486C9.74901 12.1486 12.679 10.5593 12.679 8.59998V8.34598C13.1017 8.78265 13.3403 9.27931 13.3403 9.80731C13.3403 11.548 10.7377 12.9593 7.52701 12.9593ZM7.85234 7.55265C9.50434 7.55265 11.019 7.19131 12.135 6.58598C12.775 6.23931 13.3217 5.78798 13.6657 5.25065C13.6097 6.96531 11.0283 8.34598 7.85234 8.34598C4.67634 8.34598 2.09567 6.96531 2.03967 5.25065C2.38301 5.78798 2.93034 6.23931 3.57034 6.58598C4.68634 7.19131 6.20034 7.55265 7.85234 7.55265Z"
+                          fill="white"
+                        />
+                      </svg>
+                    </div>
+                    <div class="flex flex-col items-start gap-[-1]">
+                      <h1
+                        class="flex items-start text-[17px] font-bold leading-[24px] text-[#fff]"
+                      >
+                        15m+
+                      </h1>
+                      <p
+                        class="flex items-start text-[12px] font-bold leading-[16px] text-[#A7A7C8]"
+                      >
+                        gold in stock
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="flex pt-[7px] pr-[33.66px] pb-[12px] pl-[16px] items-start rounded-[8px] bg-[#FFFFFF1A]"
+                >
+                  <div class="flex items-center gap-[8px]">
+                    <div class="flex w-[16px] items-start p-[1.333px]">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="12"
+                        viewBox="0 0 14 12"
+                        fill="none"
+                      >
+                        <path
+                          d="M12.9997 0.166642H0.333008V1.49998H1.86634L4.05301 7.49998C4.19055 7.88901 4.44506 8.22598 4.78163 8.46468C5.11821 8.70339 5.52038 8.83215 5.93301 8.83331H11.6663V7.49998H5.93301C5.796 7.49992 5.66233 7.45765 5.5502 7.37892C5.43807 7.30019 5.35292 7.18882 5.30634 7.05998L4.99967 6.16664H11.1863C11.4757 6.16622 11.7571 6.07169 11.988 5.89731C12.2189 5.72293 12.3868 5.47817 12.4663 5.19998L13.6663 1.01331C13.6934 0.925765 13.7022 0.833573 13.6921 0.742492C13.6819 0.651411 13.6531 0.563395 13.6075 0.483943C13.5618 0.404491 13.5002 0.335307 13.4266 0.280713C13.353 0.226119 13.269 0.187287 13.1797 0.166642C13.1201 0.156936 13.0593 0.156936 12.9997 0.166642ZM11.1663 4.83331H4.49967L3.28634 1.49998H12.113L11.1663 4.83331ZM5.99967 11.5C6.26489 11.5 6.51925 11.3946 6.70678 11.2071C6.89432 11.0195 6.99967 10.7652 6.99967 10.5C6.99967 10.2348 6.89432 9.98041 6.70678 9.79287C6.51925 9.60533 6.26489 9.49998 5.99967 9.49998C5.73446 9.49998 5.4801 9.60533 5.29257 9.79287C5.10503 9.98041 4.99967 10.2348 4.99967 10.5C4.99967 10.7652 5.10503 11.0195 5.29257 11.2071C5.4801 11.3946 5.73446 11.5 5.99967 11.5ZM9.99967 11.5C10.2649 11.5 10.5192 11.3946 10.7068 11.2071C10.8943 11.0195 10.9997 10.7652 10.9997 10.5C10.9997 10.2348 10.8943 9.98041 10.7068 9.79287C10.5192 9.60533 10.2649 9.49998 9.99967 9.49998C9.73446 9.49998 9.4801 9.60533 9.29257 9.79287C9.10503 9.98041 8.99967 10.2348 8.99967 10.5C8.99967 10.7652 9.10503 11.0195 9.29257 11.2071C9.4801 11.3946 9.73446 11.5 9.99967 11.5Z"
+                          fill="white"
+                        />
+                      </svg>
+                    </div>
+                    <div class="flex flex-col items-start gap-[-1]">
+                      <h1
+                        class="flex items-start text-[17px] font-bold leading-[24px] text-[#fff]"
+                      >
+                        300k
+                      </h1>
+                      <p
+                        class="flex items-start text-[12px] font-bold leading-[16px] text-[#A7A7C8]"
+                      >
+                        min. purchase
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex lg:items-center">
+                  <h2
+                    class="text-[#A7A7C8] text-[14px] leading-[22px] font-bold"
+                  >
+                    Kazzak - EU Horde
+                  </h2>
+                </div>
+              </div>
+              <div class="flex flex-col items-start">
+                <div class="flex items-center gap-1">
+                  <div class="w-2 h-2 rounded bg-[#96D473]"></div>
+                  <h2 class="text-=[14px] font-bold leading-[22px] text-white">
+                    OvergearSales
+                  </h2>
+                  <img src="./assets/Fourth/batc.png" alt="" />
+                </div>
+                <div class="flex items-center gap-1">
+                  <div class="">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="12"
+                      height="13"
+                      viewBox="0 0 12 13"
+                      fill="none"
+                    >
+                      <path
+                        d="M6 0.0999756L7.973 3.87798L12 4.68398L9.192 7.82398L9.708 12.1L6 10.262L2.292 12.1L2.808 7.82398L0 4.68398L4.027 3.87798L6 0.0999756Z"
+                        fill="#FF9548"
+                      />
+                    </svg>
+                  </div>
+                  <h2 class="text-=[10px] font-bold leading-[16px] text-white">
+                    4.9
+                  </h2>
+                  <h2
+                    class="text-=[10px] font-bold leading-[16px] text-[#A7A7C8]"
+                  >
+                    144k+
+                  </h2>
+                </div>
+              </div>
+            </div>
+            <div
+              class="p-[18px] lg:py-[10px] lg:px-[18px] lg:w-full flex flex-wrap flex-col lg:flex-row lg:items-center lg:justify-between gap-[13px] lg:gap-[20px] rounded-lg border-2 border-[#FCAB00] bg-[#FCAB001A]"
+            >
+              <div class="flex pr-0 flex-col items-start gap-[-1px]">
+                <h1
+                  class="text-[#FFFFFF] text-[22px] font-black leading-[28px]"
+                >
+                  $0.4035
+                </h1>
+                <p class="text-[#A7A7C8] text-xs font-bold">for 10k gold</p>
+              </div>
+              <div
+                class="flex flex-wrap flex-col lg:flex-row gap-[14px] lg:gap-2"
+              >
+                <div
+                  class="flex pt-[7px] pr-[33.66px] pb-[12px] pl-[16px] items-start rounded-[8px] bg-[#FFFFFF1A]"
+                >
+                  <div class="flex items-center gap-[8px]">
+                    <div class="flex w-[16px] items-start p-[1.333px]">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="15"
+                        viewBox="0 0 14 15"
+                        fill="none"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M7.85301 7.13731C11.0637 7.13731 13.6663 5.72598 13.6663 3.98531C13.6663 2.24465 11.0637 0.833313 7.85301 0.833313C4.64101 0.833313 2.03834 2.24465 2.03834 3.98531C2.03834 5.72598 4.64101 7.13731 7.85167 7.13731H7.85301ZM10.5997 4.09731C10.5923 3.82998 10.443 3.60465 10.153 3.42331C9.90359 3.26274 9.61488 3.17372 9.31834 3.16598C9.04189 3.15521 8.76555 3.18989 8.50034 3.26865C8.24167 3.34398 7.94901 3.45198 7.62101 3.59198C7.36634 3.69998 7.17434 3.77198 7.04767 3.80865C6.91634 3.84265 6.81434 3.83731 6.74167 3.79198C6.58967 3.69665 6.67034 3.55065 6.98367 3.35465C7.30101 3.15598 7.72634 3.00198 8.26101 2.89265L7.74101 2.10798C7.2697 2.19313 6.81449 2.35101 6.39167 2.57598L5.83634 2.22931L5.10767 2.68465L5.67301 3.03865C5.32167 3.33198 5.14501 3.61598 5.14234 3.89065C5.14301 4.16265 5.29567 4.39398 5.59967 4.58465C5.86234 4.74931 6.14101 4.83731 6.43434 4.84798C6.71012 4.85868 6.98588 4.82629 7.25167 4.75198C7.50367 4.67665 7.79834 4.56998 8.13634 4.43198C8.39834 4.32398 8.59501 4.25331 8.72567 4.21865C8.86034 4.18198 8.96567 4.18798 9.04167 4.23531C9.10767 4.27665 9.12167 4.33065 9.08368 4.39731C9.04234 4.46198 8.93701 4.54731 8.76834 4.65331C8.57234 4.77598 8.33768 4.88598 8.06567 4.98265C7.79779 5.07546 7.52261 5.14571 7.24301 5.19265L7.74234 5.99665C8.02433 5.95257 8.30139 5.88135 8.56967 5.78398C8.86836 5.67854 9.15742 5.54761 9.43367 5.39265L9.98368 5.73665L10.7123 5.28065L10.1363 4.92065C10.453 4.63531 10.6077 4.36065 10.5997 4.09731ZM0.333008 6.89265C0.333008 6.25865 0.678341 5.66798 1.27301 5.17331V5.65665C1.27301 7.64198 4.23434 9.25198 7.88767 9.25198C8.83701 9.25198 9.73967 9.14331 10.5557 8.94731C9.48901 9.61931 7.90967 10.0446 6.14701 10.0446C2.93567 10.044 0.333008 8.63331 0.333008 6.89265ZM6.14634 11.2526C2.97101 11.2526 0.389675 9.87198 0.334341 8.15731C0.677675 8.69465 1.22434 9.14531 1.86501 9.49265C2.98034 10.0973 4.49501 10.4593 6.14701 10.4593C7.84834 10.4593 9.40701 10.0753 10.5337 9.43465V10.1693C9.46701 10.8326 7.89701 11.2526 6.14634 11.2526ZM2.82234 12.198V12.8673C3.87901 13.6546 5.59234 14.1666 7.52634 14.1666C10.6583 14.1666 13.2117 12.824 13.335 11.1426C12.9857 11.6653 12.447 12.1026 11.8237 12.4406C10.7023 13.0486 9.18234 13.4113 7.52634 13.4113C5.66834 13.4113 3.97167 12.954 2.82167 12.198H2.82234ZM7.52701 12.9593C5.59501 12.9593 3.88301 12.4486 2.82567 11.662C3.79634 11.9713 4.92701 12.1486 6.13434 12.1486C9.74901 12.1486 12.679 10.5593 12.679 8.59998V8.34598C13.1017 8.78265 13.3403 9.27931 13.3403 9.80731C13.3403 11.548 10.7377 12.9593 7.52701 12.9593ZM7.85234 7.55265C9.50434 7.55265 11.019 7.19131 12.135 6.58598C12.775 6.23931 13.3217 5.78798 13.6657 5.25065C13.6097 6.96531 11.0283 8.34598 7.85234 8.34598C4.67634 8.34598 2.09567 6.96531 2.03967 5.25065C2.38301 5.78798 2.93034 6.23931 3.57034 6.58598C4.68634 7.19131 6.20034 7.55265 7.85234 7.55265Z"
+                          fill="white"
+                        />
+                      </svg>
+                    </div>
+                    <div class="flex flex-col items-start gap-[-1]">
+                      <h1
+                        class="flex items-start text-[17px] font-bold leading-[24px] text-[#fff]"
+                      >
+                        15m+
+                      </h1>
+                      <p
+                        class="flex items-start text-[12px] font-bold leading-[16px] text-[#A7A7C8]"
+                      >
+                        gold in stock
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="flex pt-[7px] pr-[33.66px] pb-[12px] pl-[16px] items-start rounded-[8px] bg-[#FFFFFF1A]"
+                >
+                  <div class="flex items-center gap-[8px]">
+                    <div class="flex w-[16px] items-start p-[1.333px]">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="12"
+                        viewBox="0 0 14 12"
+                        fill="none"
+                      >
+                        <path
+                          d="M12.9997 0.166642H0.333008V1.49998H1.86634L4.05301 7.49998C4.19055 7.88901 4.44506 8.22598 4.78163 8.46468C5.11821 8.70339 5.52038 8.83215 5.93301 8.83331H11.6663V7.49998H5.93301C5.796 7.49992 5.66233 7.45765 5.5502 7.37892C5.43807 7.30019 5.35292 7.18882 5.30634 7.05998L4.99967 6.16664H11.1863C11.4757 6.16622 11.7571 6.07169 11.988 5.89731C12.2189 5.72293 12.3868 5.47817 12.4663 5.19998L13.6663 1.01331C13.6934 0.925765 13.7022 0.833573 13.6921 0.742492C13.6819 0.651411 13.6531 0.563395 13.6075 0.483943C13.5618 0.404491 13.5002 0.335307 13.4266 0.280713C13.353 0.226119 13.269 0.187287 13.1797 0.166642C13.1201 0.156936 13.0593 0.156936 12.9997 0.166642ZM11.1663 4.83331H4.49967L3.28634 1.49998H12.113L11.1663 4.83331ZM5.99967 11.5C6.26489 11.5 6.51925 11.3946 6.70678 11.2071C6.89432 11.0195 6.99967 10.7652 6.99967 10.5C6.99967 10.2348 6.89432 9.98041 6.70678 9.79287C6.51925 9.60533 6.26489 9.49998 5.99967 9.49998C5.73446 9.49998 5.4801 9.60533 5.29257 9.79287C5.10503 9.98041 4.99967 10.2348 4.99967 10.5C4.99967 10.7652 5.10503 11.0195 5.29257 11.2071C5.4801 11.3946 5.73446 11.5 5.99967 11.5ZM9.99967 11.5C10.2649 11.5 10.5192 11.3946 10.7068 11.2071C10.8943 11.0195 10.9997 10.7652 10.9997 10.5C10.9997 10.2348 10.8943 9.98041 10.7068 9.79287C10.5192 9.60533 10.2649 9.49998 9.99967 9.49998C9.73446 9.49998 9.4801 9.60533 9.29257 9.79287C9.10503 9.98041 8.99967 10.2348 8.99967 10.5C8.99967 10.7652 9.10503 11.0195 9.29257 11.2071C9.4801 11.3946 9.73446 11.5 9.99967 11.5Z"
+                          fill="white"
+                        />
+                      </svg>
+                    </div>
+                    <div class="flex flex-col items-start gap-[-1]">
+                      <h1
+                        class="flex items-start text-[17px] font-bold leading-[24px] text-[#fff]"
+                      >
+                        600k
+                      </h1>
+                      <p
+                        class="flex items-start text-[12px] font-bold leading-[16px] text-[#A7A7C8]"
+                      >
+                        min. purchase
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex lg:items-center">
+                  <h2
+                    class="text-[#A7A7C8] text-[14px] leading-[22px] font-bold"
+                  >
+                    Kazzak - EU Horde
+                  </h2>
+                </div>
+              </div>
+              <div class="flex flex-col items-start">
+                <div class="flex items-center gap-1">
+                  <div class="w-2 h-2 rounded bg-[#96D473]"></div>
+                  <h2 class="text-=[14px] font-bold leading-[22px] text-white">
+                    OvergearSales
+                  </h2>
+                  <img src="./assets/Fourth/batc.png" alt="" />
+                </div>
+                <div class="flex items-center gap-1">
+                  <div class="">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="12"
+                      height="13"
+                      viewBox="0 0 12 13"
+                      fill="none"
+                    >
+                      <path
+                        d="M6 0.0999756L7.973 3.87798L12 4.68398L9.192 7.82398L9.708 12.1L6 10.262L2.292 12.1L2.808 7.82398L0 4.68398L4.027 3.87798L6 0.0999756Z"
+                        fill="#FF9548"
+                      />
+                    </svg>
+                  </div>
+                  <h2 class="text-=[10px] font-bold leading-[16px] text-white">
+                    4.9
+                  </h2>
+                  <h2
+                    class="text-=[10px] font-bold leading-[16px] text-[#A7A7C8]"
+                  >
+                    144k+
+                  </h2>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- seller Online Data -->
+          <div
+            id="sellerData"
+            class="hordeHide sellerFalse allanceHide hidden grid md:grid-cols-1 grid-cols-1 gap-[10px] lg:gap-2 mb-[50px] lg:mt-[20px]"
+          >
+            <div
+              class="p-[18px] lg:py-[10px] lg:px-[18px] lg:w-full flex flex-wrap flex-col lg:flex-row lg:items-center lg:justify-between gap-[13px] lg:gap-[20px] rounded-lg border-2 border-[#FCAB00] bg-[#FCAB001A]"
+            >
+              <div class="flex pr-0 flex-col items-start gap-[-1px]">
+                <h1
+                  class="text-[#FFFFFF] text-[22px] font-black leading-[28px]"
+                >
+                  $2.5000
+                </h1>
+                <p class="text-[#A7A7C8] text-xs font-bold">for 9k gold</p>
+              </div>
+              <div
+                class="flex flex-wrap flex-col lg:flex-row gap-[14px] lg:gap-2"
+              >
+                <div
+                  class="flex pt-[7px] pr-[33.66px] pb-[12px] pl-[16px] items-start rounded-[8px] bg-[#FFFFFF1A]"
+                >
+                  <div class="flex items-center gap-[8px]">
+                    <div class="flex w-[16px] items-start p-[1.333px]">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="15"
+                        viewBox="0 0 14 15"
+                        fill="none"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M7.85301 7.13731C11.0637 7.13731 13.6663 5.72598 13.6663 3.98531C13.6663 2.24465 11.0637 0.833313 7.85301 0.833313C4.64101 0.833313 2.03834 2.24465 2.03834 3.98531C2.03834 5.72598 4.64101 7.13731 7.85167 7.13731H7.85301ZM10.5997 4.09731C10.5923 3.82998 10.443 3.60465 10.153 3.42331C9.90359 3.26274 9.61488 3.17372 9.31834 3.16598C9.04189 3.15521 8.76555 3.18989 8.50034 3.26865C8.24167 3.34398 7.94901 3.45198 7.62101 3.59198C7.36634 3.69998 7.17434 3.77198 7.04767 3.80865C6.91634 3.84265 6.81434 3.83731 6.74167 3.79198C6.58967 3.69665 6.67034 3.55065 6.98367 3.35465C7.30101 3.15598 7.72634 3.00198 8.26101 2.89265L7.74101 2.10798C7.2697 2.19313 6.81449 2.35101 6.39167 2.57598L5.83634 2.22931L5.10767 2.68465L5.67301 3.03865C5.32167 3.33198 5.14501 3.61598 5.14234 3.89065C5.14301 4.16265 5.29567 4.39398 5.59967 4.58465C5.86234 4.74931 6.14101 4.83731 6.43434 4.84798C6.71012 4.85868 6.98588 4.82629 7.25167 4.75198C7.50367 4.67665 7.79834 4.56998 8.13634 4.43198C8.39834 4.32398 8.59501 4.25331 8.72567 4.21865C8.86034 4.18198 8.96567 4.18798 9.04167 4.23531C9.10767 4.27665 9.12167 4.33065 9.08368 4.39731C9.04234 4.46198 8.93701 4.54731 8.76834 4.65331C8.57234 4.77598 8.33768 4.88598 8.06567 4.98265C7.79779 5.07546 7.52261 5.14571 7.24301 5.19265L7.74234 5.99665C8.02433 5.95257 8.30139 5.88135 8.56967 5.78398C8.86836 5.67854 9.15742 5.54761 9.43367 5.39265L9.98368 5.73665L10.7123 5.28065L10.1363 4.92065C10.453 4.63531 10.6077 4.36065 10.5997 4.09731ZM0.333008 6.89265C0.333008 6.25865 0.678341 5.66798 1.27301 5.17331V5.65665C1.27301 7.64198 4.23434 9.25198 7.88767 9.25198C8.83701 9.25198 9.73967 9.14331 10.5557 8.94731C9.48901 9.61931 7.90967 10.0446 6.14701 10.0446C2.93567 10.044 0.333008 8.63331 0.333008 6.89265ZM6.14634 11.2526C2.97101 11.2526 0.389675 9.87198 0.334341 8.15731C0.677675 8.69465 1.22434 9.14531 1.86501 9.49265C2.98034 10.0973 4.49501 10.4593 6.14701 10.4593C7.84834 10.4593 9.40701 10.0753 10.5337 9.43465V10.1693C9.46701 10.8326 7.89701 11.2526 6.14634 11.2526ZM2.82234 12.198V12.8673C3.87901 13.6546 5.59234 14.1666 7.52634 14.1666C10.6583 14.1666 13.2117 12.824 13.335 11.1426C12.9857 11.6653 12.447 12.1026 11.8237 12.4406C10.7023 13.0486 9.18234 13.4113 7.52634 13.4113C5.66834 13.4113 3.97167 12.954 2.82167 12.198H2.82234ZM7.52701 12.9593C5.59501 12.9593 3.88301 12.4486 2.82567 11.662C3.79634 11.9713 4.92701 12.1486 6.13434 12.1486C9.74901 12.1486 12.679 10.5593 12.679 8.59998V8.34598C13.1017 8.78265 13.3403 9.27931 13.3403 9.80731C13.3403 11.548 10.7377 12.9593 7.52701 12.9593ZM7.85234 7.55265C9.50434 7.55265 11.019 7.19131 12.135 6.58598C12.775 6.23931 13.3217 5.78798 13.6657 5.25065C13.6097 6.96531 11.0283 8.34598 7.85234 8.34598C4.67634 8.34598 2.09567 6.96531 2.03967 5.25065C2.38301 5.78798 2.93034 6.23931 3.57034 6.58598C4.68634 7.19131 6.20034 7.55265 7.85234 7.55265Z"
+                          fill="white"
+                        />
+                      </svg>
+                    </div>
+                    <div class="flex flex-col items-start gap-[-1]">
+                      <h1
+                        class="flex items-start text-[17px] font-bold leading-[24px] text-[#fff]"
+                      >
+                        25m+
+                      </h1>
+                      <p
+                        class="flex items-start text-[12px] font-bold leading-[16px] text-[#A7A7C8]"
+                      >
+                        gold in stock
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="flex pt-[7px] pr-[33.66px] pb-[12px] pl-[16px] items-start rounded-[8px] bg-[#FFFFFF1A]"
+                >
+                  <div class="flex items-center gap-[8px]">
+                    <div class="flex w-[16px] items-start p-[1.333px]">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="12"
+                        viewBox="0 0 14 12"
+                        fill="none"
+                      >
+                        <path
+                          d="M12.9997 0.166642H0.333008V1.49998H1.86634L4.05301 7.49998C4.19055 7.88901 4.44506 8.22598 4.78163 8.46468C5.11821 8.70339 5.52038 8.83215 5.93301 8.83331H11.6663V7.49998H5.93301C5.796 7.49992 5.66233 7.45765 5.5502 7.37892C5.43807 7.30019 5.35292 7.18882 5.30634 7.05998L4.99967 6.16664H11.1863C11.4757 6.16622 11.7571 6.07169 11.988 5.89731C12.2189 5.72293 12.3868 5.47817 12.4663 5.19998L13.6663 1.01331C13.6934 0.925765 13.7022 0.833573 13.6921 0.742492C13.6819 0.651411 13.6531 0.563395 13.6075 0.483943C13.5618 0.404491 13.5002 0.335307 13.4266 0.280713C13.353 0.226119 13.269 0.187287 13.1797 0.166642C13.1201 0.156936 13.0593 0.156936 12.9997 0.166642ZM11.1663 4.83331H4.49967L3.28634 1.49998H12.113L11.1663 4.83331ZM5.99967 11.5C6.26489 11.5 6.51925 11.3946 6.70678 11.2071C6.89432 11.0195 6.99967 10.7652 6.99967 10.5C6.99967 10.2348 6.89432 9.98041 6.70678 9.79287C6.51925 9.60533 6.26489 9.49998 5.99967 9.49998C5.73446 9.49998 5.4801 9.60533 5.29257 9.79287C5.10503 9.98041 4.99967 10.2348 4.99967 10.5C4.99967 10.7652 5.10503 11.0195 5.29257 11.2071C5.4801 11.3946 5.73446 11.5 5.99967 11.5ZM9.99967 11.5C10.2649 11.5 10.5192 11.3946 10.7068 11.2071C10.8943 11.0195 10.9997 10.7652 10.9997 10.5C10.9997 10.2348 10.8943 9.98041 10.7068 9.79287C10.5192 9.60533 10.2649 9.49998 9.99967 9.49998C9.73446 9.49998 9.4801 9.60533 9.29257 9.79287C9.10503 9.98041 8.99967 10.2348 8.99967 10.5C8.99967 10.7652 9.10503 11.0195 9.29257 11.2071C9.4801 11.3946 9.73446 11.5 9.99967 11.5Z"
+                          fill="white"
+                        />
+                      </svg>
+                    </div>
+                    <div class="flex flex-col items-start gap-[-1]">
+                      <h1
+                        class="flex items-start text-[17px] font-bold leading-[24px] text-[#fff]"
+                      >
+                        300k
+                      </h1>
+                      <p
+                        class="flex items-start text-[12px] font-bold leading-[16px] text-[#A7A7C8]"
+                      >
+                        min. purchase
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex lg:items-center">
+                  <h2
+                    class="text-[#A7A7C8] text-[14px] leading-[22px] font-bold"
+                  >
+                    Kazzak - EU Horde
+                  </h2>
+                </div>
+              </div>
+              <div class="flex flex-col items-start">
+                <div class="flex items-center gap-1">
+                  <div class="w-2 h-2 rounded bg-[#96D473]"></div>
+                  <h2 class="text-=[14px] font-bold leading-[22px] text-white">
+                    OvergearSales
+                  </h2>
+                  <img src="./assets/Fourth/batc.png" alt="" />
+                </div>
+                <div class="flex items-center gap-1">
+                  <div class="">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="12"
+                      height="13"
+                      viewBox="0 0 12 13"
+                      fill="none"
+                    >
+                      <path
+                        d="M6 0.0999756L7.973 3.87798L12 4.68398L9.192 7.82398L9.708 12.1L6 10.262L2.292 12.1L2.808 7.82398L0 4.68398L4.027 3.87798L6 0.0999756Z"
+                        fill="#FF9548"
+                      />
+                    </svg>
+                  </div>
+                  <h2 class="text-=[10px] font-bold leading-[16px] text-white">
+                    4.9
+                  </h2>
+                  <h2
+                    class="text-=[10px] font-bold leading-[16px] text-[#A7A7C8]"
+                  >
+                    144k+
+                  </h2>
+                </div>
+              </div>
+            </div>
+            <div
+              class="p-[18px] lg:py-[10px] lg:px-[18px] lg:w-full flex flex-wrap flex-col lg:flex-row lg:items-center lg:justify-between gap-[13px] lg:gap-[20px] rounded-lg border-2 border-[#FCAB00] bg-[#FCAB001A]"
+            >
+              <div class="flex pr-0 flex-col items-start gap-[-1px]">
+                <h1
+                  class="text-[#FFFFFF] text-[22px] font-black leading-[28px]"
+                >
+                  $8.4035
+                </h1>
+                <p class="text-[#A7A7C8] text-xs font-bold">for 10k gold</p>
+              </div>
+              <div
+                class="flex flex-wrap flex-col lg:flex-row gap-[14px] lg:gap-2"
+              >
+                <div
+                  class="flex pt-[7px] pr-[33.66px] pb-[12px] pl-[16px] items-start rounded-[8px] bg-[#FFFFFF1A]"
+                >
+                  <div class="flex items-center gap-[8px]">
+                    <div class="flex w-[16px] items-start p-[1.333px]">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="15"
+                        viewBox="0 0 14 15"
+                        fill="none"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M7.85301 7.13731C11.0637 7.13731 13.6663 5.72598 13.6663 3.98531C13.6663 2.24465 11.0637 0.833313 7.85301 0.833313C4.64101 0.833313 2.03834 2.24465 2.03834 3.98531C2.03834 5.72598 4.64101 7.13731 7.85167 7.13731H7.85301ZM10.5997 4.09731C10.5923 3.82998 10.443 3.60465 10.153 3.42331C9.90359 3.26274 9.61488 3.17372 9.31834 3.16598C9.04189 3.15521 8.76555 3.18989 8.50034 3.26865C8.24167 3.34398 7.94901 3.45198 7.62101 3.59198C7.36634 3.69998 7.17434 3.77198 7.04767 3.80865C6.91634 3.84265 6.81434 3.83731 6.74167 3.79198C6.58967 3.69665 6.67034 3.55065 6.98367 3.35465C7.30101 3.15598 7.72634 3.00198 8.26101 2.89265L7.74101 2.10798C7.2697 2.19313 6.81449 2.35101 6.39167 2.57598L5.83634 2.22931L5.10767 2.68465L5.67301 3.03865C5.32167 3.33198 5.14501 3.61598 5.14234 3.89065C5.14301 4.16265 5.29567 4.39398 5.59967 4.58465C5.86234 4.74931 6.14101 4.83731 6.43434 4.84798C6.71012 4.85868 6.98588 4.82629 7.25167 4.75198C7.50367 4.67665 7.79834 4.56998 8.13634 4.43198C8.39834 4.32398 8.59501 4.25331 8.72567 4.21865C8.86034 4.18198 8.96567 4.18798 9.04167 4.23531C9.10767 4.27665 9.12167 4.33065 9.08368 4.39731C9.04234 4.46198 8.93701 4.54731 8.76834 4.65331C8.57234 4.77598 8.33768 4.88598 8.06567 4.98265C7.79779 5.07546 7.52261 5.14571 7.24301 5.19265L7.74234 5.99665C8.02433 5.95257 8.30139 5.88135 8.56967 5.78398C8.86836 5.67854 9.15742 5.54761 9.43367 5.39265L9.98368 5.73665L10.7123 5.28065L10.1363 4.92065C10.453 4.63531 10.6077 4.36065 10.5997 4.09731ZM0.333008 6.89265C0.333008 6.25865 0.678341 5.66798 1.27301 5.17331V5.65665C1.27301 7.64198 4.23434 9.25198 7.88767 9.25198C8.83701 9.25198 9.73967 9.14331 10.5557 8.94731C9.48901 9.61931 7.90967 10.0446 6.14701 10.0446C2.93567 10.044 0.333008 8.63331 0.333008 6.89265ZM6.14634 11.2526C2.97101 11.2526 0.389675 9.87198 0.334341 8.15731C0.677675 8.69465 1.22434 9.14531 1.86501 9.49265C2.98034 10.0973 4.49501 10.4593 6.14701 10.4593C7.84834 10.4593 9.40701 10.0753 10.5337 9.43465V10.1693C9.46701 10.8326 7.89701 11.2526 6.14634 11.2526ZM2.82234 12.198V12.8673C3.87901 13.6546 5.59234 14.1666 7.52634 14.1666C10.6583 14.1666 13.2117 12.824 13.335 11.1426C12.9857 11.6653 12.447 12.1026 11.8237 12.4406C10.7023 13.0486 9.18234 13.4113 7.52634 13.4113C5.66834 13.4113 3.97167 12.954 2.82167 12.198H2.82234ZM7.52701 12.9593C5.59501 12.9593 3.88301 12.4486 2.82567 11.662C3.79634 11.9713 4.92701 12.1486 6.13434 12.1486C9.74901 12.1486 12.679 10.5593 12.679 8.59998V8.34598C13.1017 8.78265 13.3403 9.27931 13.3403 9.80731C13.3403 11.548 10.7377 12.9593 7.52701 12.9593ZM7.85234 7.55265C9.50434 7.55265 11.019 7.19131 12.135 6.58598C12.775 6.23931 13.3217 5.78798 13.6657 5.25065C13.6097 6.96531 11.0283 8.34598 7.85234 8.34598C4.67634 8.34598 2.09567 6.96531 2.03967 5.25065C2.38301 5.78798 2.93034 6.23931 3.57034 6.58598C4.68634 7.19131 6.20034 7.55265 7.85234 7.55265Z"
+                          fill="white"
+                        />
+                      </svg>
+                    </div>
+                    <div class="flex flex-col items-start gap-[-1]">
+                      <h1
+                        class="flex items-start text-[17px] font-bold leading-[24px] text-[#fff]"
+                      >
+                        28m+
+                      </h1>
+                      <p
+                        class="flex items-start text-[12px] font-bold leading-[16px] text-[#A7A7C8]"
+                      >
+                        gold in stock
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="flex pt-[7px] pr-[33.66px] pb-[12px] pl-[16px] items-start rounded-[8px] bg-[#FFFFFF1A]"
+                >
+                  <div class="flex items-center gap-[8px]">
+                    <div class="flex w-[16px] items-start p-[1.333px]">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="12"
+                        viewBox="0 0 14 12"
+                        fill="none"
+                      >
+                        <path
+                          d="M12.9997 0.166642H0.333008V1.49998H1.86634L4.05301 7.49998C4.19055 7.88901 4.44506 8.22598 4.78163 8.46468C5.11821 8.70339 5.52038 8.83215 5.93301 8.83331H11.6663V7.49998H5.93301C5.796 7.49992 5.66233 7.45765 5.5502 7.37892C5.43807 7.30019 5.35292 7.18882 5.30634 7.05998L4.99967 6.16664H11.1863C11.4757 6.16622 11.7571 6.07169 11.988 5.89731C12.2189 5.72293 12.3868 5.47817 12.4663 5.19998L13.6663 1.01331C13.6934 0.925765 13.7022 0.833573 13.6921 0.742492C13.6819 0.651411 13.6531 0.563395 13.6075 0.483943C13.5618 0.404491 13.5002 0.335307 13.4266 0.280713C13.353 0.226119 13.269 0.187287 13.1797 0.166642C13.1201 0.156936 13.0593 0.156936 12.9997 0.166642ZM11.1663 4.83331H4.49967L3.28634 1.49998H12.113L11.1663 4.83331ZM5.99967 11.5C6.26489 11.5 6.51925 11.3946 6.70678 11.2071C6.89432 11.0195 6.99967 10.7652 6.99967 10.5C6.99967 10.2348 6.89432 9.98041 6.70678 9.79287C6.51925 9.60533 6.26489 9.49998 5.99967 9.49998C5.73446 9.49998 5.4801 9.60533 5.29257 9.79287C5.10503 9.98041 4.99967 10.2348 4.99967 10.5C4.99967 10.7652 5.10503 11.0195 5.29257 11.2071C5.4801 11.3946 5.73446 11.5 5.99967 11.5ZM9.99967 11.5C10.2649 11.5 10.5192 11.3946 10.7068 11.2071C10.8943 11.0195 10.9997 10.7652 10.9997 10.5C10.9997 10.2348 10.8943 9.98041 10.7068 9.79287C10.5192 9.60533 10.2649 9.49998 9.99967 9.49998C9.73446 9.49998 9.4801 9.60533 9.29257 9.79287C9.10503 9.98041 8.99967 10.2348 8.99967 10.5C8.99967 10.7652 9.10503 11.0195 9.29257 11.2071C9.4801 11.3946 9.73446 11.5 9.99967 11.5Z"
+                          fill="white"
+                        />
+                      </svg>
+                    </div>
+                    <div class="flex flex-col items-start gap-[-1]">
+                      <h1
+                        class="flex items-start text-[17px] font-bold leading-[24px] text-[#fff]"
+                      >
+                        300k
+                      </h1>
+                      <p
+                        class="flex items-start text-[12px] font-bold leading-[16px] text-[#A7A7C8]"
+                      >
+                        min. purchase
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex lg:items-center">
+                  <h2
+                    class="text-[#A7A7C8] text-[14px] leading-[22px] font-bold"
+                  >
+                    Kazzak - EU Horde
+                  </h2>
+                </div>
+              </div>
+              <div class="flex flex-col items-start">
+                <div class="flex items-center gap-1">
+                  <div class="w-2 h-2 rounded bg-[#96D473]"></div>
+                  <h2 class="text-=[14px] font-bold leading-[22px] text-white">
+                    OvergearSales
+                  </h2>
+                  <img src="./assets/Fourth/batc.png" alt="" />
+                </div>
+                <div class="flex items-center gap-1">
+                  <div class="">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="12"
+                      height="13"
+                      viewBox="0 0 12 13"
+                      fill="none"
+                    >
+                      <path
+                        d="M6 0.0999756L7.973 3.87798L12 4.68398L9.192 7.82398L9.708 12.1L6 10.262L2.292 12.1L2.808 7.82398L0 4.68398L4.027 3.87798L6 0.0999756Z"
+                        fill="#FF9548"
+                      />
+                    </svg>
+                  </div>
+                  <h2 class="text-=[10px] font-bold leading-[16px] text-white">
+                    4.9
+                  </h2>
+                  <h2
+                    class="text-=[10px] font-bold leading-[16px] text-[#A7A7C8]"
+                  >
+                    144k+
+                  </h2>
+                </div>
+              </div>
+            </div>
+            <div
+              class="p-[18px] lg:py-[10px] lg:px-[18px] lg:w-full flex flex-wrap flex-col lg:flex-row lg:items-center lg:justify-between gap-[13px] lg:gap-[20px] rounded-lg border-2 border-[#FCAB00] bg-[#FCAB001A]"
+            >
+              <div class="flex pr-0 flex-col items-start gap-[-1px]">
+                <h1
+                  class="text-[#FFFFFF] text-[22px] font-black leading-[28px]"
+                >
+                  $3.5555
+                </h1>
+                <p class="text-[#A7A7C8] text-xs font-bold">for 10k gold</p>
+              </div>
+              <div
+                class="flex flex-wrap flex-col lg:flex-row gap-[14px] lg:gap-2"
+              >
+                <div
+                  class="flex pt-[7px] pr-[33.66px] pb-[12px] pl-[16px] items-start rounded-[8px] bg-[#FFFFFF1A]"
+                >
+                  <div class="flex items-center gap-[8px]">
+                    <div class="flex w-[16px] items-start p-[1.333px]">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="15"
+                        viewBox="0 0 14 15"
+                        fill="none"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M7.85301 7.13731C11.0637 7.13731 13.6663 5.72598 13.6663 3.98531C13.6663 2.24465 11.0637 0.833313 7.85301 0.833313C4.64101 0.833313 2.03834 2.24465 2.03834 3.98531C2.03834 5.72598 4.64101 7.13731 7.85167 7.13731H7.85301ZM10.5997 4.09731C10.5923 3.82998 10.443 3.60465 10.153 3.42331C9.90359 3.26274 9.61488 3.17372 9.31834 3.16598C9.04189 3.15521 8.76555 3.18989 8.50034 3.26865C8.24167 3.34398 7.94901 3.45198 7.62101 3.59198C7.36634 3.69998 7.17434 3.77198 7.04767 3.80865C6.91634 3.84265 6.81434 3.83731 6.74167 3.79198C6.58967 3.69665 6.67034 3.55065 6.98367 3.35465C7.30101 3.15598 7.72634 3.00198 8.26101 2.89265L7.74101 2.10798C7.2697 2.19313 6.81449 2.35101 6.39167 2.57598L5.83634 2.22931L5.10767 2.68465L5.67301 3.03865C5.32167 3.33198 5.14501 3.61598 5.14234 3.89065C5.14301 4.16265 5.29567 4.39398 5.59967 4.58465C5.86234 4.74931 6.14101 4.83731 6.43434 4.84798C6.71012 4.85868 6.98588 4.82629 7.25167 4.75198C7.50367 4.67665 7.79834 4.56998 8.13634 4.43198C8.39834 4.32398 8.59501 4.25331 8.72567 4.21865C8.86034 4.18198 8.96567 4.18798 9.04167 4.23531C9.10767 4.27665 9.12167 4.33065 9.08368 4.39731C9.04234 4.46198 8.93701 4.54731 8.76834 4.65331C8.57234 4.77598 8.33768 4.88598 8.06567 4.98265C7.79779 5.07546 7.52261 5.14571 7.24301 5.19265L7.74234 5.99665C8.02433 5.95257 8.30139 5.88135 8.56967 5.78398C8.86836 5.67854 9.15742 5.54761 9.43367 5.39265L9.98368 5.73665L10.7123 5.28065L10.1363 4.92065C10.453 4.63531 10.6077 4.36065 10.5997 4.09731ZM0.333008 6.89265C0.333008 6.25865 0.678341 5.66798 1.27301 5.17331V5.65665C1.27301 7.64198 4.23434 9.25198 7.88767 9.25198C8.83701 9.25198 9.73967 9.14331 10.5557 8.94731C9.48901 9.61931 7.90967 10.0446 6.14701 10.0446C2.93567 10.044 0.333008 8.63331 0.333008 6.89265ZM6.14634 11.2526C2.97101 11.2526 0.389675 9.87198 0.334341 8.15731C0.677675 8.69465 1.22434 9.14531 1.86501 9.49265C2.98034 10.0973 4.49501 10.4593 6.14701 10.4593C7.84834 10.4593 9.40701 10.0753 10.5337 9.43465V10.1693C9.46701 10.8326 7.89701 11.2526 6.14634 11.2526ZM2.82234 12.198V12.8673C3.87901 13.6546 5.59234 14.1666 7.52634 14.1666C10.6583 14.1666 13.2117 12.824 13.335 11.1426C12.9857 11.6653 12.447 12.1026 11.8237 12.4406C10.7023 13.0486 9.18234 13.4113 7.52634 13.4113C5.66834 13.4113 3.97167 12.954 2.82167 12.198H2.82234ZM7.52701 12.9593C5.59501 12.9593 3.88301 12.4486 2.82567 11.662C3.79634 11.9713 4.92701 12.1486 6.13434 12.1486C9.74901 12.1486 12.679 10.5593 12.679 8.59998V8.34598C13.1017 8.78265 13.3403 9.27931 13.3403 9.80731C13.3403 11.548 10.7377 12.9593 7.52701 12.9593ZM7.85234 7.55265C9.50434 7.55265 11.019 7.19131 12.135 6.58598C12.775 6.23931 13.3217 5.78798 13.6657 5.25065C13.6097 6.96531 11.0283 8.34598 7.85234 8.34598C4.67634 8.34598 2.09567 6.96531 2.03967 5.25065C2.38301 5.78798 2.93034 6.23931 3.57034 6.58598C4.68634 7.19131 6.20034 7.55265 7.85234 7.55265Z"
+                          fill="white"
+                        />
+                      </svg>
+                    </div>
+                    <div class="flex flex-col items-start gap-[-1]">
+                      <h1
+                        class="flex items-start text-[17px] font-bold leading-[24px] text-[#fff]"
+                      >
+                        25m+
+                      </h1>
+                      <p
+                        class="flex items-start text-[12px] font-bold leading-[16px] text-[#A7A7C8]"
+                      >
+                        gold in stock
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="flex pt-[7px] pr-[33.66px] pb-[12px] pl-[16px] items-start rounded-[8px] bg-[#FFFFFF1A]"
+                >
+                  <div class="flex items-center gap-[8px]">
+                    <div class="flex w-[16px] items-start p-[1.333px]">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="12"
+                        viewBox="0 0 14 12"
+                        fill="none"
+                      >
+                        <path
+                          d="M12.9997 0.166642H0.333008V1.49998H1.86634L4.05301 7.49998C4.19055 7.88901 4.44506 8.22598 4.78163 8.46468C5.11821 8.70339 5.52038 8.83215 5.93301 8.83331H11.6663V7.49998H5.93301C5.796 7.49992 5.66233 7.45765 5.5502 7.37892C5.43807 7.30019 5.35292 7.18882 5.30634 7.05998L4.99967 6.16664H11.1863C11.4757 6.16622 11.7571 6.07169 11.988 5.89731C12.2189 5.72293 12.3868 5.47817 12.4663 5.19998L13.6663 1.01331C13.6934 0.925765 13.7022 0.833573 13.6921 0.742492C13.6819 0.651411 13.6531 0.563395 13.6075 0.483943C13.5618 0.404491 13.5002 0.335307 13.4266 0.280713C13.353 0.226119 13.269 0.187287 13.1797 0.166642C13.1201 0.156936 13.0593 0.156936 12.9997 0.166642ZM11.1663 4.83331H4.49967L3.28634 1.49998H12.113L11.1663 4.83331ZM5.99967 11.5C6.26489 11.5 6.51925 11.3946 6.70678 11.2071C6.89432 11.0195 6.99967 10.7652 6.99967 10.5C6.99967 10.2348 6.89432 9.98041 6.70678 9.79287C6.51925 9.60533 6.26489 9.49998 5.99967 9.49998C5.73446 9.49998 5.4801 9.60533 5.29257 9.79287C5.10503 9.98041 4.99967 10.2348 4.99967 10.5C4.99967 10.7652 5.10503 11.0195 5.29257 11.2071C5.4801 11.3946 5.73446 11.5 5.99967 11.5ZM9.99967 11.5C10.2649 11.5 10.5192 11.3946 10.7068 11.2071C10.8943 11.0195 10.9997 10.7652 10.9997 10.5C10.9997 10.2348 10.8943 9.98041 10.7068 9.79287C10.5192 9.60533 10.2649 9.49998 9.99967 9.49998C9.73446 9.49998 9.4801 9.60533 9.29257 9.79287C9.10503 9.98041 8.99967 10.2348 8.99967 10.5C8.99967 10.7652 9.10503 11.0195 9.29257 11.2071C9.4801 11.3946 9.73446 11.5 9.99967 11.5Z"
+                          fill="white"
+                        />
+                      </svg>
+                    </div>
+                    <div class="flex flex-col items-start gap-[-1]">
+                      <h1
+                        class="flex items-start text-[17px] font-bold leading-[24px] text-[#fff]"
+                      >
+                        300k
+                      </h1>
+                      <p
+                        class="flex items-start text-[12px] font-bold leading-[16px] text-[#A7A7C8]"
+                      >
+                        min. purchase
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex lg:items-center">
+                  <h2
+                    class="text-[#A7A7C8] text-[14px] leading-[22px] font-bold"
+                  >
+                    Kazzak - EU Horde
+                  </h2>
+                </div>
+              </div>
+              <div class="flex flex-col items-start">
+                <div class="flex items-center gap-1">
+                  <div class="w-2 h-2 rounded bg-[#96D473]"></div>
+                  <h2 class="text-=[14px] font-bold leading-[22px] text-white">
+                    OvergearSales
+                  </h2>
+                  <img src="./assets/Fourth/batc.png" alt="" />
+                </div>
+                <div class="flex items-center gap-1">
+                  <div class="">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="12"
+                      height="13"
+                      viewBox="0 0 12 13"
+                      fill="none"
+                    >
+                      <path
+                        d="M6 0.0999756L7.973 3.87798L12 4.68398L9.192 7.82398L9.708 12.1L6 10.262L2.292 12.1L2.808 7.82398L0 4.68398L4.027 3.87798L6 0.0999756Z"
+                        fill="#FF9548"
+                      />
+                    </svg>
+                  </div>
+                  <h2 class="text-=[10px] font-bold leading-[16px] text-white">
+                    4.9
+                  </h2>
+                  <h2
+                    class="text-=[10px] font-bold leading-[16px] text-[#A7A7C8]"
+                  >
+                    144k+
+                  </h2>
+                </div>
+              </div>
+            </div>
+            <div
+              class="p-[18px] lg:py-[10px] lg:px-[18px] lg:w-full flex flex-wrap flex-col lg:flex-row lg:items-center lg:justify-between gap-[13px] lg:gap-[20px] rounded-lg border-2 border-[#FCAB00] bg-[#FCAB001A]"
+            >
+              <div class="flex pr-0 flex-col items-start gap-[-1px]">
+                <h1
+                  class="text-[#FFFFFF] text-[22px] font-black leading-[28px]"
+                >
+                  $2.9999
+                </h1>
+                <p class="text-[#A7A7C8] text-xs font-bold">for 10k gold</p>
+              </div>
+              <div
+                class="flex flex-wrap flex-col lg:flex-row gap-[14px] lg:gap-2"
+              >
+                <div
+                  class="flex pt-[7px] pr-[33.66px] pb-[12px] pl-[16px] items-start rounded-[8px] bg-[#FFFFFF1A]"
+                >
+                  <div class="flex items-center gap-[8px]">
+                    <div class="flex w-[16px] items-start p-[1.333px]">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="15"
+                        viewBox="0 0 14 15"
+                        fill="none"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M7.85301 7.13731C11.0637 7.13731 13.6663 5.72598 13.6663 3.98531C13.6663 2.24465 11.0637 0.833313 7.85301 0.833313C4.64101 0.833313 2.03834 2.24465 2.03834 3.98531C2.03834 5.72598 4.64101 7.13731 7.85167 7.13731H7.85301ZM10.5997 4.09731C10.5923 3.82998 10.443 3.60465 10.153 3.42331C9.90359 3.26274 9.61488 3.17372 9.31834 3.16598C9.04189 3.15521 8.76555 3.18989 8.50034 3.26865C8.24167 3.34398 7.94901 3.45198 7.62101 3.59198C7.36634 3.69998 7.17434 3.77198 7.04767 3.80865C6.91634 3.84265 6.81434 3.83731 6.74167 3.79198C6.58967 3.69665 6.67034 3.55065 6.98367 3.35465C7.30101 3.15598 7.72634 3.00198 8.26101 2.89265L7.74101 2.10798C7.2697 2.19313 6.81449 2.35101 6.39167 2.57598L5.83634 2.22931L5.10767 2.68465L5.67301 3.03865C5.32167 3.33198 5.14501 3.61598 5.14234 3.89065C5.14301 4.16265 5.29567 4.39398 5.59967 4.58465C5.86234 4.74931 6.14101 4.83731 6.43434 4.84798C6.71012 4.85868 6.98588 4.82629 7.25167 4.75198C7.50367 4.67665 7.79834 4.56998 8.13634 4.43198C8.39834 4.32398 8.59501 4.25331 8.72567 4.21865C8.86034 4.18198 8.96567 4.18798 9.04167 4.23531C9.10767 4.27665 9.12167 4.33065 9.08368 4.39731C9.04234 4.46198 8.93701 4.54731 8.76834 4.65331C8.57234 4.77598 8.33768 4.88598 8.06567 4.98265C7.79779 5.07546 7.52261 5.14571 7.24301 5.19265L7.74234 5.99665C8.02433 5.95257 8.30139 5.88135 8.56967 5.78398C8.86836 5.67854 9.15742 5.54761 9.43367 5.39265L9.98368 5.73665L10.7123 5.28065L10.1363 4.92065C10.453 4.63531 10.6077 4.36065 10.5997 4.09731ZM0.333008 6.89265C0.333008 6.25865 0.678341 5.66798 1.27301 5.17331V5.65665C1.27301 7.64198 4.23434 9.25198 7.88767 9.25198C8.83701 9.25198 9.73967 9.14331 10.5557 8.94731C9.48901 9.61931 7.90967 10.0446 6.14701 10.0446C2.93567 10.044 0.333008 8.63331 0.333008 6.89265ZM6.14634 11.2526C2.97101 11.2526 0.389675 9.87198 0.334341 8.15731C0.677675 8.69465 1.22434 9.14531 1.86501 9.49265C2.98034 10.0973 4.49501 10.4593 6.14701 10.4593C7.84834 10.4593 9.40701 10.0753 10.5337 9.43465V10.1693C9.46701 10.8326 7.89701 11.2526 6.14634 11.2526ZM2.82234 12.198V12.8673C3.87901 13.6546 5.59234 14.1666 7.52634 14.1666C10.6583 14.1666 13.2117 12.824 13.335 11.1426C12.9857 11.6653 12.447 12.1026 11.8237 12.4406C10.7023 13.0486 9.18234 13.4113 7.52634 13.4113C5.66834 13.4113 3.97167 12.954 2.82167 12.198H2.82234ZM7.52701 12.9593C5.59501 12.9593 3.88301 12.4486 2.82567 11.662C3.79634 11.9713 4.92701 12.1486 6.13434 12.1486C9.74901 12.1486 12.679 10.5593 12.679 8.59998V8.34598C13.1017 8.78265 13.3403 9.27931 13.3403 9.80731C13.3403 11.548 10.7377 12.9593 7.52701 12.9593ZM7.85234 7.55265C9.50434 7.55265 11.019 7.19131 12.135 6.58598C12.775 6.23931 13.3217 5.78798 13.6657 5.25065C13.6097 6.96531 11.0283 8.34598 7.85234 8.34598C4.67634 8.34598 2.09567 6.96531 2.03967 5.25065C2.38301 5.78798 2.93034 6.23931 3.57034 6.58598C4.68634 7.19131 6.20034 7.55265 7.85234 7.55265Z"
+                          fill="white"
+                        />
+                      </svg>
+                    </div>
+                    <div class="flex flex-col items-start gap-[-1]">
+                      <h1
+                        class="flex items-start text-[17px] font-bold leading-[24px] text-[#fff]"
+                      >
+                        19m+
+                      </h1>
+                      <p
+                        class="flex items-start text-[12px] font-bold leading-[16px] text-[#A7A7C8]"
+                      >
+                        gold in stock
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="flex pt-[7px] pr-[33.66px] pb-[12px] pl-[16px] items-start rounded-[8px] bg-[#FFFFFF1A]"
+                >
+                  <div class="flex items-center gap-[8px]">
+                    <div class="flex w-[16px] items-start p-[1.333px]">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="12"
+                        viewBox="0 0 14 12"
+                        fill="none"
+                      >
+                        <path
+                          d="M12.9997 0.166642H0.333008V1.49998H1.86634L4.05301 7.49998C4.19055 7.88901 4.44506 8.22598 4.78163 8.46468C5.11821 8.70339 5.52038 8.83215 5.93301 8.83331H11.6663V7.49998H5.93301C5.796 7.49992 5.66233 7.45765 5.5502 7.37892C5.43807 7.30019 5.35292 7.18882 5.30634 7.05998L4.99967 6.16664H11.1863C11.4757 6.16622 11.7571 6.07169 11.988 5.89731C12.2189 5.72293 12.3868 5.47817 12.4663 5.19998L13.6663 1.01331C13.6934 0.925765 13.7022 0.833573 13.6921 0.742492C13.6819 0.651411 13.6531 0.563395 13.6075 0.483943C13.5618 0.404491 13.5002 0.335307 13.4266 0.280713C13.353 0.226119 13.269 0.187287 13.1797 0.166642C13.1201 0.156936 13.0593 0.156936 12.9997 0.166642ZM11.1663 4.83331H4.49967L3.28634 1.49998H12.113L11.1663 4.83331ZM5.99967 11.5C6.26489 11.5 6.51925 11.3946 6.70678 11.2071C6.89432 11.0195 6.99967 10.7652 6.99967 10.5C6.99967 10.2348 6.89432 9.98041 6.70678 9.79287C6.51925 9.60533 6.26489 9.49998 5.99967 9.49998C5.73446 9.49998 5.4801 9.60533 5.29257 9.79287C5.10503 9.98041 4.99967 10.2348 4.99967 10.5C4.99967 10.7652 5.10503 11.0195 5.29257 11.2071C5.4801 11.3946 5.73446 11.5 5.99967 11.5ZM9.99967 11.5C10.2649 11.5 10.5192 11.3946 10.7068 11.2071C10.8943 11.0195 10.9997 10.7652 10.9997 10.5C10.9997 10.2348 10.8943 9.98041 10.7068 9.79287C10.5192 9.60533 10.2649 9.49998 9.99967 9.49998C9.73446 9.49998 9.4801 9.60533 9.29257 9.79287C9.10503 9.98041 8.99967 10.2348 8.99967 10.5C8.99967 10.7652 9.10503 11.0195 9.29257 11.2071C9.4801 11.3946 9.73446 11.5 9.99967 11.5Z"
+                          fill="white"
+                        />
+                      </svg>
+                    </div>
+                    <div class="flex flex-col items-start gap-[-1]">
+                      <h1
+                        class="flex items-start text-[17px] font-bold leading-[24px] text-[#fff]"
+                      >
+                        300k
+                      </h1>
+                      <p
+                        class="flex items-start text-[12px] font-bold leading-[16px] text-[#A7A7C8]"
+                      >
+                        min. purchase
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex lg:items-center">
+                  <h2
+                    class="text-[#A7A7C8] text-[14px] leading-[22px] font-bold"
+                  >
+                    Kazzak - EU Horde
+                  </h2>
+                </div>
+              </div>
+              <div class="flex flex-col items-start">
+                <div class="flex items-center gap-1">
+                  <div class="w-2 h-2 rounded bg-[#96D473]"></div>
+                  <h2 class="text-=[14px] font-bold leading-[22px] text-white">
+                    OvergearSales
+                  </h2>
+                  <img src="./assets/Fourth/batc.png" alt="" />
+                </div>
+                <div class="flex items-center gap-1">
+                  <div class="">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="12"
+                      height="13"
+                      viewBox="0 0 12 13"
+                      fill="none"
+                    >
+                      <path
+                        d="M6 0.0999756L7.973 3.87798L12 4.68398L9.192 7.82398L9.708 12.1L6 10.262L2.292 12.1L2.808 7.82398L0 4.68398L4.027 3.87798L6 0.0999756Z"
+                        fill="#FF9548"
+                      />
+                    </svg>
+                  </div>
+                  <h2 class="text-=[10px] font-bold leading-[16px] text-white">
+                    4.9
+                  </h2>
+                  <h2
+                    class="text-=[10px] font-bold leading-[16px] text-[#A7A7C8]"
+                  >
+                    144k+
+                  </h2>
+                </div>
+              </div>
+            </div>
+            <div
+              class="p-[18px] lg:py-[10px] lg:px-[18px] lg:w-full flex flex-wrap flex-col lg:flex-row lg:items-center lg:justify-between gap-[13px] lg:gap-[20px] rounded-lg border-2 border-[#FCAB00] bg-[#FCAB001A]"
+            >
+              <div class="flex pr-0 flex-col items-start gap-[-1px]">
+                <h1
+                  class="text-[#FFFFFF] text-[22px] font-black leading-[28px]"
+                >
+                  $8.3333
+                </h1>
+                <p class="text-[#A7A7C8] text-xs font-bold">for 10k gold</p>
+              </div>
+              <div
+                class="flex flex-wrap flex-col lg:flex-row gap-[14px] lg:gap-2"
+              >
+                <div
+                  class="flex pt-[7px] pr-[33.66px] pb-[12px] pl-[16px] items-start rounded-[8px] bg-[#FFFFFF1A]"
+                >
+                  <div class="flex items-center gap-[8px]">
+                    <div class="flex w-[16px] items-start p-[1.333px]">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="15"
+                        viewBox="0 0 14 15"
+                        fill="none"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M7.85301 7.13731C11.0637 7.13731 13.6663 5.72598 13.6663 3.98531C13.6663 2.24465 11.0637 0.833313 7.85301 0.833313C4.64101 0.833313 2.03834 2.24465 2.03834 3.98531C2.03834 5.72598 4.64101 7.13731 7.85167 7.13731H7.85301ZM10.5997 4.09731C10.5923 3.82998 10.443 3.60465 10.153 3.42331C9.90359 3.26274 9.61488 3.17372 9.31834 3.16598C9.04189 3.15521 8.76555 3.18989 8.50034 3.26865C8.24167 3.34398 7.94901 3.45198 7.62101 3.59198C7.36634 3.69998 7.17434 3.77198 7.04767 3.80865C6.91634 3.84265 6.81434 3.83731 6.74167 3.79198C6.58967 3.69665 6.67034 3.55065 6.98367 3.35465C7.30101 3.15598 7.72634 3.00198 8.26101 2.89265L7.74101 2.10798C7.2697 2.19313 6.81449 2.35101 6.39167 2.57598L5.83634 2.22931L5.10767 2.68465L5.67301 3.03865C5.32167 3.33198 5.14501 3.61598 5.14234 3.89065C5.14301 4.16265 5.29567 4.39398 5.59967 4.58465C5.86234 4.74931 6.14101 4.83731 6.43434 4.84798C6.71012 4.85868 6.98588 4.82629 7.25167 4.75198C7.50367 4.67665 7.79834 4.56998 8.13634 4.43198C8.39834 4.32398 8.59501 4.25331 8.72567 4.21865C8.86034 4.18198 8.96567 4.18798 9.04167 4.23531C9.10767 4.27665 9.12167 4.33065 9.08368 4.39731C9.04234 4.46198 8.93701 4.54731 8.76834 4.65331C8.57234 4.77598 8.33768 4.88598 8.06567 4.98265C7.79779 5.07546 7.52261 5.14571 7.24301 5.19265L7.74234 5.99665C8.02433 5.95257 8.30139 5.88135 8.56967 5.78398C8.86836 5.67854 9.15742 5.54761 9.43367 5.39265L9.98368 5.73665L10.7123 5.28065L10.1363 4.92065C10.453 4.63531 10.6077 4.36065 10.5997 4.09731ZM0.333008 6.89265C0.333008 6.25865 0.678341 5.66798 1.27301 5.17331V5.65665C1.27301 7.64198 4.23434 9.25198 7.88767 9.25198C8.83701 9.25198 9.73967 9.14331 10.5557 8.94731C9.48901 9.61931 7.90967 10.0446 6.14701 10.0446C2.93567 10.044 0.333008 8.63331 0.333008 6.89265ZM6.14634 11.2526C2.97101 11.2526 0.389675 9.87198 0.334341 8.15731C0.677675 8.69465 1.22434 9.14531 1.86501 9.49265C2.98034 10.0973 4.49501 10.4593 6.14701 10.4593C7.84834 10.4593 9.40701 10.0753 10.5337 9.43465V10.1693C9.46701 10.8326 7.89701 11.2526 6.14634 11.2526ZM2.82234 12.198V12.8673C3.87901 13.6546 5.59234 14.1666 7.52634 14.1666C10.6583 14.1666 13.2117 12.824 13.335 11.1426C12.9857 11.6653 12.447 12.1026 11.8237 12.4406C10.7023 13.0486 9.18234 13.4113 7.52634 13.4113C5.66834 13.4113 3.97167 12.954 2.82167 12.198H2.82234ZM7.52701 12.9593C5.59501 12.9593 3.88301 12.4486 2.82567 11.662C3.79634 11.9713 4.92701 12.1486 6.13434 12.1486C9.74901 12.1486 12.679 10.5593 12.679 8.59998V8.34598C13.1017 8.78265 13.3403 9.27931 13.3403 9.80731C13.3403 11.548 10.7377 12.9593 7.52701 12.9593ZM7.85234 7.55265C9.50434 7.55265 11.019 7.19131 12.135 6.58598C12.775 6.23931 13.3217 5.78798 13.6657 5.25065C13.6097 6.96531 11.0283 8.34598 7.85234 8.34598C4.67634 8.34598 2.09567 6.96531 2.03967 5.25065C2.38301 5.78798 2.93034 6.23931 3.57034 6.58598C4.68634 7.19131 6.20034 7.55265 7.85234 7.55265Z"
+                          fill="white"
+                        />
+                      </svg>
+                    </div>
+                    <div class="flex flex-col items-start gap-[-1]">
+                      <h1
+                        class="flex items-start text-[17px] font-bold leading-[24px] text-[#fff]"
+                      >
+                        15m+
+                      </h1>
+                      <p
+                        class="flex items-start text-[12px] font-bold leading-[16px] text-[#A7A7C8]"
+                      >
+                        gold in stock
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="flex pt-[7px] pr-[33.66px] pb-[12px] pl-[16px] items-start rounded-[8px] bg-[#FFFFFF1A]"
+                >
+                  <div class="flex items-center gap-[8px]">
+                    <div class="flex w-[16px] items-start p-[1.333px]">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="12"
+                        viewBox="0 0 14 12"
+                        fill="none"
+                      >
+                        <path
+                          d="M12.9997 0.166642H0.333008V1.49998H1.86634L4.05301 7.49998C4.19055 7.88901 4.44506 8.22598 4.78163 8.46468C5.11821 8.70339 5.52038 8.83215 5.93301 8.83331H11.6663V7.49998H5.93301C5.796 7.49992 5.66233 7.45765 5.5502 7.37892C5.43807 7.30019 5.35292 7.18882 5.30634 7.05998L4.99967 6.16664H11.1863C11.4757 6.16622 11.7571 6.07169 11.988 5.89731C12.2189 5.72293 12.3868 5.47817 12.4663 5.19998L13.6663 1.01331C13.6934 0.925765 13.7022 0.833573 13.6921 0.742492C13.6819 0.651411 13.6531 0.563395 13.6075 0.483943C13.5618 0.404491 13.5002 0.335307 13.4266 0.280713C13.353 0.226119 13.269 0.187287 13.1797 0.166642C13.1201 0.156936 13.0593 0.156936 12.9997 0.166642ZM11.1663 4.83331H4.49967L3.28634 1.49998H12.113L11.1663 4.83331ZM5.99967 11.5C6.26489 11.5 6.51925 11.3946 6.70678 11.2071C6.89432 11.0195 6.99967 10.7652 6.99967 10.5C6.99967 10.2348 6.89432 9.98041 6.70678 9.79287C6.51925 9.60533 6.26489 9.49998 5.99967 9.49998C5.73446 9.49998 5.4801 9.60533 5.29257 9.79287C5.10503 9.98041 4.99967 10.2348 4.99967 10.5C4.99967 10.7652 5.10503 11.0195 5.29257 11.2071C5.4801 11.3946 5.73446 11.5 5.99967 11.5ZM9.99967 11.5C10.2649 11.5 10.5192 11.3946 10.7068 11.2071C10.8943 11.0195 10.9997 10.7652 10.9997 10.5C10.9997 10.2348 10.8943 9.98041 10.7068 9.79287C10.5192 9.60533 10.2649 9.49998 9.99967 9.49998C9.73446 9.49998 9.4801 9.60533 9.29257 9.79287C9.10503 9.98041 8.99967 10.2348 8.99967 10.5C8.99967 10.7652 9.10503 11.0195 9.29257 11.2071C9.4801 11.3946 9.73446 11.5 9.99967 11.5Z"
+                          fill="white"
+                        />
+                      </svg>
+                    </div>
+                    <div class="flex flex-col items-start gap-[-1]">
+                      <h1
+                        class="flex items-start text-[17px] font-bold leading-[24px] text-[#fff]"
+                      >
+                        300k
+                      </h1>
+                      <p
+                        class="flex items-start text-[12px] font-bold leading-[16px] text-[#A7A7C8]"
+                      >
+                        min. purchase
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex lg:items-center">
+                  <h2
+                    class="text-[#A7A7C8] text-[14px] leading-[22px] font-bold"
+                  >
+                    Kazzak - EU Horde
+                  </h2>
+                </div>
+              </div>
+              <div class="flex flex-col items-start">
+                <div class="flex items-center gap-1">
+                  <div class="w-2 h-2 rounded bg-[#96D473]"></div>
+                  <h2 class="text-=[14px] font-bold leading-[22px] text-white">
+                    OvergearSales
+                  </h2>
+                  <img src="./assets/Fourth/batc.png" alt="" />
+                </div>
+                <div class="flex items-center gap-1">
+                  <div class="">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="12"
+                      height="13"
+                      viewBox="0 0 12 13"
+                      fill="none"
+                    >
+                      <path
+                        d="M6 0.0999756L7.973 3.87798L12 4.68398L9.192 7.82398L9.708 12.1L6 10.262L2.292 12.1L2.808 7.82398L0 4.68398L4.027 3.87798L6 0.0999756Z"
+                        fill="#FF9548"
+                      />
+                    </svg>
+                  </div>
+                  <h2 class="text-=[10px] font-bold leading-[16px] text-white">
+                    4.9
+                  </h2>
+                  <h2
+                    class="text-=[10px] font-bold leading-[16px] text-[#A7A7C8]"
+                  >
+                    144k+
+                  </h2>
+                </div>
+              </div>
+            </div>
+            <div
+              class="p-[18px] lg:py-[10px] lg:px-[18px] lg:w-full flex flex-wrap flex-col lg:flex-row lg:items-center lg:justify-between gap-[13px] lg:gap-[20px] rounded-lg border-2 border-[#FCAB00] bg-[#FCAB001A]"
+            >
+              <div class="flex pr-0 flex-col items-start gap-[-1px]">
+                <h1
+                  class="text-[#FFFFFF] text-[22px] font-black leading-[28px]"
+                >
+                  $0.4035
+                </h1>
+                <p class="text-[#A7A7C8] text-xs font-bold">for 10k gold</p>
+              </div>
+              <div
+                class="flex flex-wrap flex-col lg:flex-row gap-[14px] lg:gap-2"
+              >
+                <div
+                  class="flex pt-[7px] pr-[33.66px] pb-[12px] pl-[16px] items-start rounded-[8px] bg-[#FFFFFF1A]"
+                >
+                  <div class="flex items-center gap-[8px]">
+                    <div class="flex w-[16px] items-start p-[1.333px]">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="15"
+                        viewBox="0 0 14 15"
+                        fill="none"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M7.85301 7.13731C11.0637 7.13731 13.6663 5.72598 13.6663 3.98531C13.6663 2.24465 11.0637 0.833313 7.85301 0.833313C4.64101 0.833313 2.03834 2.24465 2.03834 3.98531C2.03834 5.72598 4.64101 7.13731 7.85167 7.13731H7.85301ZM10.5997 4.09731C10.5923 3.82998 10.443 3.60465 10.153 3.42331C9.90359 3.26274 9.61488 3.17372 9.31834 3.16598C9.04189 3.15521 8.76555 3.18989 8.50034 3.26865C8.24167 3.34398 7.94901 3.45198 7.62101 3.59198C7.36634 3.69998 7.17434 3.77198 7.04767 3.80865C6.91634 3.84265 6.81434 3.83731 6.74167 3.79198C6.58967 3.69665 6.67034 3.55065 6.98367 3.35465C7.30101 3.15598 7.72634 3.00198 8.26101 2.89265L7.74101 2.10798C7.2697 2.19313 6.81449 2.35101 6.39167 2.57598L5.83634 2.22931L5.10767 2.68465L5.67301 3.03865C5.32167 3.33198 5.14501 3.61598 5.14234 3.89065C5.14301 4.16265 5.29567 4.39398 5.59967 4.58465C5.86234 4.74931 6.14101 4.83731 6.43434 4.84798C6.71012 4.85868 6.98588 4.82629 7.25167 4.75198C7.50367 4.67665 7.79834 4.56998 8.13634 4.43198C8.39834 4.32398 8.59501 4.25331 8.72567 4.21865C8.86034 4.18198 8.96567 4.18798 9.04167 4.23531C9.10767 4.27665 9.12167 4.33065 9.08368 4.39731C9.04234 4.46198 8.93701 4.54731 8.76834 4.65331C8.57234 4.77598 8.33768 4.88598 8.06567 4.98265C7.79779 5.07546 7.52261 5.14571 7.24301 5.19265L7.74234 5.99665C8.02433 5.95257 8.30139 5.88135 8.56967 5.78398C8.86836 5.67854 9.15742 5.54761 9.43367 5.39265L9.98368 5.73665L10.7123 5.28065L10.1363 4.92065C10.453 4.63531 10.6077 4.36065 10.5997 4.09731ZM0.333008 6.89265C0.333008 6.25865 0.678341 5.66798 1.27301 5.17331V5.65665C1.27301 7.64198 4.23434 9.25198 7.88767 9.25198C8.83701 9.25198 9.73967 9.14331 10.5557 8.94731C9.48901 9.61931 7.90967 10.0446 6.14701 10.0446C2.93567 10.044 0.333008 8.63331 0.333008 6.89265ZM6.14634 11.2526C2.97101 11.2526 0.389675 9.87198 0.334341 8.15731C0.677675 8.69465 1.22434 9.14531 1.86501 9.49265C2.98034 10.0973 4.49501 10.4593 6.14701 10.4593C7.84834 10.4593 9.40701 10.0753 10.5337 9.43465V10.1693C9.46701 10.8326 7.89701 11.2526 6.14634 11.2526ZM2.82234 12.198V12.8673C3.87901 13.6546 5.59234 14.1666 7.52634 14.1666C10.6583 14.1666 13.2117 12.824 13.335 11.1426C12.9857 11.6653 12.447 12.1026 11.8237 12.4406C10.7023 13.0486 9.18234 13.4113 7.52634 13.4113C5.66834 13.4113 3.97167 12.954 2.82167 12.198H2.82234ZM7.52701 12.9593C5.59501 12.9593 3.88301 12.4486 2.82567 11.662C3.79634 11.9713 4.92701 12.1486 6.13434 12.1486C9.74901 12.1486 12.679 10.5593 12.679 8.59998V8.34598C13.1017 8.78265 13.3403 9.27931 13.3403 9.80731C13.3403 11.548 10.7377 12.9593 7.52701 12.9593ZM7.85234 7.55265C9.50434 7.55265 11.019 7.19131 12.135 6.58598C12.775 6.23931 13.3217 5.78798 13.6657 5.25065C13.6097 6.96531 11.0283 8.34598 7.85234 8.34598C4.67634 8.34598 2.09567 6.96531 2.03967 5.25065C2.38301 5.78798 2.93034 6.23931 3.57034 6.58598C4.68634 7.19131 6.20034 7.55265 7.85234 7.55265Z"
+                          fill="white"
+                        />
+                      </svg>
+                    </div>
+                    <div class="flex flex-col items-start gap-[-1]">
+                      <h1
+                        class="flex items-start text-[17px] font-bold leading-[24px] text-[#fff]"
+                      >
+                        15m+
+                      </h1>
+                      <p
+                        class="flex items-start text-[12px] font-bold leading-[16px] text-[#A7A7C8]"
+                      >
+                        gold in stock
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="flex pt-[7px] pr-[33.66px] pb-[12px] pl-[16px] items-start rounded-[8px] bg-[#FFFFFF1A]"
+                >
+                  <div class="flex items-center gap-[8px]">
+                    <div class="flex w-[16px] items-start p-[1.333px]">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="12"
+                        viewBox="0 0 14 12"
+                        fill="none"
+                      >
+                        <path
+                          d="M12.9997 0.166642H0.333008V1.49998H1.86634L4.05301 7.49998C4.19055 7.88901 4.44506 8.22598 4.78163 8.46468C5.11821 8.70339 5.52038 8.83215 5.93301 8.83331H11.6663V7.49998H5.93301C5.796 7.49992 5.66233 7.45765 5.5502 7.37892C5.43807 7.30019 5.35292 7.18882 5.30634 7.05998L4.99967 6.16664H11.1863C11.4757 6.16622 11.7571 6.07169 11.988 5.89731C12.2189 5.72293 12.3868 5.47817 12.4663 5.19998L13.6663 1.01331C13.6934 0.925765 13.7022 0.833573 13.6921 0.742492C13.6819 0.651411 13.6531 0.563395 13.6075 0.483943C13.5618 0.404491 13.5002 0.335307 13.4266 0.280713C13.353 0.226119 13.269 0.187287 13.1797 0.166642C13.1201 0.156936 13.0593 0.156936 12.9997 0.166642ZM11.1663 4.83331H4.49967L3.28634 1.49998H12.113L11.1663 4.83331ZM5.99967 11.5C6.26489 11.5 6.51925 11.3946 6.70678 11.2071C6.89432 11.0195 6.99967 10.7652 6.99967 10.5C6.99967 10.2348 6.89432 9.98041 6.70678 9.79287C6.51925 9.60533 6.26489 9.49998 5.99967 9.49998C5.73446 9.49998 5.4801 9.60533 5.29257 9.79287C5.10503 9.98041 4.99967 10.2348 4.99967 10.5C4.99967 10.7652 5.10503 11.0195 5.29257 11.2071C5.4801 11.3946 5.73446 11.5 5.99967 11.5ZM9.99967 11.5C10.2649 11.5 10.5192 11.3946 10.7068 11.2071C10.8943 11.0195 10.9997 10.7652 10.9997 10.5C10.9997 10.2348 10.8943 9.98041 10.7068 9.79287C10.5192 9.60533 10.2649 9.49998 9.99967 9.49998C9.73446 9.49998 9.4801 9.60533 9.29257 9.79287C9.10503 9.98041 8.99967 10.2348 8.99967 10.5C8.99967 10.7652 9.10503 11.0195 9.29257 11.2071C9.4801 11.3946 9.73446 11.5 9.99967 11.5Z"
+                          fill="white"
+                        />
+                      </svg>
+                    </div>
+                    <div class="flex flex-col items-start gap-[-1]">
+                      <h1
+                        class="flex items-start text-[17px] font-bold leading-[24px] text-[#fff]"
+                      >
+                        600k
+                      </h1>
+                      <p
+                        class="flex items-start text-[12px] font-bold leading-[16px] text-[#A7A7C8]"
+                      >
+                        min. purchase
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex lg:items-center">
+                  <h2
+                    class="text-[#A7A7C8] text-[14px] leading-[22px] font-bold"
+                  >
+                    Kazzak - EU Horde
+                  </h2>
+                </div>
+              </div>
+              <div class="flex flex-col items-start">
+                <div class="flex items-center gap-1">
+                  <div class="w-2 h-2 rounded bg-[#96D473]"></div>
+                  <h2 class="text-=[14px] font-bold leading-[22px] text-white">
+                    OvergearSales
+                  </h2>
+                  <img src="./assets/Fourth/batc.png" alt="" />
+                </div>
+                <div class="flex items-center gap-1">
+                  <div class="">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="12"
+                      height="13"
+                      viewBox="0 0 12 13"
+                      fill="none"
+                    >
+                      <path
+                        d="M6 0.0999756L7.973 3.87798L12 4.68398L9.192 7.82398L9.708 12.1L6 10.262L2.292 12.1L2.808 7.82398L0 4.68398L4.027 3.87798L6 0.0999756Z"
+                        fill="#FF9548"
+                      />
+                    </svg>
+                  </div>
+                  <h2 class="text-=[10px] font-bold leading-[16px] text-white">
+                    4.9
+                  </h2>
+                  <h2
+                    class="text-=[10px] font-bold leading-[16px] text-[#A7A7C8]"
+                  >
+                    144k+
+                  </h2>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Horde Section -->
+          <div
+            id="horde-section"
+            class="hidden sellerFalse sellerHide allanceHide grid md:grid-cols-1 grid-cols-1 gap-[10px] lg:gap-2 mb-[50px] lg:mt-[20px]"
+          >
+            <div
+              class="p-[18px] lg:py-[10px] lg:px-[18px] lg:w-full flex flex-wrap flex-col lg:flex-row lg:items-center lg:justify-between gap-[13px] lg:gap-[20px] rounded-lg border-2 border-[#FCAB00] bg-[#FCAB001A]"
+            >
+              <div class="flex pr-0 flex-col items-start gap-[-1px]">
+                <h1
+                  class="text-[#FFFFFF] text-[22px] font-black leading-[28px]"
+                >
+                  $6.5000
+                </h1>
+                <p class="text-[#A7A7C8] text-xs font-bold">for 10k gold</p>
               </div>
               <div
                 class="flex flex-wrap flex-col lg:flex-row gap-[14px] lg:gap-2"
@@ -2325,7 +3814,7 @@
       class="pt-[60px] bg-gradient-to-r from-[#241420] via-[#302b3f] to-[#27213C]"
     >
       <article
-        class="w-[calc(100vw-48px)] lg:w-[calc(100vw-200px)] mx-auto lg:flex lg:flex-wrap lg:justify-between"
+        class="w-[calc(100vw-48px)] lg:w-[calc(100vw-200px)] 2xl:w-[1480px] mx-auto lg:flex lg:flex-wrap lg:justify-between"
       >
         <div class="lg:w-[35%]">
           <!-- Realse date Section -->
@@ -2960,7 +4449,7 @@
 
         <!-- news sec -->
         <div
-          class="w-full bg-[#FFFFFF1A] rounded-[20px] p-[10px] lg:p-[30px] mt-[20px]"
+          class="bg-[#FFFFFF1A] rounded-[20px] p-[10px] lg:p-[30px] mt-[20px] w-full"
         >
           <div class="flex flex-wrap items-center justify-between px-4">
             <h1 class="text-[21px] font-bold leading-[36px] text-white">
@@ -3070,7 +4559,7 @@
           get paid helping other gamers worldwide.
         </p>
         <button
-          class="mt-6 bg-[#FCAB00] border-[#FCAB00] px-20 md:px-8 py-3 border-[2px] hover:border-[#FCAB00] hover:bg-[#fcb826] duration-300 text-[12px] md:text-[13px] font-bold rounded-full"
+          class="mt-6 bg-[#FCAB00] border-[#FCAB00] px-20 md:px-8 py-3 border-[2px] hover:border-[#FCAB00] hover:bg-[#c8c8c85e] hover:text-white duration-500 text-[12px] md:text-[13px] font-bold rounded-full"
         >
           Start earning with Overgear
         </button>
