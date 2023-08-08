@@ -10,6 +10,10 @@
       src="https://kit.fontawesome.com/c79b956231.js"
       crossorigin="anonymous"
     ></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.css"
+      rel="stylesheet"
+    />
     <style>
       input[type="checkbox"] {
         appearance: none;
@@ -19,16 +23,7 @@
       }
       input[type="checkbox"]:checked {
         background-color: #fcab00;
-        accent-color: #fcab00;
-      }
-
-      input[type="checkbox"]:checked::before {
-        content: "\2713";
-        position: absolute;
-        font-weight: bold;
-        color: black; /* Color of the checkmark */
-        font-size: 20px;
-        line-height: 1;
+        accent-color: black;
       }
 
       input[type="radio"] {
@@ -663,159 +658,333 @@
             <div>
               <h1 class="text-white mt-5">Server</h1>
               <div class="flex tab">
-                <div class="flex tabParent">
-                  <h2 class="tab1 font-semibold softcore-btn duration-200">
-                    Season 1 - Softcore
-                  </h2>
-                  <h2 class="tab2 font-semibold softcore-btn duration-200">
-                    Eternal - Softcore
-                  </h2>
-                </div>
+                <ul
+                  class="flex tabParent"
+                  id="checkbox-menu"
+                  data-tabs-toggle="#check-box-container"
+                  role="tablist"
+                >
+                  <li role="presentation">
+                    <button
+                      id="season-1-tab"
+                      data-tabs-target="#season-1"
+                      type="button"
+                      role="tab"
+                      aria-controls="season-1-tab"
+                      aria-selected="false"
+                      class="tab1 font-semibold softcore-btn duration-200"
+                    >
+                      Season 1 - Softcore
+                    </button>
+                  </li>
+                  <li role="presentation">
+                    <button
+                      id="eternal-tab"
+                      data-tabs-target="#eternal"
+                      type="button"
+                      role="tab"
+                      aria-controls="eternal-tab"
+                      aria-selected="false"
+                      class="tab2 font-semibold softcore-btn duration-200"
+                    >
+                      Eternal - Softcore
+                    </button>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
         </section>
       </section>
-
-      <section id="check-box-container">
-        <!-- 1st checkbox section -->
+      <section
+        id="check-box-container"
+        class="w-[calc(100vw-48px)] lg:w-[calc(100vw-200px)] 2xl:w-[1480px] mx-auto"
+      >
         <section
-          class="firstCheckBox mx-auto grid grid-cols-2 md:grid-cols-4 w-[calc(100vw-48px)] lg:w-[calc(100vw-200px)] 2xl:w-[1480px]"
+          id="season-1"
+          class="hidden"
+          role="tabpanel"
+          aria-labelledby="season-1-tab"
         >
-          <div class="details">
-            <input type="checkbox" class="check" name id />
-            <span class="checkboxName">Perfect Rare</span>
-          </div>
-          <div class="details">
-            <input type="checkbox" class="check" name id />
-            <span class="checkboxName">Ancestral Rare</span>
-          </div>
-          <div class="details">
-            <input type="checkbox" class="check" name id />
-            <span class="checkboxName">Gems</span>
-          </div>
-          <div class="details">
-            <input type="checkbox" class="check" name id />
-            <span class="checkboxName">Consumables</span>
-          </div>
-          <div class="details">
-            <input type="checkbox" class="check" name id />
-            <span class="checkboxName">Junk For Salvage</span>
-          </div>
-          <div class="details">
-            <input type="checkbox" class="check" name id />
-            <span class="checkboxName">Currency ＆ Material</span>
-          </div>
-          <div class="details">
-            <input type="checkbox" class="check" name id />
-            <span class="checkboxName">Random Rare</span>
-          </div>
+          <!-- 1st checkbox section -->
+          <section class="firstCheckBox grid grid-cols-2 md:grid-cols-4">
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" />
+              <span class="checkboxName">Perfect Rare</span>
+            </div>
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" name id />
+              <span class="checkboxName">Ancestral Rare</span>
+            </div>
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" name id />
+              <span class="checkboxName">Gems</span>
+            </div>
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" name id />
+              <span class="checkboxName">Consumables</span>
+            </div>
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" name id />
+              <span class="checkboxName">Junk For Salvage</span>
+            </div>
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" name id />
+              <span class="checkboxName">Currency ＆ Material</span>
+            </div>
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" name id />
+              <span class="checkboxName">Random Rare</span>
+            </div>
+          </section>
+          <!-- 2nd checkbox section -->
+          <section
+            class="secondCheckBox mx-auto grid grid-cols-2 md:grid-cols-4 w-[calc(100vw-48px)] lg:w-[calc(100vw-200px)] 2xl:w-[1480px]"
+          >
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" name id />
+              <span class="checkboxName">All</span>
+            </div>
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" name id />
+              <span class="checkboxName">Amulet</span>
+            </div>
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" name id />
+              <span class="checkboxName">Axe</span>
+            </div>
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" name id />
+              <span class="checkboxName">Boots</span>
+            </div>
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" name id />
+              <span class="checkboxName">Bow</span>
+            </div>
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" name id />
+              <span class="checkboxName">Crossbow</span>
+            </div>
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" name id />
+              <span class="checkboxName">Chest Armor</span>
+            </div>
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" name id />
+              <span class="checkboxName">Dagger</span>
+            </div>
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" name id />
+              <span class="checkboxName">Focus</span>
+            </div>
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" name id />
+              <span class="checkboxName">Gloves</span>
+            </div>
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" name id />
+              <span class="checkboxName">Helm</span>
+            </div>
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" name id />
+              <span class="checkboxName">Mace</span>
+            </div>
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" name id />
+              <span class="checkboxName">Pants</span>
+            </div>
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" name id />
+              <span class="checkboxName">Polearm</span>
+            </div>
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" name id />
+              <span class="checkboxName">Ring</span>
+            </div>
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" name id />
+              <span class="checkboxName">Scythe</span>
+            </div>
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" name id />
+              <span class="checkboxName">Shield</span>
+            </div>
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" name id />
+              <span class="checkboxName">Staff</span>
+            </div>
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" name id />
+              <span class="checkboxName">Sword</span>
+            </div>
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" name id />
+              <span class="checkboxName">Totem</span>
+            </div>
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" name id />
+              <span class="checkboxName">Two-Handed Axe</span>
+            </div>
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" name id />
+              <span class="checkboxName">Two-Handed Mace</span>
+            </div>
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" name id />
+              <span class="checkboxName">Two-Handed Scythe</span>
+            </div>
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" name id />
+              <span class="checkboxName">Two-Handed Sword</span>
+            </div>
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" name id />
+              <span class="checkboxName">Wand</span>
+            </div>
+          </section>
         </section>
-
-        <!-- 2nd checkbox section -->
         <section
-          class="secondCheckBox mx-auto grid grid-cols-2 md:grid-cols-4 w-[calc(100vw-48px)] lg:w-[calc(100vw-200px)] 2xl:w-[1480px]"
+          id="eternal"
+          class="hidden"
+          role="tabpanel"
+          aria-labelledby="eternal-1-tab"
         >
-          <div class="details">
-            <input type="checkbox" class="check" name id />
-            <span class="checkboxName">All</span>
-          </div>
-          <div class="details">
-            <input type="checkbox" class="check" name id />
-            <span class="checkboxName">Amulet</span>
-          </div>
-          <div class="details">
-            <input type="checkbox" class="check" name id />
-            <span class="checkboxName">Axe</span>
-          </div>
-          <div class="details">
-            <input type="checkbox" class="check" name id />
-            <span class="checkboxName">Boots</span>
-          </div>
-          <div class="details">
-            <input type="checkbox" class="check" name id />
-            <span class="checkboxName">Bow</span>
-          </div>
-          <div class="details">
-            <input type="checkbox" class="check" name id />
-            <span class="checkboxName">Crossbow</span>
-          </div>
-          <div class="details">
-            <input type="checkbox" class="check" name id />
-            <span class="checkboxName">Chest Armor</span>
-          </div>
-          <div class="details">
-            <input type="checkbox" class="check" name id />
-            <span class="checkboxName">Dagger</span>
-          </div>
-          <div class="details">
-            <input type="checkbox" class="check" name id />
-            <span class="checkboxName">Focus</span>
-          </div>
-          <div class="details">
-            <input type="checkbox" class="check" name id />
-            <span class="checkboxName">Gloves</span>
-          </div>
-          <div class="details">
-            <input type="checkbox" class="check" name id />
-            <span class="checkboxName">Helm</span>
-          </div>
-          <div class="details">
-            <input type="checkbox" class="check" name id />
-            <span class="checkboxName">Mace</span>
-          </div>
-          <div class="details">
-            <input type="checkbox" class="check" name id />
-            <span class="checkboxName">Pants</span>
-          </div>
-          <div class="details">
-            <input type="checkbox" class="check" name id />
-            <span class="checkboxName">Polearm</span>
-          </div>
-          <div class="details">
-            <input type="checkbox" class="check" name id />
-            <span class="checkboxName">Ring</span>
-          </div>
-          <div class="details">
-            <input type="checkbox" class="check" name id />
-            <span class="checkboxName">Scythe</span>
-          </div>
-          <div class="details">
-            <input type="checkbox" class="check" name id />
-            <span class="checkboxName">Shield</span>
-          </div>
-          <div class="details">
-            <input type="checkbox" class="check" name id />
-            <span class="checkboxName">Staff</span>
-          </div>
-          <div class="details">
-            <input type="checkbox" class="check" name id />
-            <span class="checkboxName">Sword</span>
-          </div>
-          <div class="details">
-            <input type="checkbox" class="check" name id />
-            <span class="checkboxName">Totem</span>
-          </div>
-          <div class="details">
-            <input type="checkbox" class="check" name id />
-            <span class="checkboxName">Two-Handed Axe</span>
-          </div>
-          <div class="details">
-            <input type="checkbox" class="check" name id />
-            <span class="checkboxName">Two-Handed Mace</span>
-          </div>
-          <div class="details">
-            <input type="checkbox" class="check" name id />
-            <span class="checkboxName">Two-Handed Scythe</span>
-          </div>
-          <div class="details">
-            <input type="checkbox" class="check" name id />
-            <span class="checkboxName">Two-Handed Sword</span>
-          </div>
-          <div class="details">
-            <input type="checkbox" class="check" name id />
-            <span class="checkboxName">Wand</span>
-          </div>
+          <!-- 1st checkbox section -->
+          <section class="firstCheckBox grid grid-cols-2 md:grid-cols-4">
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" />
+              <span class="checkboxName">Gems</span>
+            </div>
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" name id />
+              <span class="checkboxName">Consumables</span>
+            </div>
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" name id />
+              <span class="checkboxName">Perfect Rare</span>
+            </div>
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" name id />
+              <span class="checkboxName">Ancestral Rare</span>
+            </div>
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" name id />
+              <span class="checkboxName">Currency ＆ Material</span>
+            </div>
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" name id />
+              <span class="checkboxName">Junk For Salvage</span>
+            </div>
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" name id />
+              <span class="checkboxName">Random Rare</span>
+            </div>
+          </section>
+          <!-- 2nd checkbox section -->
+          <section
+            class="secondCheckBox mx-auto grid grid-cols-2 md:grid-cols-4 w-[calc(100vw-48px)] lg:w-[calc(100vw-200px)] 2xl:w-[1480px]"
+          >
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" name id />
+              <span class="checkboxName">All</span>
+            </div>
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" name id />
+              <span class="checkboxName">Axe</span>
+            </div>
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" name id />
+              <span class="checkboxName">Boots</span>
+            </div>
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" name id />
+              <span class="checkboxName">Amulet</span>
+            </div>
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" name id />
+              <span class="checkboxName">Crossbow</span>
+            </div>
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" name id />
+              <span class="checkboxName">Bow</span>
+            </div>
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" name id />
+              <span class="checkboxName">Focus</span>
+            </div>
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" name id />
+              <span class="checkboxName">Chest Armor</span>
+            </div>
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" name id />
+              <span class="checkboxName">Dagger</span>
+            </div>
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" name id />
+              <span class="checkboxName">Helm</span>
+            </div>
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" name id />
+              <span class="checkboxName">Gloves</span>
+            </div>
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" name id />
+              <span class="checkboxName">Mace</span>
+            </div>
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" name id />
+              <span class="checkboxName">Polearm</span>
+            </div>
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" name id />
+              <span class="checkboxName">Pants</span>
+            </div>
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" name id />
+              <span class="checkboxName">Ring</span>
+            </div>
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" name id />
+              <span class="checkboxName">Shield</span>
+            </div>
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" name id />
+              <span class="checkboxName">Scythe</span>
+            </div>
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" name id />
+              <span class="checkboxName">Sword</span>
+            </div>
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" name id />
+              <span class="checkboxName">Staff</span>
+            </div>
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" name id />
+              <span class="checkboxName">Totem</span>
+            </div>
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" name id />
+              <span class="checkboxName">Two-Handed Scythe</span>
+            </div>
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" name id />
+              <span class="checkboxName">Two-Handed Mace</span>
+            </div>
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" name id />
+              <span class="checkboxName">Two-Handed Axe</span>
+            </div>
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" name id />
+              <span class="checkboxName">Two-Handed Sword</span>
+            </div>
+            <div class="details">
+              <input type="checkbox" class="check focus:ring-0" name id />
+              <span class="checkboxName">Wand</span>
+            </div>
+          </section>
         </section>
       </section>
       <!-- Search Section -->
@@ -829,7 +998,7 @@
             <input
               type="text"
               placeholder="Search"
-              class="bg-transparent text-sm max-w-full duration-300 border-0 outline-o focus:outline-0 placeholder:opacity-70 w-full text-white"
+              class="bg-transparent text-sm max-w-full duration-300 border-0 outline-o focus:outline-0 placeholder:opacity-70 w-full text-white focus:ring-0"
             />
             <button>
               <i class="fa-solid fa-magnifying-glass text-white opacity-70"></i>
@@ -841,7 +1010,7 @@
               <div class="grid grid-cols-2 md:grid-cols-4 mt-10 circleName">
                 <div class="flex">
                   <input
-                    class="circle cursor-pointer"
+                    class="circle focus:ring-0 cursor-pointer"
                     type="radio"
                     name="sorting"
                     value="AtoZ"
@@ -852,7 +1021,7 @@
                 </div>
                 <div class="flex">
                   <input
-                    class="circle cursor-pointer"
+                    class="circle focus:ring-0 cursor-pointer"
                     type="radio"
                     name="sorting"
                     value="ZtoA"
@@ -863,7 +1032,7 @@
                 </div>
                 <div class="flex">
                   <input
-                    class="circle cursor-pointer"
+                    class="circle focus:ring-0 cursor-pointer"
                     type="radio"
                     name="sorting"
                     id
@@ -872,7 +1041,7 @@
                 </div>
                 <div class="flex">
                   <input
-                    class="circle cursor-pointer"
+                    class="circle focus:ring-0 cursor-pointer"
                     type="radio"
                     name="sorting"
                   />
@@ -1348,9 +1517,9 @@
             <div class="secondDiv overflow-hidden">
               <h4>Showing our latest reviews</h4>
               <div id="review-box" class="space-y-3 text-center mx-auto">
-                <h2>Nice guy</h2>
-                <p>nice guy, took care of business</p>
-                <h5>Robert Lockar...1 hour ago</h5>
+                <h2 id="review-header">Nice guy</h2>
+                <p id="review-desc">nice guy, took care of business</p>
+                <h5 id="reviewer">Robert Lockar...1 hour ago</h5>
               </div>
             </div>
             <div class="flex justify-around items-center mt-16">
@@ -1516,6 +1685,7 @@
         </p>
       </div>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>
     <script type="module" src="./navbar.js"></script>
     <script type="module" src="./third.js"></script>
   </body>

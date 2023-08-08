@@ -351,6 +351,7 @@ button.filter-btn {
   margin-top: 20px;
   background: #393131;
   border-radius: 300px;
+  border: 1px solid #fcab0020 !important;
 }
 
 .tab1,
@@ -360,8 +361,9 @@ button.filter-btn {
   padding: 11px 18.28px 11px 17px;
   align-items: center;
   border-radius: 300px;
-  border: 1px solid #393131;
-  background: #393131;
+  border: 1px solid #393131 !important;
+  color: white !important;
+  background: #393131 !important;
   cursor: pointer;
 }
 
@@ -370,13 +372,13 @@ button.filter-btn {
   height: 46px;
   padding: 11px 18.28px 11px 17px;
   align-items: center;
-  color: #241f36;
+  color: #241f36 !important;
   border-radius: 300px;
-  border: 1px solid #fcab00;
-  background: #fcab00;
+  border: 1px solid #fcab00 !important;
+  background: #fcab00 !important;
 }
 .active-tab:hover {
-  background-color: #f8b422;
+  background-color: #f8b422 !important;
 }
 
 /* FirstCheckbox */
@@ -397,7 +399,7 @@ button.filter-btn {
   justify-items: center;
   align-items: center;
   flex-shrink: 0;
-  border-radius: 3px;
+  border-radius: 3px !important;
   border: 2px solid rgba(255, 255, 255, 0.2);
   cursor: pointer;
 }
@@ -452,7 +454,7 @@ button.filter-btn {
   width: 20px;
   height: 20px;
   border-radius: 20px;
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  /* border: 2px solid rgba(255, 255, 255, 0.2) !important; */
 }
 
 .circleOption {
