@@ -6,7 +6,6 @@ let decrementBtn = document.getElementById("decrementBtn");
 let fieldText = document.getElementById("fieldText");
 let priceField = document.getElementById("price-amount");
 
-
 IncrementBtn.addEventListener("click", () => {
   let quantity = parseInt(fieldText.value);
   fieldText.value = quantity + 1;
@@ -24,25 +23,20 @@ decrementBtn.addEventListener("click", () => {
 });
 //Increment and decrement fields
 
-
 // const fieldText = document.getElementById('fieldText');
 
-fieldText.addEventListener('input', (event) => {
+fieldText.addEventListener("input", (event) => {
   event.preventDefault();
   const quantity = event.target.value;
-  if(!quantity){
+  if (!quantity) {
     priceField.innerText = 0;
-  }
-  else if(quantity < 0) {
+  } else if (quantity < 0) {
     priceField.innerText = 0;
-    alert('Negative value is not acceptable!');
-  }
-  else {
+    alert("Negative value is not acceptable!");
+  } else {
     priceField.innerText = parseInt(fieldText.value) * 4;
   }
 });
-
-
 
 //tab buttons click then fire the text field
 let firstBtn = document.getElementById("firstBtn");
@@ -78,6 +72,24 @@ fourthBtn.addEventListener("click", () => {
   amount.innerText = `${priceField.innerText} M`;
 });
 
+
+
+// Setting styles for the active sub-filter buttons like 20M, 100M, 50M.
+const subCategories = document.querySelectorAll('.sub-category');
+subCategories[0].classList.add('bg-[#51c18b]');
+
+for(let i=0; i<subCategories.length; i++) {
+  subCategories[i].addEventListener('click', (event) => {
+    // Clearing all other items background that are not active
+    subCategories.forEach((item) => {
+      item.classList.remove("bg-[#51c18b]");
+    });  
+    // Setting the clicked items background color.
+    event.currentTarget.classList.add('bg-[#51c18b]');
+  })
+}
+
+
 //button active
 function addAnchor(
   goldId,
@@ -111,4 +123,37 @@ buttons.forEach((button) => {
     button.classList.add("bg-[#51c18b]"); // Add the active background color
     button.classList.add("text-black"); // Add the active text color
   });
+});
+
+let million20 = document.getElementById("20million");
+let million50 = document.getElementById("50million");
+let million100 = document.getElementById("100million");
+let million200 = document.getElementById("200million");
+let million300 = document.getElementById("300million");
+let million500 = document.getElementById("500million");
+
+
+million20.addEventListener("click", () => {
+  amount.innerText = "20 M";
+  priceField.innerText = 20 * 4;
+});
+million50.addEventListener("click", () => {
+  amount.innerText = "50 M";
+  priceField.innerText = 50 * 4;
+});
+million100.addEventListener("click", () => {
+  amount.innerText = "100 M";
+  priceField.innerText = 100 * 4;
+});
+million200.addEventListener("click", () => {
+  amount.innerText = "200 M";
+  priceField.innerText = 200 * 4;
+});
+million300.addEventListener("click", () => {
+  amount.innerText = "300 M";
+  priceField.innerText = 300 * 4;
+});
+million500.addEventListener("click", () => {
+  amount.innerText = "500 M";
+  priceField.innerText = 500 * 4;
 });
